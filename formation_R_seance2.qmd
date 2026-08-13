@@ -1,0 +1,1917 @@
+---
+title: "Formation R — Séance 2 : Manipulation et visualisation de données"
+subtitle: "Tidyverse, ggplot2, structures de données avancées et statistiques"
+author: "Formateur : [Votre Nom]"
+date: "02 juillet 2026"
+lang: fr
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: "Table des matières"
+    toc-location: left
+    number-sections: true
+    theme: flatly
+    highlight-style: github
+    code-fold: false
+    code-tools: true
+    code-copy: true
+    fig-align: center
+    fig-width: 7
+    fig-height: 5
+    embed-resources: true
+  pdf:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    documentclass: article
+    papersize: a4
+    fontsize: 11pt
+    geometry:
+      - top=2.5cm
+      - bottom=2.5cm
+      - left=2.5cm
+      - right=2.5cm
+    colorlinks: true
+    linkcolor: blue
+    urlcolor: blue
+    highlight-style: github
+    fig-width: 6
+    fig-height: 4
+    include-in-header:
+      text: |
+        \usepackage{fancyhdr}
+        \usepackage{xcolor}
+        \pagestyle{fancy}
+        \fancyhf{}
+        \fancyhead[L]{\small Formation R — Séance 2}
+        \fancyhead[R]{\small \leftmark}
+        \fancyfoot[C]{\thepage}
+        \renewcommand{\headrulewidth}{0.4pt}
+execute:
+  echo: true
+  eval: true
+  warning: false
+  message: false
+---
+
+```{r}
+#| include: false
+options(scipen = 999)
+```
+
+------------------------------------------------------------------------
+
+# Introduction {.unnumbered}
+
+Bienvenue dans la **Séance 2** de cette formation R ! Lors de la première séance, vous avez acquis les bases essentielles : installation de R et RStudio, calculs arithmétiques, création de variables, types de données, vecteurs, data frames, importation de données et premiers graphiques.
+
+Cette deuxième séance, d'une durée de **5 heures**, vous plonge dans les outils modernes de la communauté R : le **tidyverse**, la manipulation avancée des structures de données et la visualisation professionnelle avec **ggplot2**.
+
+::: callout-note
+## Prérequis — Ce que vous devez maîtriser avant cette séance
+
+✅ Créer et manipuler des vecteurs et data frames
+
+✅ Utiliser les fonctions de base : `mean()`, `sum()`, `table()`, `class()`
+
+✅ Importer un fichier Excel avec `readxl`
+
+✅ Produire un histogramme et un diagramme en barres
+
+Si l'un de ces points n'est pas clair, relisez le support de la Séance 1 avant de continuer.
+:::
+
+------------------------------------------------------------------------
+
+# Objectifs de la séance {.unnumbered}
+
+::: callout-note
+## Compétences visées — Séance 2
+
+✅ **Installer et charger** les packages du tidyverse
+
+✅ **Manipuler** des données avec `dplyr` : filtrer, sélectionner, transformer, résumer
+
+✅ **Remodeler** des tableaux avec `tidyr` : format long ↔ large
+
+✅ **Créer et manipuler** des listes et des facteurs
+
+✅ **Comprendre** les vecteurs labellisés et leur intérêt en enquête
+
+✅ **Produire** des graphiques publiables avec `ggplot2`
+
+✅ **Calculer** des statistiques univariées et bivariées avec les fonctions de base
+
+✅ **Utiliser** des fonctions utilitaires essentielles de R
+:::
+
+------------------------------------------------------------------------
+
+# Introduction au Tidyverse
+
+## Qu'est-ce que le Tidyverse ?
+
+Le **tidyverse** est une collection de packages R conçus pour travailler ensemble de façon cohérente. Tous partagent la même philosophie : les données doivent être **ordonnées** (*tidy*) pour faciliter l'analyse.
+
+Un jeu de données est dit *tidy* lorsque :
+
+1.  Chaque **variable** occupe une colonne
+2.  Chaque **observation** occupe une ligne
+3.  Chaque **valeur** occupe une cellule
+
+::: callout-important
+## À retenir — Les packages principaux du Tidyverse
+
+| Package   | Rôle principal                                       |
+|-----------|------------------------------------------------------|
+| `dplyr`   | Manipulation de données (filtrer, trier, résumer...) |
+| `tidyr`   | Remise en forme des tableaux (pivot, gather...)      |
+| `ggplot2` | Visualisation de données                             |
+| `readr`   | Importation de fichiers CSV et texte                 |
+| `stringr` | Manipulation de chaînes de caractères                |
+| `forcats` | Manipulation de facteurs                             |
+| `purrr`   | Programmation fonctionnelle                          |
+| `tibble`  | Amélioration des data frames                         |
+:::
+
+## Installation et chargement
+
+```{r}
+#| eval: false
+# Installation du tidyverse (une seule fois)
+install.packages("tidyverse")
+```
+
+```{r}
+# Chargement du tidyverse (à chaque session)
+library(tidyverse)
+```
+
+::: callout-tip
+## Astuce — `library(tidyverse)` charge plusieurs packages à la fois
+
+En tapant `library(tidyverse)`, vous chargez automatiquement : `ggplot2`, `dplyr`, `tidyr`, `readr`, `purrr`, `tibble`, `stringr` et `forcats`. C'est équivalent à charger ces 8 packages un par un.
+:::
+
+## Le tibble : version améliorée du data frame
+
+Le **tibble** est la version moderne du data frame dans le tidyverse. Il s'affiche mieux dans la console et gère mieux les types de données.
+
+```{r}
+# Créer un tibble
+donnees_eleves <- tibble(
+  nom     = c("Adjoua", "Kofi", "Aminata", "Brice", "Fatouma"),
+  age     = c(22, 24, 21, 23, 20),
+  filiere = c("Statistique", "Démographie", "Statistique", "Info", "Éco"),
+  note    = c(14.5, 11.0, 16.5, 13.0, 12.5)
+)
+
+donnees_eleves
+```
+
+```{r}
+# Différence avec un data.frame classique à l'affichage
+class(donnees_eleves)
+```
+
+## L'opérateur pipe `|>`
+
+Le **pipe** (`|>`) est l'un des éléments les plus importants du tidyverse. Il permet de chaîner des opérations de gauche à droite, rendant le code beaucoup plus lisible.
+
+```{r}
+# Sans pipe : lecture de droite à gauche, difficile à suivre
+round(mean(c(12, 14, 11, 16, 13)), 2)
+
+# Avec pipe : lecture de gauche à droite, naturelle
+c(12, 14, 11, 16, 13) |> mean() |> round(2)
+```
+
+::: callout-tip
+## Raccourci clavier pour le pipe
+
+Dans RStudio : **`Ctrl + Shift + M`** insère le pipe `|>`
+
+L'ancien pipe `%>%` du package `magrittr` fonctionne de la même façon. Vous le verrez souvent dans les tutoriels anciens.
+:::
+
+------------------------------------------------------------------------
+
+# Manipulation de données avec `dplyr`
+
+`dplyr` fournit un ensemble de **verbes** pour manipuler les données. Chaque verbe effectue une action précise et peut être chaîné avec le pipe.
+
+## Jeu de données de travail
+
+```{r}
+# Jeu de données : enquête dans une université
+set.seed(42)
+n <- 80
+
+enquete <- tibble(
+  id           = 1:n,
+  sexe         = sample(c("Homme", "Femme"), n, replace = TRUE, prob = c(0.55, 0.45)),
+  age          = sample(18:30, n, replace = TRUE),
+  filiere      = sample(c("Statistique", "Démographie", "Informatique", "Économie"), 
+                        n, replace = TRUE),
+  annee        = sample(1:3, n, replace = TRUE),
+  note_stats   = round(runif(n, 5, 20), 1),
+  note_info    = round(runif(n, 5, 20), 1),
+  heures_travail = sample(1:8, n, replace = TRUE),
+  bourse       = sample(c(TRUE, FALSE), n, replace = TRUE, prob = c(0.4, 0.6))
+)
+
+glimpse(enquete)
+```
+
+## `filter()` — Filtrer les lignes
+
+```{r}
+# Étudiants de première année
+enquete |> filter(annee == 1)
+```
+
+```{r}
+# Étudiants de Statistique ayant une note > 14
+enquete |> filter(filiere == "Statistique", note_stats > 14)
+```
+
+```{r}
+# Étudiants boursiers OU ayant plus de 25 ans
+enquete |> filter(bourse == TRUE | age > 25) |> nrow()
+```
+
+## `select()` — Sélectionner les colonnes
+
+```{r}
+# Sélectionner quelques colonnes
+enquete |> select(id, sexe, filiere, note_stats)
+```
+
+```{r}
+# Exclure des colonnes avec -
+enquete |> select(-id, -bourse)
+```
+
+```{r}
+# Sélection par type ou pattern
+enquete |> select(starts_with("note"))     # colonnes qui commencent par "note"
+enquete |> select(where(is.numeric))       # toutes les colonnes numériques
+```
+
+## `mutate()` — Créer ou modifier des colonnes
+
+```{r}
+# Ajouter une colonne "moyenne" et une colonne "mention"
+enquete <- enquete |>
+  mutate(
+    moyenne = (note_stats + note_info) / 2,
+    mention = case_when(
+      moyenne >= 16 ~ "Très bien",
+      moyenne >= 14 ~ "Bien",
+      moyenne >= 12 ~ "Assez bien",
+      moyenne >= 10 ~ "Passable",
+      TRUE          ~ "Insuffisant"
+    )
+  )
+
+# Vérification
+enquete |> select(id, note_stats, note_info, moyenne, mention) |> head(8)
+```
+
+## `arrange()` — Trier les lignes
+
+```{r}
+# Trier par moyenne décroissante
+enquete |> arrange(desc(moyenne)) |> select(id, filiere, moyenne, mention) |> head(5)
+```
+
+```{r}
+# Trier par filière puis par moyenne décroissante
+enquete |> arrange(filiere, desc(moyenne)) |> 
+  select(id, filiere, moyenne) |> head(8)
+```
+
+## `summarise()` — Résumer les données
+
+```{r}
+# Statistiques globales
+enquete |>
+  summarise(
+    n          = n(),
+    moy_stats  = mean(note_stats),
+    moy_info   = mean(note_info),
+    moy_gen    = mean(moyenne),
+    et_gen     = sd(moyenne),
+    min_gen    = min(moyenne),
+    max_gen    = max(moyenne)
+  )
+```
+
+## `group_by()` + `summarise()` — Statistiques par groupe
+
+C'est la combinaison la plus puissante de `dplyr` : calculer des statistiques **par groupe**.
+
+```{r}
+# Statistiques par filière
+enquete |>
+  group_by(filiere) |>
+  summarise(
+    n          = n(),
+    moy_gen    = round(mean(moyenne), 2),
+    moy_stats  = round(mean(note_stats), 2),
+    pct_bourse = round(mean(bourse) * 100, 1)
+  ) |>
+  arrange(desc(moy_gen))
+```
+
+```{r}
+# Statistiques par sexe et par filière
+enquete |>
+  group_by(sexe, filiere) |>
+  summarise(
+    n     = n(),
+    moy   = round(mean(moyenne), 2),
+    .groups = "drop"
+  ) |>
+  arrange(filiere, sexe)
+```
+
+::: callout-important
+## À retenir — Les 5 verbes fondamentaux de `dplyr`
+
+| Verbe | Action |
+|----|----|
+| `filter()` | Garder certaines **lignes** selon une condition |
+| `select()` | Garder ou exclure certaines **colonnes** |
+| `mutate()` | Créer ou transformer des **colonnes** |
+| `arrange()` | **Trier** les lignes |
+| `summarise()` + `group_by()` | **Résumer** par groupe |
+:::
+
+## `count()` — Compter rapidement
+
+```{r}
+# Compter les effectifs par filière
+enquete |> count(filiere, sort = TRUE)
+```
+
+```{r}
+# Compter avec proportions
+enquete |>
+  count(filiere) |>
+  mutate(pct = round(n / sum(n) * 100, 1))
+```
+
+## `rename()` et `relocate()`
+
+```{r}
+# Renommer une colonne
+enquete |> rename(note_statistique = note_stats) |> names()
+```
+
+```{r}
+# Déplacer une colonne en premier
+enquete |> relocate(moyenne, .before = note_stats) |> names()
+```
+
+------------------------------------------------------------------------
+
+# Listes et tableaux de données
+
+## Les listes en R
+
+Une **liste** est une structure qui peut contenir des éléments de types différents : vecteurs, data frames, d'autres listes, etc. C'est la structure la plus flexible de R.
+
+```{r}
+# Créer une liste hétérogène
+profil_etudiant <- list(
+  nom        = "Adjoa Mensah",
+  age        = 22,
+  notes      = c(14.5, 12.0, 16.0, 11.5),
+  est_bourse = TRUE,
+  adresse    = list(ville = "Parakou", pays = "Bénin")
+)
+
+# Afficher la structure
+str(profil_etudiant)
+```
+
+## Accéder aux éléments d'une liste
+
+```{r}
+# Méthode 1 : par le nom avec $
+profil_etudiant$nom
+profil_etudiant$notes
+
+# Méthode 2 : par double crochets [[]]
+profil_etudiant[["age"]]
+
+# Méthode 3 : par position
+profil_etudiant[[1]]   # Premier élément
+
+# Accès imbriqué
+profil_etudiant$adresse$ville
+```
+
+```{r}
+# Longueur d'une liste
+length(profil_etudiant)
+
+# Noms des éléments
+names(profil_etudiant)
+```
+
+## Modifier une liste
+
+```{r}
+# Ajouter un élément
+profil_etudiant$filiere <- "Statistique Appliquée"
+
+# Modifier un élément
+profil_etudiant$age <- 23
+
+# Supprimer un élément
+profil_etudiant$est_bourse <- NULL
+
+str(profil_etudiant)
+```
+
+## Listes de data frames (tableaux imbriqués)
+
+```{r}
+# Cas pratique : résultats de plusieurs enquêtes
+resultats <- list(
+  ue1 = tibble(matiere = "Statistique", note = c(14, 12, 16, 11, 15)),
+  ue2 = tibble(matiere = "Informatique", note = c(13, 15, 12, 17, 14)),
+  ue3 = tibble(matiere = "Démographie",  note = c(11, 14, 13, 15, 12))
+)
+
+# Accéder à un tableau
+resultats$ue1
+
+# Calculer la moyenne pour chaque UE
+sapply(resultats, function(df) mean(df$note))
+```
+
+## `tidyr` — Remise en forme des tableaux
+
+Le package `tidyr` permet de passer d'un format **large** (une ligne par individu, plusieurs colonnes de mesures) à un format **long** (une ligne par mesure), et vice-versa.
+
+```{r}
+# Données en format large
+notes_large <- tibble(
+  etudiant = c("Adjoua", "Kofi", "Aminata", "Brice"),
+  stats    = c(14.5, 11.0, 16.5, 13.0),
+  info     = c(13.0, 15.0, 12.0, 14.5),
+  demo     = c(12.0, 10.5, 14.0, 11.5)
+)
+notes_large
+```
+
+```{r}
+# Passage au format long avec pivot_longer()
+notes_long <- notes_large |>
+  pivot_longer(
+    cols      = c(stats, info, demo),  # colonnes à empiler
+    names_to  = "matiere",             # nom de la nouvelle colonne des noms
+    values_to = "note"                 # nom de la nouvelle colonne des valeurs
+  )
+notes_long
+```
+
+```{r}
+# Retour au format large avec pivot_wider()
+notes_large_retour <- notes_long |>
+  pivot_wider(
+    names_from  = matiere,
+    values_from = note
+  )
+notes_large_retour
+```
+
+::: callout-tip
+## Quand utiliser le format long vs large ?
+
+- **Format large** : présentation dans un tableau, rapport, export Excel
+- **Format long** : analyse avec `dplyr`, visualisation avec `ggplot2`, modélisation
+
+La plupart des fonctions du tidyverse travaillent avec le **format long**.
+:::
+
+------------------------------------------------------------------------
+
+# Facteurs et vecteurs labellisés
+
+## Les facteurs (`factor`)
+
+Un **facteur** est un vecteur de valeurs catégorielles dont les niveaux sont fixés et ordonnés. C'est le type utilisé pour représenter des variables qualitatives en R.
+
+```{r}
+# Créer un facteur simple
+niveau_etude <- factor(c("Licence", "Master", "Licence", "Doctorat", "Master"))
+niveau_etude
+```
+
+```{r}
+# Voir les niveaux
+levels(niveau_etude)
+
+# Nombre de niveaux
+nlevels(niveau_etude)
+
+# Classe
+class(niveau_etude)
+```
+
+## Facteurs ordonnés
+
+```{r}
+# Facteur ordonné (avec hiérarchie)
+mention <- factor(
+  c("Bien", "Passable", "Très bien", "Assez bien", "Bien"),
+  levels  = c("Passable", "Assez bien", "Bien", "Très bien"),
+  ordered = TRUE
+)
+mention
+
+# Comparaison logique possible grâce à l'ordre
+mention[1] > mention[2]   # "Bien" > "Passable" ?
+```
+
+## Le package `forcats` pour manipuler les facteurs
+
+`forcats` (inclus dans le tidyverse) fournit des fonctions pratiques pour gérer les facteurs.
+
+```{r}
+# Données avec un facteur filière
+filieres_vec <- c("Statistique", "Éco", "Info", "Statistique", "Démographie",
+                  "Éco", "Info", "Statistique", "Statistique", "Éco")
+filiere_f <- factor(filieres_vec)
+
+# fct_count() : compter les modalités
+fct_count(filiere_f, sort = TRUE)
+```
+
+```{r}
+# fct_relevel() : réordonner les niveaux manuellement
+filiere_f <- fct_relevel(filiere_f, "Statistique", "Démographie", "Éco", "Info")
+levels(filiere_f)
+```
+
+```{r}
+# fct_recode() : renommer les modalités
+filiere_f2 <- fct_recode(filiere_f,
+  "STAT" = "Statistique",
+  "DEMO" = "Démographie",
+  "INFO" = "Info",
+  "ECO"  = "Éco"
+)
+levels(filiere_f2)
+```
+
+```{r}
+# fct_lump_n() : regrouper les modalités rares
+region <- factor(c("Borgou", "Atacora", "Borgou", "Atlantique", "Borgou",
+                   "Zou", "Couffo", "Borgou", "Atlantique", "Mono", "Borgou"))
+# Garder les 2 plus fréquentes, regrouper le reste en "Autre"
+fct_lump_n(region, n = 2)
+```
+
+## Les vecteurs labellisés
+
+Les **vecteurs labellisés** permettent d'associer des **étiquettes textuelles** à des **codes numériques**, comme dans les logiciels d'enquête (Stata, SPSS, SAS). C'est très utile pour les données d'enquêtes ménages.
+
+```{r}
+#| eval: false
+# Installation du package haven (si nécessaire)
+install.packages("haven")
+```
+
+```{r}
+library(haven)
+
+# Créer un vecteur labellisé
+sexe_lab <- labelled(
+  c(1, 2, 1, 1, 2, 2, 1),
+  labels = c(Homme = 1, Femme = 2)
+)
+
+sexe_lab
+class(sexe_lab)
+```
+
+```{r}
+# Voir les labels
+attr(sexe_lab, "labels")
+
+# Convertir en facteur
+as_factor(sexe_lab)
+```
+
+```{r}
+# Exemple complet : données d'enquête codées
+niveau_vie <- labelled(
+  c(1, 3, 2, 1, 4, 2, 3, 1),
+  labels = c(
+    "Très pauvre" = 1,
+    "Pauvre"      = 2,
+    "Moyen"       = 3,
+    "Aisé"        = 4
+  )
+)
+
+# Affichage avec les labels
+as_factor(niveau_vie)
+
+# Table de fréquences avec labels
+table(as_factor(niveau_vie))
+```
+
+::: callout-note
+## Vecteurs labellisés vs Facteurs
+
+|                  | Facteur          | Vecteur labellisé        |
+|------------------|------------------|--------------------------|
+| Stockage interne | Entier           | Numérique avec attributs |
+| Usage principal  | Analyse R native | Import depuis Stata/SPSS |
+| Package          | Base R           | `haven`                  |
+| Conversion       | `as.factor()`    | `as_factor()` (haven)    |
+
+Dans la pratique, on importe les données Stata/SPSS avec `haven`, et on convertit en facteurs pour l'analyse avec `as_factor()`.
+:::
+
+------------------------------------------------------------------------
+
+# Visualisation avec `ggplot2`
+
+## La grammaire des graphiques
+
+`ggplot2` est fondé sur la **grammaire des graphiques** : tout graphique est construit par couches successives.
+
+```         
+ggplot(data = ..., aes(x = ..., y = ..., color = ...)) +
+  geom_...() +           # type de graphique
+  scale_...() +          # ajustement des axes/couleurs
+  labs(...) +            # titres et labels
+  theme_...()            # apparence générale
+```
+
+::: callout-important
+## À retenir — Les 3 composantes obligatoires
+
+1.  **`data`** : le jeu de données
+2.  **`aes()`** : les aesthetics (variables mappées aux axes, couleurs, formes...)
+3.  **`geom_*()`** : le type de représentation graphique
+:::
+
+## Histogramme avec `geom_histogram()`
+
+```{r}
+#| fig-height: 4.5
+ggplot(enquete, aes(x = moyenne)) +
+  geom_histogram(bins = 15, fill = "steelblue", color = "white") +
+  labs(
+    title    = "Distribution des moyennes générales",
+    subtitle = "Enquête universitaire — n = 80 étudiants",
+    x        = "Moyenne générale /20",
+    y        = "Nombre d'étudiants",
+    caption  = "Source : Enquête universitaire 2024"
+  ) +
+  theme_minimal()
+```
+
+## Diagramme en barres avec `geom_bar()`
+
+```{r}
+#| fig-height: 4.5
+ggplot(enquete, aes(x = filiere)) +
+  geom_bar(fill = "coral", color = "white") +
+  labs(
+    title = "Répartition des étudiants par filière",
+    x     = "Filière",
+    y     = "Effectif"
+  ) +
+  theme_minimal()
+```
+
+```{r}
+#| fig-height: 5
+# Barres groupées par sexe
+ggplot(enquete, aes(x = filiere, fill = sexe)) +
+  geom_bar(position = "dodge") +
+  scale_fill_manual(values = c("Homme" = "steelblue", "Femme" = "coral")) +
+  labs(
+    title = "Répartition par filière et par sexe",
+    x     = "Filière",
+    y     = "Effectif",
+    fill  = "Sexe"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "top")
+```
+
+## Boîte à moustaches avec `geom_boxplot()`
+
+La boîte à moustaches (boxplot) est idéale pour comparer la distribution d'une variable quantitative selon les modalités d'une variable qualitative.
+
+```{r}
+#| fig-height: 5
+ggplot(enquete, aes(x = filiere, y = moyenne, fill = filiere)) +
+  geom_boxplot(alpha = 0.7) +
+  geom_jitter(width = 0.2, alpha = 0.3, size = 1.5) +  # points individuels
+  scale_fill_brewer(palette = "Set2") +
+  labs(
+    title    = "Distribution des moyennes par filière",
+    subtitle = "Les points représentent les observations individuelles",
+    x        = "Filière",
+    y        = "Moyenne générale /20"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+## Nuage de points avec `geom_point()`
+
+```{r}
+#| fig-height: 5
+ggplot(enquete, aes(x = note_stats, y = note_info, color = filiere)) +
+  geom_point(alpha = 0.7, size = 2.5) +
+  geom_smooth(method = "lm", se = FALSE, linewidth = 0.8) +
+  scale_color_brewer(palette = "Set1") +
+  labs(
+    title  = "Relation entre la note de stats et la note d'info",
+    x      = "Note de Statistique /20",
+    y      = "Note d'Informatique /20",
+    color  = "Filière"
+  ) +
+  theme_minimal()
+```
+
+## Graphique en courbes avec `geom_line()`
+
+```{r}
+#| fig-height: 4.5
+# Données temporelles simulées
+evolution <- tibble(
+  annee      = rep(2018:2023, 3),
+  filiere    = rep(c("Statistique", "Informatique", "Démographie"), each = 6),
+  effectif   = c(45, 52, 58, 61, 70, 75,
+                 30, 35, 42, 50, 58, 65,
+                 20, 22, 25, 24, 28, 30)
+)
+
+ggplot(evolution, aes(x = annee, y = effectif, color = filiere, group = filiere)) +
+  geom_line(linewidth = 1.2) +
+  geom_point(size = 3) +
+  scale_color_manual(values = c("steelblue", "coral", "forestgreen")) +
+  labs(
+    title  = "Évolution des effectifs par filière (2018–2023)",
+    x      = "Année",
+    y      = "Effectif",
+    color  = "Filière"
+  ) +
+  theme_minimal() +
+  scale_x_continuous(breaks = 2018:2023)
+```
+
+## Graphique à barres empilées (%)
+
+```{r}
+#| fig-height: 4.5
+ggplot(enquete, aes(x = filiere, fill = mention)) +
+  geom_bar(position = "fill") +
+  scale_y_continuous(labels = scales::percent) +
+  scale_fill_brewer(palette = "RdYlGn", direction = 1) +
+  labs(
+    title = "Répartition des mentions par filière",
+    x     = "Filière",
+    y     = "Proportion",
+    fill  = "Mention"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+## `facet_wrap()` — Graphiques en facettes
+
+Les facettes permettent de répéter le même graphique pour chaque modalité d'une variable.
+
+```{r}
+#| fig-height: 6
+ggplot(enquete, aes(x = note_stats, fill = sexe)) +
+  geom_histogram(bins = 10, alpha = 0.75, color = "white") +
+  facet_wrap(~ filiere, ncol = 2) +
+  scale_fill_manual(values = c("Homme" = "steelblue", "Femme" = "coral")) +
+  labs(
+    title = "Distribution des notes de statistique par filière et sexe",
+    x     = "Note /20",
+    y     = "Effectif",
+    fill  = "Sexe"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+## Personnalisation avancée des thèmes
+
+```{r}
+#| fig-height: 5
+ggplot(enquete, aes(x = fct_reorder(filiere, moyenne, .fun = mean), 
+                    y = moyenne, fill = filiere)) +
+  stat_summary(fun = mean, geom = "bar", alpha = 0.85) +
+  stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.25, linewidth = 0.8) +
+  coord_flip() +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(
+    title    = "Moyenne générale par filière (avec intervalle d'erreur)",
+    subtitle = "Les barres d'erreur représentent ± l'erreur standard",
+    x        = NULL,
+    y        = "Moyenne générale /20"
+  ) +
+  theme_classic() +
+  theme(
+    legend.position = "none",
+    plot.title      = element_text(face = "bold", size = 12),
+    plot.subtitle   = element_text(color = "gray50", size = 9),
+    axis.text       = element_text(size = 10)
+  )
+```
+
+::: callout-tip
+## Les thèmes prédéfinis de ggplot2
+
+| Thème             | Rendu                       |
+|-------------------|-----------------------------|
+| `theme_minimal()` | Fond blanc, grille légère   |
+| `theme_classic()` | Fond blanc, axes uniquement |
+| `theme_bw()`      | Fond blanc, grille visible  |
+| `theme_dark()`    | Fond sombre                 |
+| `theme_void()`    | Aucun fond ni axes          |
+
+Utilisez `theme_minimal()` ou `theme_classic()` pour des graphiques prêts pour publication.
+:::
+
+## Sauvegarder un graphique
+
+```{r}
+#| eval: false
+# Créer le graphique
+mon_graphique <- ggplot(enquete, aes(x = filiere, y = moyenne)) +
+  geom_boxplot(fill = "steelblue", alpha = 0.7) +
+  theme_minimal() +
+  labs(title = "Moyennes par filière")
+
+# Sauvegarder en PNG haute résolution
+ggsave(
+  filename = "graphique_moyennes.png",
+  plot     = mon_graphique,
+  width    = 8,
+  height   = 5,
+  dpi      = 300
+)
+
+# Sauvegarder en PDF (vectoriel, pour publications)
+ggsave("graphique_moyennes.pdf", mon_graphique, width = 8, height = 5)
+```
+
+------------------------------------------------------------------------
+
+# Statistiques univariées et bivariées
+
+## Statistiques univariées avec les fonctions de base
+
+### Variables quantitatives
+
+```{r}
+# Utilisons le jeu de données enquete déjà créé
+x <- enquete$moyenne
+
+# Mesures de tendance centrale
+cat("=== Tendance centrale ===\n")
+cat("Moyenne   :", round(mean(x), 2), "\n")
+cat("Médiane   :", round(median(x), 2), "\n")
+cat("Mode      :", names(sort(table(round(x)), decreasing = TRUE)[1]), "\n")
+
+# Mesures de dispersion
+cat("\n=== Dispersion ===\n")
+cat("Écart-type:", round(sd(x), 2), "\n")
+cat("Variance  :", round(var(x), 2), "\n")
+cat("Étendue   :", max(x) - min(x), "\n")
+cat("IQR       :", IQR(x), "\n")
+
+# Quantiles
+cat("\n=== Quantiles ===\n")
+print(round(quantile(x, probs = c(0, 0.25, 0.5, 0.75, 1)), 2))
+```
+
+```{r}
+# Résumé complet en une commande
+summary(enquete$moyenne)
+```
+
+### Asymétrie et aplatissement
+
+```{r}
+#| eval: false
+install.packages("e1071")
+```
+
+```{r}
+library(e1071)
+
+cat("Asymétrie (skewness) :", round(skewness(enquete$moyenne), 3), "\n")
+cat("Aplatissement (kurtosis) :", round(kurtosis(enquete$moyenne), 3), "\n")
+```
+
+::: callout-note
+## Interpréter l'asymétrie
+
+- **Skewness ≈ 0** : distribution symétrique
+- **Skewness \> 0** : queue à droite (asymétrie positive)
+- **Skewness \< 0** : queue à gauche (asymétrie négative)
+:::
+
+### Variables qualitatives
+
+```{r}
+# Fréquences absolues
+table(enquete$filiere)
+
+# Fréquences relatives (%)
+round(prop.table(table(enquete$filiere)) * 100, 1)
+
+# Avec dplyr (plus lisible)
+enquete |>
+  count(filiere) |>
+  mutate(
+    pct   = round(n / sum(n) * 100, 1),
+    cum_n = cumsum(n),
+    cum_pct = cumsum(pct)
+  )
+```
+
+## Statistiques bivariées
+
+### Deux variables qualitatives — Tableau croisé
+
+```{r}
+# Tableau de contingence
+tab <- table(enquete$filiere, enquete$sexe)
+tab
+
+# En pourcentages ligne (profil ligne)
+round(prop.table(tab, margin = 1) * 100, 1)
+
+# En pourcentages colonne (profil colonne)
+round(prop.table(tab, margin = 2) * 100, 1)
+```
+
+```{r}
+# Test du chi-2 d'indépendance
+test_chi2 <- chisq.test(tab)
+test_chi2
+```
+
+```{r}
+# Interpréter le résultat
+cat("Valeur du chi-2 :", round(test_chi2$statistic, 3), "\n")
+cat("Degrés de liberté :", test_chi2$parameter, "\n")
+cat("p-valeur :", round(test_chi2$p.value, 4), "\n")
+if (test_chi2$p.value < 0.05) {
+  cat("Conclusion : Lien significatif entre filière et sexe (α = 5%)\n")
+} else {
+  cat("Conclusion : Pas de lien significatif (α = 5%)\n")
+}
+```
+
+### Une qualitative × une quantitative — Comparaison de groupes
+
+```{r}
+# Moyenne par groupe
+enquete |>
+  group_by(filiere) |>
+  summarise(
+    n   = n(),
+    moy = round(mean(moyenne), 2),
+    et  = round(sd(moyenne), 2),
+    med = round(median(moyenne), 2)
+  )
+```
+
+```{r}
+# Test de Kruskal-Wallis (alternative non paramétrique à l'ANOVA)
+kruskal.test(moyenne ~ filiere, data = enquete)
+```
+
+```{r}
+# Comparaison Homme vs Femme (test de Wilcoxon)
+wilcox.test(moyenne ~ sexe, data = enquete)
+```
+
+### Deux variables quantitatives — Corrélation
+
+```{r}
+# Corrélation de Pearson
+cor_val <- cor(enquete$note_stats, enquete$note_info, method = "pearson")
+cat("Corrélation de Pearson (stats ~ info) :", round(cor_val, 3), "\n")
+
+# Test de significativité
+cor.test(enquete$note_stats, enquete$note_info)
+```
+
+```{r}
+# Matrice de corrélations
+vars_quant <- enquete |> select(note_stats, note_info, heures_travail, moyenne, age)
+cor_matrix <- round(cor(vars_quant, method = "pearson"), 2)
+cor_matrix
+```
+
+::: callout-note
+## Interpréter le coefficient de corrélation
+
+|             | r                    |
+|-------------|----------------------|
+| 0.00 – 0.10 | Nulle ou négligeable |
+| 0.10 – 0.30 | Faible               |
+| 0.30 – 0.50 | Modérée              |
+| 0.50 – 0.70 | Forte                |
+| 0.70 – 1.00 | Très forte           |
+:::
+
+```{r}
+#| fig-height: 5
+# Visualisation de la matrice de corrélations
+# Installation si nécessaire : install.packages("corrplot")
+library(corrplot)
+
+corrplot(cor_matrix,
+         method  = "color",
+         type    = "upper",
+         addCoef.col = "black",
+         tl.col  = "black",
+         tl.srt  = 45,
+         col     = colorRampPalette(c("coral", "white", "steelblue"))(200),
+         title   = "Matrice de corrélations",
+         mar     = c(0, 0, 1, 0))
+```
+
+------------------------------------------------------------------------
+
+# Quelques fonctions utiles de R
+
+## Fonctions sur les chaînes de caractères — `stringr`
+
+```{r}
+library(stringr)
+
+noms <- c("Adjoa Mensah", "kofi ATSU", "aminata Diallo", "BRICE Hounsa")
+
+# Mise en forme
+str_to_upper(noms)         # TOUT EN MAJUSCULES
+str_to_lower(noms)         # tout en minuscules
+str_to_title(noms)         # Première Lettre En Majuscule
+```
+
+```{r}
+# Longueur des chaînes
+str_length(noms)
+
+# Détecter un motif
+str_detect(noms, "a")     # Contient la lettre "a" ?
+
+# Extraire une sous-chaîne
+str_sub(noms, 1, 5)       # 5 premiers caractères
+
+# Remplacer
+str_replace(noms, "Adjoa", "Akosua")
+```
+
+```{r}
+# Diviser une chaîne
+str_split("Adjoa Mensah", " ")[[1]]
+
+# Coller des chaînes
+str_c("Étudiant", 1:5, sep = "_")
+
+# Supprimer les espaces inutiles
+str_trim("   Brice Hounsa   ")
+
+# Compter les occurrences d'un motif
+str_count(noms, "a")
+```
+
+## Fonctions mathématiques et de transformation
+
+```{r}
+x <- c(4.567, 3.142, 9.999, 1.001, 7.5)
+
+# Arrondis
+round(x, 2)          # arrondi à 2 décimales
+floor(x)             # arrondi vers le bas
+ceiling(x)           # arrondi vers le haut
+trunc(x)             # partie entière (vers zéro)
+
+# Transformations mathématiques
+log(x)               # logarithme naturel
+log10(x)             # logarithme base 10
+exp(x)               # exponentielle
+abs(c(-3, 5, -2, 7)) # valeur absolue
+```
+
+```{r}
+# Cumul et rang
+valeurs <- c(10, 25, 8, 17, 30, 12)
+cumsum(valeurs)      # somme cumulée
+cumprod(c(1,2,3,4))  # produit cumulé
+cummax(valeurs)      # maximum cumulé
+rank(valeurs)        # rang de chaque valeur
+```
+
+## Fonctions sur les vecteurs et data frames
+
+```{r}
+# Identifier les valeurs uniques
+villes <- c("Cotonou", "Parakou", "Cotonou", "Porto-Novo", "Parakou", "Cotonou")
+unique(villes)         # valeurs distinctes
+duplicated(villes)     # TRUE si doublon
+table(villes)          # fréquences
+
+# Valeurs manquantes
+x_na <- c(3, NA, 7, NA, 5, 9)
+is.na(x_na)            # Identifier les NA
+sum(is.na(x_na))       # Compter les NA
+mean(x_na, na.rm = TRUE)  # Calculer en ignorant les NA
+na.omit(x_na)          # Supprimer les NA
+```
+
+```{r}
+# Remplacer les NA
+x_na[is.na(x_na)] <- 0   # Remplacer par 0
+x_na
+
+# Avec dplyr : replace_na()
+enquete_na <- tibble(age = c(20, NA, 22, NA, 25))
+enquete_na |> mutate(age = replace_na(age, mean(age, na.rm = TRUE)))
+```
+
+## Conditions : `if`, `ifelse()`, `case_when()`
+
+```{r}
+# if simple (pour un seul test)
+note <- 13.5
+if (note >= 10) {
+  cat("Admis\n")
+} else {
+  cat("Ajourné\n")
+}
+```
+
+```{r}
+# ifelse() vectorisé (pour un vecteur)
+notes <- c(14, 9, 12, 7, 15, 11)
+statut <- ifelse(notes >= 10, "Admis", "Ajourné")
+statut
+```
+
+```{r}
+# case_when() de dplyr : conditions multiples
+notes_df <- tibble(note = c(18, 15, 13, 11, 8))
+notes_df |>
+  mutate(
+    mention = case_when(
+      note >= 16 ~ "Très bien",
+      note >= 14 ~ "Bien",
+      note >= 12 ~ "Assez bien",
+      note >= 10 ~ "Passable",
+      TRUE       ~ "Insuffisant"
+    )
+  )
+```
+
+## Boucles `for` et fonctions `apply`
+
+```{r}
+# Boucle for : répéter une opération
+for (i in 1:5) {
+  cat("Itération", i, "— carré =", i^2, "\n")
+}
+```
+
+```{r}
+# sapply() : appliquer une fonction à chaque élément
+matieres <- list(
+  stats = c(14, 12, 16, 11, 15),
+  info  = c(13, 15, 10, 17, 12),
+  demo  = c(11, 14, 13, 15, 12)
+)
+
+sapply(matieres, mean)
+sapply(matieres, sd)
+```
+
+```{r}
+# lapply() : retourne une liste
+lapply(matieres, summary)
+```
+
+```{r}
+# apply() : sur une matrice (lignes ou colonnes)
+mat <- matrix(c(14, 12, 16, 11, 13, 15, 10, 17, 11, 14, 13, 15), nrow = 4)
+apply(mat, 1, mean)  # moyenne par ligne
+apply(mat, 2, mean)  # moyenne par colonne
+```
+
+## Créer ses propres fonctions
+
+```{r}
+# Structure d'une fonction
+ma_fonction <- function(argument1, argument2 = valeur_defaut) {
+  # Corps de la fonction
+  resultat <- argument1 + argument2
+  return(resultat)
+}
+```
+
+```{r}
+# Fonction : taux de réussite
+taux_reussite <- function(notes, seuil = 10) {
+  n_total  <- length(notes)
+  n_admis  <- sum(notes >= seuil)
+  taux     <- round(n_admis / n_total * 100, 1)
+  cat("Total :", n_total, "| Admis :", n_admis, "| Taux :", taux, "%\n")
+  return(invisible(taux))
+}
+
+# Application
+notes_classe <- c(14, 9, 12, 7, 15, 11, 8, 16, 10, 13)
+taux_reussite(notes_classe)
+taux_reussite(notes_classe, seuil = 12)
+```
+
+```{r}
+# Fonction : résumé statistique personnalisé
+resume_stat <- function(x, var_name = "Variable") {
+  tibble(
+    variable  = var_name,
+    n         = length(x[!is.na(x)]),
+    n_na      = sum(is.na(x)),
+    moyenne   = round(mean(x, na.rm = TRUE), 2),
+    mediane   = round(median(x, na.rm = TRUE), 2),
+    et        = round(sd(x, na.rm = TRUE), 2),
+    min       = round(min(x, na.rm = TRUE), 2),
+    max       = round(max(x, na.rm = TRUE), 2),
+    q1        = round(quantile(x, 0.25, na.rm = TRUE), 2),
+    q3        = round(quantile(x, 0.75, na.rm = TRUE), 2)
+  )
+}
+
+# Application sur plusieurs variables
+bind_rows(
+  resume_stat(enquete$note_stats,  "Note Stats"),
+  resume_stat(enquete$note_info,   "Note Info"),
+  resume_stat(enquete$moyenne,     "Moyenne"),
+  resume_stat(enquete$heures_travail, "Heures de travail")
+)
+```
+
+::: callout-tip
+## Bonne pratique — Écrire de bonnes fonctions
+
+1.  **Un nom explicite** : préférez `calculer_taux()` à `f()`
+2.  **Des arguments nommés** avec des valeurs par défaut sensées
+3.  **Des commentaires** expliquant le rôle de chaque argument
+4.  **Un `return()` explicite** pour la valeur retournée
+5.  **Tester** la fonction avec des cas simples avant de l'utiliser
+:::
+
+------------------------------------------------------------------------
+
+# Exercices de synthèse
+
+::: callout-caution
+## Exercice 1 — Manipulation avec dplyr
+
+À partir du jeu de données `enquete` :
+
+1.  Filtrez les étudiants de `Statistique` ou `Démographie` qui ont une moyenne ≥ 12
+2.  Sélectionnez uniquement les colonnes `nom` (si existante), `filiere`, `sexe`, `moyenne`, `mention`
+3.  Triez par `mention` puis par `moyenne` décroissante
+4.  Créez une nouvelle colonne `categorie_age` avec : "18-21 ans", "22-25 ans", "26 ans et plus"
+5.  Comptez le nombre d'étudiants par `filiere` et `mention`, calculez les pourcentages
+:::
+
+**Correction :**
+
+```{r}
+# 1. Filtrage
+enquete |>
+  filter(filiere %in% c("Statistique", "Démographie"), moyenne >= 12) |>
+  nrow()
+
+# 2 & 3. Sélection et tri
+enquete |>
+  filter(filiere %in% c("Statistique", "Démographie"), moyenne >= 12) |>
+  select(filiere, sexe, moyenne, mention) |>
+  arrange(mention, desc(moyenne)) |>
+  head(10)
+```
+
+```{r}
+# 4. Catégorie d'âge
+enquete <- enquete |>
+  mutate(
+    categorie_age = case_when(
+      age <= 21 ~ "18-21 ans",
+      age <= 25 ~ "22-25 ans",
+      TRUE      ~ "26 ans et plus"
+    )
+  )
+enquete |> count(categorie_age)
+```
+
+```{r}
+# 5. Effectifs et % par filière et mention
+enquete |>
+  count(filiere, mention) |>
+  group_by(filiere) |>
+  mutate(pct = round(n / sum(n) * 100, 1)) |>
+  arrange(filiere, desc(pct))
+```
+
+::: callout-caution
+## Exercice 2 — Facteurs
+
+1.  Créez un facteur ordonné `mention_f` à partir de la colonne `mention` avec les niveaux dans l'ordre croissant
+2.  Vérifiez les niveaux et comptez les modalités
+3.  Recodez les modalités en abréviations : P, AB, B, TB, INS
+4.  Affichez un tableau de fréquences du facteur recodé
+:::
+
+**Correction :**
+
+```{r}
+# 1. Facteur ordonné
+mention_f <- factor(
+  enquete$mention,
+  levels  = c("Insuffisant", "Passable", "Assez bien", "Bien", "Très bien"),
+  ordered = TRUE
+)
+
+# 2. Niveaux et comptage
+levels(mention_f)
+fct_count(mention_f)
+```
+
+```{r}
+# 3. Recodage
+mention_abreg <- fct_recode(mention_f,
+  "INS" = "Insuffisant",
+  "P"   = "Passable",
+  "AB"  = "Assez bien",
+  "B"   = "Bien",
+  "TB"  = "Très bien"
+)
+
+# 4. Tableau de fréquences
+table(mention_abreg)
+```
+
+::: callout-caution
+## Exercice 3 — Pivot
+
+Les données suivantes sont en format large. Transformez-les en format long, calculez la moyenne par matière, puis retransformez en format large.
+
+``` r
+notes_large2 <- tibble(
+  id       = 1:5,
+  maths    = c(14, 12, 17, 9, 15),
+  francais = c(13, 15, 11, 14, 12),
+  histoire = c(10, 13, 14, 12, 11)
+)
+```
+:::
+
+**Correction :**
+
+```{r}
+notes_large2 <- tibble(
+  id       = 1:5,
+  maths    = c(14, 12, 17, 9, 15),
+  francais = c(13, 15, 11, 14, 12),
+  histoire = c(10, 13, 14, 12, 11)
+)
+
+# Format long
+notes_long2 <- notes_large2 |>
+  pivot_longer(cols = -id, names_to = "matiere", values_to = "note")
+notes_long2
+
+# Moyenne par matière
+notes_long2 |>
+  group_by(matiere) |>
+  summarise(moy = round(mean(note), 2))
+
+# Retour au format large
+notes_long2 |>
+  pivot_wider(names_from = matiere, values_from = note)
+```
+
+::: callout-caution
+## Exercice 4 — Graphiques ggplot2
+
+À partir du jeu de données `enquete` :
+
+1.  Tracez un boxplot des notes de statistique selon le sexe, avec des couleurs différentes pour chaque sexe
+2.  Tracez un nuage de points entre `heures_travail` (axe X) et `moyenne` (axe Y) avec les points colorés par `filiere`
+3.  Tracez un graphique en barres de la répartition des mentions, trié du plus fréquent au moins fréquent
+4.  Produisez le graphique 1 en facettes par `filiere`
+:::
+
+**Correction :**
+
+```{r}
+#| fig-height: 4.5
+# 1. Boxplot notes stats selon le sexe
+ggplot(enquete, aes(x = sexe, y = note_stats, fill = sexe)) +
+  geom_boxplot(alpha = 0.7) +
+  scale_fill_manual(values = c("Homme" = "steelblue", "Femme" = "coral")) +
+  labs(title = "Notes de statistique selon le sexe", x = "Sexe", y = "Note /20") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+```{r}
+#| fig-height: 4.5
+# 2. Nuage de points heures ~ moyenne
+ggplot(enquete, aes(x = heures_travail, y = moyenne, color = filiere)) +
+  geom_point(alpha = 0.7, size = 2.5) +
+  geom_smooth(method = "lm", se = FALSE, linewidth = 0.7, aes(group = 1),
+              color = "black", linetype = "dashed") +
+  scale_color_brewer(palette = "Set1") +
+  labs(
+    title  = "Heures de travail et moyenne générale",
+    x      = "Heures de travail par jour",
+    y      = "Moyenne générale /20",
+    color  = "Filière"
+  ) +
+  theme_minimal()
+```
+
+```{r}
+#| fig-height: 4.5
+# 3. Barplot mentions triées
+enquete |>
+  count(mention) |>
+  mutate(mention = fct_reorder(mention, n)) |>
+  ggplot(aes(x = mention, y = n, fill = mention)) +
+  geom_col(show.legend = FALSE) +
+  geom_text(aes(label = n), hjust = -0.2, size = 3.5) +
+  coord_flip() +
+  scale_fill_brewer(palette = "RdYlGn") +
+  labs(title = "Répartition des mentions", x = NULL, y = "Effectif") +
+  theme_minimal()
+```
+
+```{r}
+#| fig-height: 6
+# 4. Facettes par filière
+ggplot(enquete, aes(x = sexe, y = note_stats, fill = sexe)) +
+  geom_boxplot(alpha = 0.7) +
+  facet_wrap(~ filiere, ncol = 2) +
+  scale_fill_manual(values = c("Homme" = "steelblue", "Femme" = "coral")) +
+  labs(
+    title = "Notes de statistique selon le sexe, par filière",
+    x = NULL, y = "Note /20"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+::: callout-caution
+## Exercice 5 — Statistiques bivariées
+
+À partir du jeu de données `enquete` :
+
+1.  Calculez la corrélation entre `heures_travail` et `moyenne` et interprétez
+2.  Réalisez un test du chi-2 entre `filiere` et `bourse`, interprétez le résultat
+3.  Comparez la moyenne de `note_stats` entre boursiers et non-boursiers avec un test adapté
+4.  Calculez et affichez la matrice de corrélations des variables numériques
+:::
+
+**Correction :**
+
+```{r}
+# 1. Corrélation heures_travail ~ moyenne
+cor_test <- cor.test(enquete$heures_travail, enquete$moyenne)
+cat("Corrélation de Pearson r =", round(cor_test$estimate, 3), "\n")
+cat("p-valeur =", round(cor_test$p.value, 4), "\n")
+if (abs(cor_test$estimate) < 0.3) cat("Intensité : faible\n") else
+  if (abs(cor_test$estimate) < 0.5) cat("Intensité : modérée\n") else
+    cat("Intensité : forte\n")
+```
+
+```{r}
+# 2. Test du chi-2 filière × bourse
+tab_chi2 <- table(enquete$filiere, enquete$bourse)
+test <- chisq.test(tab_chi2)
+cat("Chi-2 =", round(test$statistic, 3), "| ddl =", test$parameter,
+    "| p-valeur =", round(test$p.value, 4), "\n")
+if (test$p.value < 0.05) {
+  cat("Conclusion : Lien significatif entre filière et bourse (α = 5%)\n")
+} else {
+  cat("Conclusion : Pas de lien significatif (α = 5%)\n")
+}
+```
+
+```{r}
+# 3. Comparaison note_stats : boursiers vs non-boursiers
+wilcox.test(note_stats ~ bourse, data = enquete)
+```
+
+```{r}
+# 4. Matrice de corrélations
+enquete |>
+  select(where(is.numeric), -id) |>
+  cor(use = "complete.obs") |>
+  round(2)
+```
+
+::: callout-caution
+## Exercice 6 — Fonctions personnalisées
+
+1.  Écrivez une fonction `describe_quant(x, var_name)` qui retourne un tibble avec n, n_NA, moyenne, médiane, écart-type, Q1, Q3, IQR
+2.  Appliquez-la sur `note_stats`, `note_info` et `moyenne`
+3.  Écrivez une fonction `normaliser(x)` qui transforme un vecteur en scores standardisés : $z = \frac{x - \bar{x}}{s}$
+4.  Écrivez une fonction `categoriser_note(note)` qui retourne la mention selon le barème béninois (TB ≥ 16, B ≥ 14, AB ≥ 12, P ≥ 10, INS \< 10)
+:::
+
+**Correction :**
+
+```{r}
+# 1 & 2. Fonction describe_quant
+describe_quant <- function(x, var_name = deparse(substitute(x))) {
+  tibble(
+    variable = var_name,
+    n        = sum(!is.na(x)),
+    n_NA     = sum(is.na(x)),
+    moyenne  = round(mean(x, na.rm = TRUE), 2),
+    mediane  = round(median(x, na.rm = TRUE), 2),
+    et       = round(sd(x, na.rm = TRUE), 2),
+    Q1       = round(quantile(x, 0.25, na.rm = TRUE), 2),
+    Q3       = round(quantile(x, 0.75, na.rm = TRUE), 2),
+    IQR      = round(IQR(x, na.rm = TRUE), 2)
+  )
+}
+
+bind_rows(
+  describe_quant(enquete$note_stats, "Note Stats"),
+  describe_quant(enquete$note_info,  "Note Info"),
+  describe_quant(enquete$moyenne,    "Moyenne")
+)
+```
+
+```{r}
+# 3. Fonction normaliser
+normaliser <- function(x) {
+  (x - mean(x, na.rm = TRUE)) / sd(x, na.rm = TRUE)
+}
+
+z_scores <- normaliser(enquete$moyenne)
+cat("Moyenne des z-scores :", round(mean(z_scores), 4), "\n")
+cat("Écart-type des z-scores :", round(sd(z_scores), 4), "\n")
+```
+
+```{r}
+# 4. Fonction categoriser_note
+categoriser_note <- function(note) {
+  case_when(
+    note >= 16 ~ "Très bien (TB)",
+    note >= 14 ~ "Bien (B)",
+    note >= 12 ~ "Assez bien (AB)",
+    note >= 10 ~ "Passable (P)",
+    TRUE       ~ "Insuffisant (INS)"
+  )
+}
+
+# Test
+notes_test <- c(17.5, 14.2, 12.8, 10.1, 8.5, 16.0)
+categoriser_note(notes_test)
+```
+
+::: callout-caution
+## Exercice 7 — Manipulation de chaînes avec `stringr`
+
+On dispose du vecteur suivant :
+
+``` r
+codes <- c("STAT-2024-01", "DEMO-2023-07", "INFO-2024-03", "ECO-2023-12")
+```
+
+1.  Extrayez la filière (3 ou 4 premiers caractères avant le tiret)
+2.  Extrayez l'année (4 chiffres au milieu)
+3.  Transformez les filieres en minuscules
+4.  Remplacez "STAT" par "Statistique" et "DEMO" par "Démographie"
+5.  Créez de nouveaux codes en remplaçant 2023 par 2025
+:::
+
+**Correction :**
+
+```{r}
+library(stringr)
+codes <- c("STAT-2024-01", "DEMO-2023-07", "INFO-2024-03", "ECO-2023-12")
+
+# 1. Extraction filière
+filieres_ext <- str_extract(codes, "^[A-Z]+")
+filieres_ext
+
+# 2. Extraction année
+annees_ext <- str_extract(codes, "\\d{4}")
+annees_ext
+
+# 3. Minuscules
+str_to_lower(filieres_ext)
+
+# 4. Remplacement
+str_replace(codes, "STAT", "Statistique") |>
+  str_replace("DEMO", "Démographie")
+
+# 5. Mise à jour des codes
+str_replace(codes, "2023", "2025")
+```
+
+::: callout-caution
+## Exercice 8 — Pipeline complet
+
+À partir du jeu de données `enquete`, réalisez le pipeline suivant en **une seule chaîne de commandes** :
+
+1.  Filtrer les étudiants en 2ème ou 3ème année
+2.  Créer une variable `profil` = `filiere` + " - " + `sexe` (ex: "Statistique - Homme")
+3.  Calculer par `profil` : effectif, moyenne, écart-type
+4.  Garder uniquement les profils avec au moins 3 étudiants
+5.  Trier par moyenne décroissante
+6.  Afficher le résultat
+:::
+
+**Correction :**
+
+```{r}
+enquete |>
+  filter(annee %in% c(2, 3)) |>
+  mutate(profil = str_c(filiere, " — ", sexe)) |>
+  group_by(profil) |>
+  summarise(
+    n   = n(),
+    moy = round(mean(moyenne), 2),
+    et  = round(sd(moyenne), 2),
+    .groups = "drop"
+  ) |>
+  filter(n >= 3) |>
+  arrange(desc(moy))
+```
+
+::: callout-caution
+## Exercice 9 — Visualisation avancée
+
+Créez un graphique qui combine :
+
+- Un boxplot de la `moyenne` par `filiere`
+- Coloré par `sexe` (côte à côte)
+- Avec les points individuels superposés
+- En facettes par `annee`
+- Avec un titre, des labels d'axes et une légende bien positionnée
+:::
+
+**Correction :**
+
+```{r}
+#| fig-height: 7
+ggplot(enquete, aes(x = filiere, y = moyenne, fill = sexe)) +
+  geom_boxplot(alpha = 0.6, position = position_dodge(0.8)) +
+  geom_jitter(aes(color = sexe),
+              position = position_jitterdodge(jitter.width = 0.15, dodge.width = 0.8),
+              alpha = 0.5, size = 1.2) +
+  facet_wrap(~ paste("Année", annee), ncol = 3) +
+  scale_fill_manual(values  = c("Homme" = "steelblue", "Femme" = "coral")) +
+  scale_color_manual(values = c("Homme" = "steelblue", "Femme" = "coral")) +
+  labs(
+    title    = "Distribution des moyennes par filière, sexe et année",
+    subtitle = "Enquête universitaire — n = 80 étudiants",
+    x        = "Filière",
+    y        = "Moyenne générale /20",
+    fill     = "Sexe",
+    color    = "Sexe"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position  = "bottom",
+    axis.text.x      = element_text(angle = 30, hjust = 1, size = 8),
+    strip.background = element_rect(fill = "steelblue", color = NA),
+    strip.text       = element_text(color = "white", face = "bold")
+  )
+```
+
+::: callout-caution
+## Exercice 10 — Analyse complète
+
+Vous disposez du jeu de données suivant sur 10 communes d'un département :
+
+``` r
+communes <- tibble(
+  commune       = c("Parakou", "Ndali", "Sinendé", "Bembèrèkè", "Kalalé",
+                    "Nikki", "Pèrèrè", "Gogounou", "Kérou", "Kouandé"),
+  population    = c(255478, 56234, 82341, 95612, 78923,
+                    104567, 45231, 67890, 38456, 52341),
+  nb_cs         = c(12, 4, 5, 6, 5, 7, 3, 4, 3, 4),
+  taux_couv_penta3 = c(92.3, 78.5, 85.2, 88.1, 72.4, 81.7, 69.8, 83.5, 65.2, 79.3),
+  acces_eau     = c(TRUE, FALSE, TRUE, TRUE, FALSE, TRUE, FALSE, TRUE, FALSE, TRUE)
+)
+```
+
+Réalisez :
+
+1.  Un résumé statistique complet des variables numériques
+2.  La corrélation entre `nb_cs` et `taux_couv_penta3`
+3.  La comparaison du taux de couverture selon l'accès à l'eau (`acces_eau`)
+4.  Un graphique nuage de points `nb_cs` \~ `taux_couv_penta3` avec les noms des communes en label
+5.  Un barplot horizontal du taux de couverture par commune, trié
+:::
+
+**Correction :**
+
+```{r}
+communes <- tibble(
+  commune       = c("Parakou", "Ndali", "Sinendé", "Bembèrèkè", "Kalalé",
+                    "Nikki", "Pèrèrè", "Gogounou", "Kérou", "Kouandé"),
+  population    = c(255478, 56234, 82341, 95612, 78923,
+                    104567, 45231, 67890, 38456, 52341),
+  nb_cs         = c(12, 4, 5, 6, 5, 7, 3, 4, 3, 4),
+  taux_couv_penta3 = c(92.3, 78.5, 85.2, 88.1, 72.4, 81.7, 69.8, 83.5, 65.2, 79.3),
+  acces_eau     = c(TRUE, FALSE, TRUE, TRUE, FALSE, TRUE, FALSE, TRUE, FALSE, TRUE)
+)
+
+# 1. Résumé statistique
+summary(communes |> select(where(is.numeric)))
+```
+
+```{r}
+# 2. Corrélation nb_cs ~ taux_couv_penta3
+cor_res <- cor.test(communes$nb_cs, communes$taux_couv_penta3)
+cat("r =", round(cor_res$estimate, 3), "| p =", round(cor_res$p.value, 4), "\n")
+```
+
+```{r}
+# 3. Comparaison selon accès à l'eau
+communes |>
+  group_by(acces_eau) |>
+  summarise(
+    n           = n(),
+    moy_taux    = round(mean(taux_couv_penta3), 1),
+    med_taux    = round(median(taux_couv_penta3), 1)
+  )
+```
+
+```{r}
+#| fig-height: 5
+#| eval: !expr requireNamespace("ggrepel", quietly = TRUE)
+# 4. Nuage de points avec labels
+# install.packages("ggrepel")  # si nécessaire
+library(ggrepel)
+
+ggplot(communes, aes(x = nb_cs, y = taux_couv_penta3,
+                     color = acces_eau, label = commune)) +
+  geom_point(size = 4) +
+  geom_text_repel(size = 3.5) +
+  scale_color_manual(
+    values = c("TRUE" = "steelblue", "FALSE" = "coral"),
+    labels = c("TRUE" = "Oui", "FALSE" = "Non")
+  ) +
+  labs(
+    title  = "Centres de santé et couverture Penta3 par commune",
+    x      = "Nombre de centres de santé",
+    y      = "Taux de couverture Penta3 (%)",
+    color  = "Accès à l'eau potable"
+  ) +
+  theme_minimal()
+```
+
+```{r}
+#| fig-height: 5
+# 5. Barplot horizontal trié
+communes |>
+  mutate(commune = fct_reorder(commune, taux_couv_penta3)) |>
+  ggplot(aes(x = commune, y = taux_couv_penta3,
+             fill = taux_couv_penta3 >= 80)) +
+  geom_col() +
+  geom_hline(yintercept = 80, linetype = "dashed", color = "red", linewidth = 0.8) +
+  geom_text(aes(label = paste0(taux_couv_penta3, "%")),
+            hjust = -0.1, size = 3.2) +
+  coord_flip(ylim = c(0, 100)) +
+  scale_fill_manual(
+    values = c("TRUE" = "steelblue", "FALSE" = "coral"),
+    labels = c("TRUE" = "≥ 80%", "FALSE" = "< 80%")
+  ) +
+  labs(
+    title  = "Taux de couverture Penta3 par commune",
+    subtitle = "La ligne rouge indique l'objectif cible de 80%",
+    x      = NULL,
+    y      = "Taux de couverture (%)",
+    fill   = "Cible atteinte"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+------------------------------------------------------------------------
+
+# Conclusion {.unnumbered}
+
+## Résumé des notions apprises
+
+::: callout-note
+## Ce que vous avez maîtrisé en Séance 2
+
+**Tidyverse & dplyr**
+
+- Comprendre la philosophie *tidy data* et l'opérateur pipe `|>`
+- Manipuler des données avec les 5 verbes : `filter`, `select`, `mutate`, `arrange`, `summarise`
+- Grouper et résumer avec `group_by()` + `summarise()`
+
+**Structures de données avancées**
+
+- Créer et manipuler des listes
+- Pivoter les tableaux avec `pivot_longer()` et `pivot_wider()`
+- Créer et retravailler des facteurs avec `factor()` et `forcats`
+- Comprendre les vecteurs labellisés (`haven`)
+
+**Visualisation avec ggplot2**
+
+- Maîtriser la grammaire des graphiques (data + aes + geom)
+- Produire : histogramme, boxplot, nuage de points, barres, courbes
+- Utiliser les facettes (`facet_wrap`)
+- Personnaliser les thèmes et sauvegarder
+
+**Statistiques univariées & bivariées**
+
+- Indicateurs de tendance centrale, dispersion, forme
+- Tableau croisé, test du chi-2, corrélation de Pearson
+- Tests de comparaison : Wilcoxon, Kruskal-Wallis
+
+**Fonctions et outils**
+
+- Manipulation de chaînes avec `stringr`
+- Conditions : `ifelse()`, `case_when()`
+- Itération : boucles `for`, `sapply()`, `lapply()`
+- Créer ses propres fonctions
+:::
+
+------------------------------------------------------------------------
+
+# Travail personnel {.unnumbered}
+
+::: callout-caution
+## Devoir — Mini-projet d'analyse
+
+Collectez ou utilisez un jeu de données de votre choix (au moins 50 lignes et 5 variables, dont au moins 2 qualitatives et 2 quantitatives).
+
+Rédigez un script R complet et annoté qui réalise :
+
+1.  **Importation** et exploration initiale (`glimpse`, `summary`, `head`)
+2.  **Nettoyage** : vérifier et traiter les valeurs manquantes
+3.  **Recodage** : créer au moins une variable recodée avec `mutate()` + `case_when()`
+4.  **Analyse univariée** : statistiques descriptives pour toutes les variables
+5.  **Analyse bivariée** : au moins un tableau croisé et une corrélation
+6.  **Visualisation** : au moins 3 graphiques `ggplot2` différents et commentés
+7.  **Synthèse** : un paragraphe de conclusions
+
+Déposez votre script `devoir_seance2.R` avant la prochaine séance.
+:::
+
+::: callout-tip
+## Ressources pour aller plus loin
+
+**Tidyverse & dplyr**
+
+- [R for Data Science](https://r4ds.hadley.nz) — Chapitres 3 à 5
+- [dplyr cheat sheet](https://github.com/rstudio/cheatsheets/blob/main/data-transformation.pdf)
+
+**ggplot2**
+
+- [ggplot2 : Elegant Graphics for Data Analysis](https://ggplot2-book.org)
+- [The R Graph Gallery](https://r-graph-gallery.com) — Galerie de graphiques avec code
+
+**Statistiques avec R**
+
+- [Introduction à la statistique avec R](https://juba.github.io/tidyverse/) — Julien Barnier
+
+**Aperçu de la Séance 3**
+
+- Introduction à `Rmarkdown` / `Quarto` pour les rapports automatisés
+- Régression linéaire simple et multiple
+- Introduction aux modèles logistiques
+- Création de tableaux de statistiques publiables avec `gtsummary`
+:::
+
+------------------------------------------------------------------------
+
+*Document produit avec [Quarto](https://quarto.org) — Formation R, Séance 2*

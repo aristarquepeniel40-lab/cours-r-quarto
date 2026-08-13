@@ -1,0 +1,2116 @@
+---
+title: "Formation R — Séance 1 : Prise en main du logiciel R"
+subtitle: "Du zéro à l'analyse de données : premiers pas avec R et RStudio"
+author: "Formateur : Aristarque Péniel SEGUE"
+date: "14 juin 2026"
+lang: fr
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: "Table des matières"
+    toc-location: left
+    number-sections: true
+    theme: flatly
+    highlight-style: github
+    code-fold: false
+    code-tools: true
+    code-copy: true
+    fig-align: center
+    callout-appearance: default
+    embed-resources: true
+  pdf:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    documentclass: article
+    papersize: a4
+    fontsize: 11pt
+    geometry:
+      - top=2.5cm
+      - bottom=2.5cm
+      - left=2.5cm
+      - right=2.5cm
+    colorlinks: true
+    linkcolor: blue
+    urlcolor: blue
+    highlight-style: github
+    include-in-header:
+      text: |
+        \usepackage{fancyhdr}
+        \usepackage{xcolor}
+        \usepackage{tcolorbox}
+        \usepackage{mdframed}
+        \pagestyle{fancy}
+        \fancyhf{}
+        \fancyhead[L]{\small Formation R — Séance 1}
+        \fancyhead[R]{\small \leftmark}
+        \fancyfoot[C]{\thepage}
+        \renewcommand{\headrulewidth}{0.4pt}
+execute:
+  echo: true
+  eval: true
+  warning: false
+  message: false
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+```{r}
+#| include: false
+# Configuration globale
+options(scipen = 999)
+```
+
+------------------------------------------------------------------------
+
+# Introduction {.unnumbered}
+
+## Présentation du langage R
+
+**R** est un langage de programmation et un environnement logiciel libre, open-source, spécialement conçu pour le calcul statistique, l'analyse de données et la production de graphiques. Il est aujourd'hui l'un des langages les plus utilisés dans le monde par les statisticiens, data scientists, chercheurs et décideurs.
+
+R se distingue des autres logiciels statistiques par plusieurs caractéristiques fondamentales :
+
+- **Gratuit et open-source** : R est disponible librement pour tous les systèmes d'exploitation (Windows, macOS, Linux).
+- **Extensible** : Des milliers de packages (extensions) sont disponibles pour enrichir les fonctionnalités de base.
+- **Communautaire** : Une immense communauté internationale active contribue au développement de R.
+- **Reproductible** : Les analyses réalisées sous R peuvent être documentées et reproduites facilement.
+- **Polyvalent** : R gère à la fois la manipulation de données, les modèles statistiques complexes, la visualisation et le reporting.
+
+## Historique de R
+
+| Année | Événement |
+|----------------------------|--------------------------------------------|
+| 1976 | Création du langage **S** par John Chambers aux Bell Laboratories |
+| 1991 | **Ross Ihaka** et **Robert Gentleman** (Université d'Auckland, Nouvelle-Zélande) commencent à développer R comme alternative libre au langage S |
+| 1993 | Première annonce publique de R |
+| 1997 | Création du **R Core Team** qui prend en charge le développement officiel |
+| 2000 | Sortie de **R version 1.0.0** |
+| 2003 | Création du **CRAN** (Comprehensive R Archive Network), dépôt officiel des packages |
+| 2011 | Lancement de **RStudio**, environnement de développement convivial pour R |
+| Aujourd'hui | Plus de **20 000 packages** disponibles sur le CRAN |
+
+: Chronologie du développement de R
+
+## Domaines d'application de R
+
+R est utilisé dans de nombreux secteurs d'activité et domaines scientifiques :
+
+**Sciences et recherche**
+
+- Biostatistique et épidémiologie (analyse de données de santé publique)
+- Statistiques agricoles et enquêtes ménages
+- Génomique et bioinformatique
+- Sciences sociales et économie
+
+**Entreprise et organisations**
+
+- Analyse financière et prévision économique
+- Marketing et études de marché
+- Ressources humaines et évaluation des performances
+- Suivi-évaluation de projets et programmes
+
+**Intelligence artificielle et Data Science**
+
+- Machine learning et modélisation prédictive
+- Analyse de texte (text mining)
+- Visualisation avancée de données
+
+**Organisations internationales**
+
+Des institutions comme l'ONU, la Banque mondiale, l'OMS, le PNUD et de nombreux ministères africains utilisent R pour leurs analyses et publications officielles.
+
+## Pourquoi apprendre R aujourd'hui ?
+
+::: callout-tip
+## Les 5 bonnes raisons d'apprendre R
+
+1.  **Gratuit et accessible** : Aucune licence coûteuse contrairement à SPSS, SAS ou Stata.
+2.  **Très demandé sur le marché de l'emploi** : Les compétences en R sont valorisées dans les organisations nationales et internationales.
+3.  **Reproductibilité scientifique** : Vos analyses sont documentées, partageables et reproductibles.
+4.  **Visualisation de haute qualité** : R produit des graphiques publiables directement dans des rapports scientifiques.
+5.  **Communauté et ressources** : Des milliers de tutoriels, forums, livres et formations gratuits sont disponibles.
+:::
+
+------------------------------------------------------------------------
+
+# Objectifs de la séance {.unnumbered}
+
+À l'issue de cette séance de **4 heures**, l'apprenant sera capable de :
+
+::: callout-note
+## Compétences visées
+
+✅ **Installer** R et RStudio sur son ordinateur
+
+✅ **Naviguer** dans l'interface RStudio et identifier ses différents panneaux
+
+✅ **Utiliser** la console R pour exécuter des commandes simples
+
+✅ **Créer** et sauvegarder un script R
+
+✅ **Réaliser** des calculs arithmétiques de base avec R
+
+✅ **Créer** et manipuler des variables dans R
+
+✅ **Identifier** les types de données fondamentaux (numérique, caractère, logique)
+
+✅ **Créer** et manipuler des vecteurs
+
+✅ **Créer** un data frame simple et l'explorer
+
+✅ **Importer** un fichier Excel dans R
+
+✅ **Calculer** des statistiques descriptives simples
+
+✅ **Produire** des graphiques élémentaires (histogramme, diagramme en barres)
+:::
+
+------------------------------------------------------------------------
+
+# Installation et prise en main de R et RStudio
+
+## Présentation de R
+
+**R** est le **moteur de calcul** : c'est lui qui effectue les calculs statistiques, manipule les données et produit les résultats. Il fonctionne en ligne de commande et peut s'utiliser sans interface graphique, bien que cela soit moins confortable pour les débutants.
+
+## Présentation de RStudio
+
+**RStudio** est un **environnement de développement intégré (IDE)** conçu spécifiquement pour faciliter l'utilisation de R. Il offre une interface graphique conviviale avec des outils pour éditer du code, visualiser les résultats, gérer les fichiers et les données.
+
+::: callout-important
+## À retenir — R et RStudio : deux logiciels distincts
+
+**R** et **RStudio** sont deux logiciels distincts mais complémentaires :
+
+- **R** = le moteur (indispensable, doit être installé en premier)
+- **RStudio** = le tableau de bord (optionnel, mais fortement recommandé)
+
+**Analogie :** R est comme le moteur d'une voiture, RStudio est comme le tableau de bord. Vous avez besoin des deux pour conduire confortablement, mais c'est bien le moteur qui fait le travail.
+:::
+
+## Différence entre R et RStudio
+
+| Caractéristique | R | RStudio |
+|------------------------------------|------------------|------------------|
+| Rôle | Moteur de calcul | Interface utilisateur |
+| Interface | Ligne de commande | Interface graphique |
+| Nécessité | **Obligatoire** | Recommandé |
+| Coût | Gratuit | Gratuit (version Desktop) |
+| Site officiel | [cran.r-project.org](https://cran.r-project.org) | [posit.co/rstudio](https://posit.co/products/open-source/rstudio/) |
+
+: Comparaison entre R et RStudio
+
+## Installation de R
+
+**Étapes d'installation de R :**
+
+1.  Rendez-vous sur le site officiel : [**https://cran.r-project.org**](https://cran.r-project.org)
+2.  Cliquez sur **"Download R for Windows"** (ou macOS / Linux selon votre système)
+3.  Cliquez sur **"base"** puis sur **"Download R x.x.x for Windows"**
+4.  Exécutez le fichier téléchargé et suivez les instructions d'installation par défaut
+5.  Après installation, l'icône R apparaît sur votre bureau
+
+::: callout-tip
+## Conseil d'installation
+
+Laissez toutes les options par défaut lors de l'installation. Ne modifiez pas le répertoire d'installation proposé, sauf si vous avez une raison particulière de le faire.
+:::
+
+## Installation de RStudio
+
+**Étapes d'installation de RStudio :**
+
+1.  Rendez-vous sur : [**https://posit.co/download/rstudio-desktop/**](https://posit.co/download/rstudio-desktop/)
+2.  Téléchargez la version **RStudio Desktop (Free)**
+3.  Exécutez le fichier d'installation
+4.  Suivez les instructions par défaut
+
+::: callout-warning
+## Important
+
+Installez toujours **R avant RStudio**. Si vous installez RStudio en premier, il ne trouvera pas R et ne fonctionnera pas correctement.
+:::
+
+## Présentation détaillée de l'interface RStudio
+
+L'interface RStudio est divisée en **4 panneaux principaux** :
+
+```{r}
+#| echo: false
+library(huxtable)
+
+as_hux(
+  matrix(c(
+    "Éditeur de scripts\n(Script Editor)\n[Panneau Haut-Gauche]",
+    "Environnement / History\nVariables, objets\n[Panneau Haut-Droit]",
+    "Console R\n(saisie commandes)\n[Panneau Bas-Gauche]",
+    "Fichiers / Plots / Packages / Aide\n[Panneau Bas-Droit]"
+  ), nrow = 2, byrow = TRUE),
+  add_colnames = FALSE
+) |>
+  set_all_borders(0.8) |>
+  set_align(everywhere, everywhere, "center") |>
+  set_valign(everywhere, everywhere, "middle") |>
+  set_all_padding(everywhere, everywhere, 12) |>
+  set_col_width(c(0.5, 0.5)) |>
+  set_width(0.9) |>
+  set_bold(everywhere, everywhere, TRUE)
+```
+
+**Description de chaque panneau :**
+
+**1. Éditeur de scripts** (haut-gauche)
+
+- Zone où l'on écrit et sauvegarde le code R
+- Permet d'ouvrir plusieurs fichiers simultanément (onglets)
+- Raccourci pour exécuter une ligne : `Ctrl + Entrée`
+- Raccourci pour exécuter tout le script : `Ctrl + Shift + Entrée`
+
+**2. Console** (bas-gauche)
+
+- Zone d'exécution interactive de R
+- Les commandes s'y tapent directement ou y sont envoyées depuis l'éditeur
+- Le symbole `>` indique que R est prêt à recevoir une commande
+- Les résultats s'affichent immédiatement
+
+**3. Environnement / Historique** (haut-droit)
+
+- Onglet **Environment** : liste tous les objets créés (variables, données...)
+- Onglet **History** : historique des commandes exécutées
+
+**4. Fichiers / Graphiques / Packages / Aide** (bas-droit)
+
+- Onglet **Files** : navigateur de fichiers
+- Onglet **Plots** : visualisation des graphiques produits
+- Onglet **Packages** : gestion des packages installés
+- Onglet **Help** : documentation et aide sur les fonctions
+
+::: callout-important
+## À retenir — Les raccourcis essentiels de RStudio
+
+| Action                       | Raccourci               |
+|------------------------------|-------------------------|
+| Exécuter la ligne courante   | `Ctrl + Entrée`         |
+| Exécuter tout le script      | `Ctrl + Shift + Entrée` |
+| Nouveau script               | `Ctrl + Shift + N`      |
+| Sauvegarder le script        | `Ctrl + S`              |
+| Commentaire/Décommenter      | `Ctrl + Shift + C`      |
+| Effacer la console           | `Ctrl + L`              |
+| Opérateur d'affectation `<-` | `Alt + -`               |
+:::
+
+------------------------------------------------------------------------
+
+# Premiers pas avec R
+
+## Utilisation de la console
+
+La console R est l'endroit où vous pouvez taper des commandes et obtenir des résultats immédiatement. Lorsque vous voyez le symbole `>`, cela signifie que R attend votre instruction.
+
+```{r}
+# Exemple simple : afficher un message
+print("Bonjour, je commence à apprendre R !")
+```
+
+```{r}
+# R peut aussi être utilisé comme une calculatrice
+2 + 3
+```
+
+```{r}
+# Afficher le résultat d'une opération
+10 * 5
+```
+
+## Création d'un script R
+
+Un **script R** est un fichier texte contenant une série de commandes R que l'on peut sauvegarder et réexécuter. L'extension des scripts R est `.R`.
+
+**Pour créer un nouveau script :**
+
+- Menu : `File > New File > R Script`
+- Raccourci : `Ctrl + Shift + N`
+
+::: callout-tip
+## Bonne pratique — Organisation d'un script R
+
+Un bon script R commence toujours par un en-tête décrivant son contenu :
+
+``` r
+# =============================================================
+# Formation R - Séance 1
+# Auteur : Prénom Nom
+# Date : 2024-01-01
+# Objectif : Premiers pas avec R
+# =============================================================
+
+# Nettoyage de l'environnement
+rm(list = ls())
+```
+:::
+
+## Exécution de commandes
+
+Il existe plusieurs façons d'exécuter du code dans RStudio :
+
+**Depuis la console :**
+
+- Tapez directement la commande après le `>` et appuyez sur `Entrée`
+
+**Depuis l'éditeur de scripts :**
+
+- Placez le curseur sur la ligne à exécuter et appuyez sur `Ctrl + Entrée`
+- Sélectionnez plusieurs lignes et appuyez sur `Ctrl + Entrée`
+- Pour tout exécuter : `Ctrl + Shift + Entrée`
+
+```{r}
+# Ces trois lignes peuvent être exécutées une par une ou toutes ensemble
+1 + 1
+5 * 3
+100 / 4
+```
+
+## Commentaires dans R
+
+Les **commentaires** sont des lignes de texte dans un script qui ne sont pas exécutées par R. Ils servent à documenter et expliquer le code.
+
+Un commentaire commence par le symbole dièse `#`.
+
+```{r}
+# Ceci est un commentaire : R l'ignore lors de l'exécution
+
+# Calcul de la superficie d'un rectangle
+longueur <- 12  # longueur en mètres
+largeur <- 8    # largeur en mètres
+superficie <- longueur * largeur  # multiplication
+
+# Affichage du résultat
+print(superficie)
+```
+
+::: callout-important
+## À retenir — Les commentaires sont indispensables !
+
+Commentez généreusement votre code. Dans 6 mois, vous ne vous souviendrez plus forcément de ce que fait chaque ligne. Les commentaires permettent de :
+
+- Comprendre rapidement l'objectif d'une portion de code
+- Faciliter la relecture par d'autres personnes
+- Désactiver temporairement une ligne sans la supprimer
+:::
+
+------------------------------------------------------------------------
+
+# Calculs et opérations de base
+
+R peut être utilisé comme une calculatrice scientifique très puissante. Voici les opérations arithmétiques fondamentales.
+
+## Les opérateurs arithmétiques
+
+| Opération        | Opérateur | Exemple    | Résultat |
+|------------------|-----------|------------|----------|
+| Addition         | `+`       | `5 + 3`    | 8        |
+| Soustraction     | `-`       | `10 - 4`   | 6        |
+| Multiplication   | `*`       | `6 * 7`    | 42       |
+| Division         | `/`       | `15 / 4`   | 3.75     |
+| Puissance        | `^`       | `2^8`      | 256      |
+| Racine carrée    | `sqrt()`  | `sqrt(25)` | 5        |
+| Modulo (reste)   | `%%`      | `17 %% 5`  | 2        |
+| Division entière | `%/%`     | `17 %/% 5` | 3        |
+
+: Opérateurs arithmétiques en R
+
+## Addition
+
+```{r}
+# Addition simple
+5 + 3
+
+# Addition de plusieurs nombres
+10 + 20 + 30 + 40
+
+# Addition avec décimales
+3.14 + 2.86
+```
+
+## Soustraction
+
+```{r}
+# Soustraction simple
+100 - 37
+
+# Résultat négatif
+5 - 12
+
+# Calcul de différence d'âge
+age_pere <- 45
+age_fils <- 18
+difference <- age_pere - age_fils
+difference
+```
+
+## Multiplication
+
+```{r}
+# Multiplication simple
+6 * 7
+
+# Calcul du prix total
+prix_unitaire <- 2500  # en FCFA
+quantite <- 12
+prix_total <- prix_unitaire * quantite
+prix_total
+```
+
+## Division
+
+```{r}
+# Division simple
+100 / 4
+
+# Division avec résultat décimal
+22 / 7  # approximation de Pi
+
+# Calcul de pourcentage
+# Part des filles dans un effectif de 450 élèves dont 198 filles
+filles <- 198
+total <- 450
+pourcentage_filles <- (filles / total) * 100
+pourcentage_filles
+```
+
+## Puissance
+
+```{r}
+# Carré d'un nombre
+4^2
+
+# Cube d'un nombre
+3^3
+
+# Puissance quelconque
+2^10
+
+# Calcul de l'intérêt composé
+# Capital initial = 100 000 FCFA, taux = 5%, durée = 3 ans
+capital <- 100000
+taux <- 0.05
+annees <- 3
+capital_final <- capital * (1 + taux)^annees
+capital_final
+```
+
+## Racine carrée
+
+```{r}
+# Racine carrée de 144
+sqrt(144)
+
+# Racine carrée de 2 (nombre irrationnel)
+sqrt(2)
+
+# Application : hypoténuse d'un triangle rectangle
+# Triangle avec côtés a = 3 cm et b = 4 cm
+a <- 3
+b <- 4
+hypotenuse <- sqrt(a^2 + b^2)
+hypotenuse
+```
+
+::: callout-note
+## Remarque sur les priorités des opérations
+
+R respecte les priorités mathématiques classiques : parenthèses d'abord, puis puissances, puis multiplications/divisions, puis additions/soustractions.
+
+``` r
+2 + 3 * 4      # = 14 (et non 20)
+(2 + 3) * 4    # = 20
+```
+:::
+
+## Exercices corrigés
+
+::: callout-caution
+## Exercice 1 — Calculs de base
+
+Calculez les expressions suivantes dans R :
+
+1.  $125 + 347 - 89$
+2.  $12 \times 15 \div 4$
+3.  $\sqrt{169}$
+4.  $2^{12}$
+5.  La superficie d'un cercle de rayon 7 cm (rappel : $S = \pi r^2$)
+:::
+
+**Correction :**
+
+```{r}
+# 1. Addition et soustraction
+125 + 347 - 89
+
+# 2. Multiplication et division (respecte la priorité)
+12 * 15 / 4
+
+# 3. Racine carrée de 169
+sqrt(169)
+
+# 4. 2 puissance 12
+2^12
+
+# 5. Superficie d'un cercle de rayon 7
+# pi est une constante pré-définie dans R
+rayon <- 7
+superficie_cercle <- pi * rayon^2
+superficie_cercle
+```
+
+::: callout-caution
+## Exercice 2 — Application pratique
+
+Un agent de santé collecte les données suivantes dans un centre de santé :
+
+- Nombre total de consultations ce mois : **342**
+- Nombre de consultations féminines : **198**
+- Nombre de cas de paludisme : **87**
+
+Calculez dans R :
+
+1.  Le nombre de consultations masculines
+2.  Le pourcentage de consultations féminines
+3.  Le taux de prévalence du paludisme (en %)
+:::
+
+**Correction :**
+
+```{r}
+# Données
+total_consultations <- 342
+consultations_feminines <- 198
+cas_paludisme <- 87
+
+# 1. Consultations masculines
+consultations_masculines <- total_consultations - consultations_feminines
+consultations_masculines
+
+# 2. Pourcentage de consultations féminines
+pct_feminines <- (consultations_feminines / total_consultations) * 100
+round(pct_feminines, 1)  # arrondi à 1 décimale
+
+# 3. Taux de prévalence du paludisme
+taux_paludisme <- (cas_paludisme / total_consultations) * 100
+round(taux_paludisme, 1)
+```
+
+------------------------------------------------------------------------
+
+# Variables et objets dans R
+
+En R, on travaille essentiellement avec des **objets**. Un objet est une entité qui stocke une valeur ou un ensemble de valeurs. Les variables sont les noms que l'on donne à ces objets.
+
+## Affectation avec `<-`
+
+L'opérateur d'affectation en R est `<-` (flèche vers la gauche). Il permet de stocker une valeur dans une variable.
+
+```{r}
+# Affecter la valeur 42 à la variable "age"
+age <- 42
+
+# Affecter un texte à la variable "prenom"
+prenom <- "Kofi"
+
+# Affecter le résultat d'un calcul
+salaire_mensuel <- 250000  # en FCFA
+salaire_annuel <- salaire_mensuel * 12
+```
+
+::: callout-tip
+## Règles de nommage des variables
+
+- Les noms peuvent contenir des **lettres**, des **chiffres**, le point `.` et le tiret bas `_`
+- Ils doivent **commencer par une lettre** (pas un chiffre)
+- R est **sensible à la casse** : `Age` et `age` sont deux variables différentes !
+- Évitez les noms avec des accents ou des espaces
+
+✅ Valides : `age`, `nom_etudiant`, `score2024`, `taux.chomage`
+
+❌ Invalides : `2age`, `nom etudiant`, `@score`
+:::
+
+::: callout-note
+## Note sur `=` vs `<-`
+
+Bien que `=` puisse aussi servir d'opérateur d'affectation en R, la convention dans la communauté R est d'utiliser `<-`. Utilisez toujours `<-` pour les affectations dans vos scripts.
+
+Le raccourci clavier `Alt + -` insère automatiquement `<-` dans RStudio.
+:::
+
+## Affichage d'objets
+
+Pour afficher la valeur d'un objet, il suffit de taper son nom ou d'utiliser la fonction `print()`.
+
+```{r}
+# Créons quelques variables
+nom_pays <- "Bénin"
+population <- 13000000  # population approximative
+superficie_km2 <- 114763
+
+# Affichage en tapant le nom
+nom_pays
+
+# Affichage avec print()
+print(population)
+
+# Calcul et affichage direct
+densite <- population / superficie_km2
+cat("Densité de population :", round(densite, 1), "habitants/km²\n")
+```
+
+## Suppression d'objets
+
+La fonction `rm()` (remove) permet de supprimer un ou plusieurs objets de l'environnement.
+
+```{r}
+# Créer des variables temporaires
+x <- 10
+y <- 20
+z <- 30
+temp1 <- "variable temporaire"
+
+# Supprimer une seule variable
+rm(temp1)
+
+# Supprimer plusieurs variables à la fois
+rm(x, y)
+
+# Vérifier que z est toujours là
+z
+```
+
+## La fonction `ls()`
+
+`ls()` liste tous les objets présents dans l'environnement de travail actuel.
+
+```{r}
+# Créons plusieurs objets
+ville <- "Parakou"
+departement <- "Borgou"
+nb_habitants <- 255478
+est_chef_lieu <- TRUE
+
+# Lister tous les objets
+ls()
+```
+
+## La fonction `rm()` — Nettoyage complet
+
+```{r}
+# Pour supprimer TOUS les objets de l'environnement (nettoyage complet)
+# rm(list = ls())  
+# ⚠️ Décommentez cette ligne uniquement si vous voulez tout effacer
+
+# Suppression ciblée
+rm(est_chef_lieu)
+ls()  # Vérifier que est_chef_lieu a été supprimé
+```
+
+::: callout-tip
+## Bonne pratique — Début de script
+
+Il est recommandé de commencer chaque script par `rm(list = ls())` pour partir d'un environnement propre et éviter les conflits avec des objets d'une session précédente.
+:::
+
+## Exemples détaillés
+
+```{r}
+# --- Exemple complet : gestion de variables ---
+
+# Données d'un étudiant
+nom_etudiant <- "Adjovi Marie"
+age_etudiant <- 22
+filiere <- "Statistique Appliquée"
+annee_etude <- 3
+note_stats <- 14.5
+note_info <- 16.0
+note_demo <- 13.0
+
+# Calcul de la moyenne
+nb_matieres <- 3
+moyenne_generale <- (note_stats + note_info + note_demo) / nb_matieres
+
+# Affichage formaté
+cat("=== Relevé de notes ===\n")
+cat("Étudiant :", nom_etudiant, "\n")
+cat("Âge :", age_etudiant, "ans\n")
+cat("Filière :", filiere, "— Année", annee_etude, "\n")
+cat("Moyenne générale :", round(moyenne_generale, 2), "/20\n")
+
+# Lister tous les objets créés
+ls()
+```
+
+------------------------------------------------------------------------
+
+# Types de données
+
+R reconnaît plusieurs types de données fondamentaux. Comprendre ces types est essentiel pour éviter les erreurs et manipuler correctement les données.
+
+## Les types principaux
+
+### Le type Numérique (`numeric`)
+
+Le type numérique représente les nombres réels (avec ou sans décimales).
+
+```{r}
+# Entiers et décimaux
+population <- 15000000
+taux_croissance <- 2.8
+temperature <- -5.3
+
+# Vérification du type
+class(population)
+class(taux_croissance)
+```
+
+```{r}
+# Les entiers stricts (integer) se notent avec un L
+nb_enfants <- 3L
+class(nb_enfants)
+typeof(nb_enfants)  # type interne plus précis
+```
+
+### Le type Caractère (`character`)
+
+Le type caractère (ou chaîne de caractères) représente du texte. Les valeurs sont toujours entourées de guillemets simples `'...'` ou doubles `"..."`.
+
+```{r}
+# Exemples de chaînes de caractères
+prenom <- "Adjoa"
+pays <- 'Bénin'
+phrase <- "L'analyse de données est fascinante !"
+
+# Vérification
+class(prenom)
+
+# Opérations sur les caractères
+# Concaténation avec paste()
+nom_complet <- paste("Adjoa", "Mensah")
+nom_complet
+
+# Concaténation sans espace
+code <- paste0("ENSPD", "2024")
+code
+
+# Longueur d'une chaîne
+nchar(prenom)
+nchar("Bonjour, monde !")
+```
+
+### Le type Logique (`logical`)
+
+Le type logique (booléen) ne peut prendre que deux valeurs : `TRUE` (vrai) ou `FALSE` (faux). Ces valeurs sont souvent le résultat de comparaisons.
+
+```{r}
+# Valeurs logiques directes
+est_etudiant <- TRUE
+est_marie <- FALSE
+
+class(est_etudiant)
+
+# Résultats de comparaisons
+10 > 5      # Dix est-il supérieur à cinq ?
+3 == 3      # Trois est-il égal à trois ?
+7 != 4      # Sept est-il différent de quatre ?
+15 >= 20    # Quinze est-il supérieur ou égal à vingt ?
+```
+
+```{r}
+# Opérateurs logiques
+# ET logique : &
+TRUE & FALSE    # Les deux doivent être vrais
+TRUE & TRUE
+
+# OU logique : |
+TRUE | FALSE    # Au moins un doit être vrai
+FALSE | FALSE
+
+# NON logique : !
+!TRUE
+!FALSE
+```
+
+## Les fonctions `class()` et `typeof()`
+
+```{r}
+# class() donne la classe de l'objet (niveau utilisateur)
+# typeof() donne le type interne (niveau machine)
+
+x <- 42.5
+cat("class() :", class(x), "\n")
+cat("typeof() :", typeof(x), "\n")
+
+y <- "Bonjour"
+cat("class() :", class(y), "\n")
+cat("typeof() :", typeof(y), "\n")
+
+z <- TRUE
+cat("class() :", class(z), "\n")
+cat("typeof() :", typeof(z), "\n")
+
+n <- 10L
+cat("class() :", class(n), "\n")
+cat("typeof() :", typeof(n), "\n")
+```
+
+::: callout-important
+## À retenir — Résumé des types de données
+
+| Type      | Exemple         | `class()`     | Usage               |
+|-----------|-----------------|---------------|---------------------|
+| Numérique | `3.14`, `42`    | `"numeric"`   | Mesures, calculs    |
+| Entier    | `5L`, `100L`    | `"integer"`   | Comptages           |
+| Caractère | `"Bonjour"`     | `"character"` | Textes, noms        |
+| Logique   | `TRUE`, `FALSE` | `"logical"`   | Conditions, filtres |
+:::
+
+## Conversion entre types
+
+```{r}
+# Convertir un numérique en caractère
+x <- 42
+x_texte <- as.character(x)
+class(x_texte)
+
+# Convertir un caractère en numérique (si possible)
+y <- "3.14"
+y_num <- as.numeric(y)
+class(y_num)
+
+# Convertir en logique
+as.logical(0)   # 0 → FALSE
+as.logical(1)   # 1 → TRUE
+as.logical(5)   # tout non-zéro → TRUE
+```
+
+## Exercices
+
+::: callout-caution
+## Exercice 3 — Types de données
+
+1.  Créez les objets suivants et vérifiez leur type avec `class()` :
+
+    - Le nombre de communes au Bénin : 77
+    - Le taux de mortalité infantile : 57.2 (pour mille)
+    - Le nom de la capitale du Bénin : "Porto-Novo"
+    - Un indicateur "pays enclavé" : FALSE
+
+2.  Que retourne `class(TRUE + TRUE)` ? Expliquez.
+
+3.  Que se passe-t-il si vous essayez `as.numeric("ENSPD")` ?
+:::
+
+**Correction :**
+
+```{r}
+# 1. Création et vérification des types
+nb_communes <- 77
+cat("Nombre de communes — class():", class(nb_communes), "\n")
+
+taux_mortalite <- 57.2
+cat("Taux de mortalité — class():", class(taux_mortalite), "\n")
+
+capitale <- "Porto-Novo"
+cat("Capitale — class():", class(capitale), "\n")
+
+enclave <- FALSE
+cat("Pays enclavé — class():", class(enclave), "\n")
+```
+
+```{r}
+# 2. TRUE + TRUE
+resultat <- TRUE + TRUE
+cat("TRUE + TRUE =", resultat, "\n")
+cat("class(TRUE + TRUE) =", class(TRUE + TRUE), "\n")
+# Explication : R convertit automatiquement TRUE en 1 et FALSE en 0
+# lors des opérations arithmétiques. TRUE + TRUE = 1 + 1 = 2 (numeric)
+```
+
+```{r}
+# 3. Conversion impossible
+as.numeric("ENSPD")
+# R retourne NA (valeur manquante) avec un avertissement
+# car "ENSPD" ne peut pas être converti en nombre
+```
+
+------------------------------------------------------------------------
+
+# Les vecteurs
+
+Un **vecteur** est la structure de données fondamentale en R. C'est une séquence ordonnée d'éléments du **même type**. Presque toutes les opérations en R s'appliquent sur des vecteurs.
+
+## Création de vecteurs avec `c()`
+
+La fonction `c()` (combine ou concatenate) permet de créer des vecteurs.
+
+```{r}
+# Vecteur numérique : notes de 6 étudiants
+notes <- c(12.5, 14.0, 11.5, 16.0, 9.5, 13.0)
+notes
+
+# Vecteur de caractères : prénoms
+prenoms <- c("Adjoa", "Kofi", "Aminata", "Brice", "Fatoumata", "Yao")
+prenoms
+
+# Vecteur logique
+ont_valide <- c(TRUE, TRUE, FALSE, TRUE, FALSE, TRUE)
+ont_valide
+
+# Séquences numériques
+seq1 <- 1:10           # Entiers de 1 à 10
+seq2 <- seq(0, 1, by = 0.1)   # De 0 à 1 par pas de 0.1
+seq3 <- seq(2020, 2030, by = 2)  # Années paires
+seq1
+seq2
+seq3
+```
+
+## Longueur d'un vecteur — `length()`
+
+```{r}
+notes <- c(12.5, 14.0, 11.5, 16.0, 9.5, 13.0)
+
+# Nombre d'éléments dans le vecteur
+length(notes)
+
+prenoms <- c("Adjoa", "Kofi", "Aminata", "Brice", "Fatoumata", "Yao")
+length(prenoms)
+```
+
+## Somme — `sum()`
+
+```{r}
+# Somme de toutes les valeurs
+depenses <- c(15000, 8500, 22000, 6000, 17500)
+sum(depenses)  # Total des dépenses
+
+# Somme logique : compter les vrais
+ont_valide <- c(TRUE, TRUE, FALSE, TRUE, FALSE, TRUE)
+sum(ont_valide)  # Nombre d'étudiants ayant validé
+```
+
+## Moyenne — `mean()`
+
+```{r}
+notes <- c(12.5, 14.0, 11.5, 16.0, 9.5, 13.0)
+mean(notes)  # Moyenne des notes
+
+# Moyenne des températures journalières (°C)
+temperatures <- c(32.1, 34.5, 31.8, 33.2, 35.0, 30.9, 32.7)
+mean(temperatures)
+```
+
+## Minimum et Maximum — `min()`, `max()`
+
+```{r}
+notes <- c(12.5, 14.0, 11.5, 16.0, 9.5, 13.0)
+
+# Note minimale
+min(notes)
+
+# Note maximale
+max(notes)
+
+# Les deux en même temps avec range()
+range(notes)
+```
+
+## Médiane — `median()`
+
+```{r}
+notes <- c(12.5, 14.0, 11.5, 16.0, 9.5, 13.0)
+
+# Médiane des notes
+median(notes)
+
+# Comparaison moyenne vs médiane
+# Avec une valeur extrême (outlier)
+revenus <- c(150000, 200000, 180000, 160000, 2500000)  # dernier = millionnaire
+cat("Moyenne des revenus :", mean(revenus), "\n")
+cat("Médiane des revenus :", median(revenus), "\n")
+# La médiane est plus robuste aux valeurs extrêmes
+```
+
+## Accéder aux éléments d'un vecteur
+
+```{r}
+notes <- c(12.5, 14.0, 11.5, 16.0, 9.5, 13.0)
+
+# Accéder au premier élément (indices commencent à 1 en R !)
+notes[1]
+
+# Accéder au 4ème élément
+notes[4]
+
+# Accéder à plusieurs éléments
+notes[c(1, 3, 5)]
+
+# Accéder à une plage
+notes[2:4]
+
+# Exclure un élément (indice négatif)
+notes[-1]   # Tout sauf le premier
+```
+
+## Exercices corrigés
+
+::: callout-caution
+## Exercice 4 — Manipulation de vecteurs
+
+On dispose des données suivantes sur 8 ménages d'un village :
+
+- Nombre d'enfants : 3, 1, 5, 2, 4, 0, 3, 6
+- Revenus mensuels (FCFA) : 85000, 120000, 65000, 200000, 95000, 180000, 75000, 110000
+
+1.  Créez un vecteur `nb_enfants` et un vecteur `revenus`
+2.  Combien y a-t-il de ménages ?
+3.  Quel est le nombre moyen d'enfants par ménage ?
+4.  Quel est le revenu total de l'ensemble des ménages ?
+5.  Quels sont les revenus minimum et maximum ?
+6.  Quelle est la médiane des revenus ?
+:::
+
+**Correction :**
+
+```{r}
+# 1. Création des vecteurs
+nb_enfants <- c(3, 1, 5, 2, 4, 0, 3, 6)
+revenus <- c(85000, 120000, 65000, 200000, 95000, 180000, 75000, 110000)
+
+# 2. Nombre de ménages
+nb_menages <- length(nb_enfants)
+cat("Nombre de ménages :", nb_menages, "\n")
+
+# 3. Nombre moyen d'enfants
+moy_enfants <- mean(nb_enfants)
+cat("Nombre moyen d'enfants :", moy_enfants, "\n")
+
+# 4. Revenu total
+revenu_total <- sum(revenus)
+cat("Revenu total :", format(revenu_total, big.mark = " "), "FCFA\n")
+
+# 5. Revenus min et max
+cat("Revenu minimum :", format(min(revenus), big.mark = " "), "FCFA\n")
+cat("Revenu maximum :", format(max(revenus), big.mark = " "), "FCFA\n")
+
+# 6. Médiane des revenus
+mediane_revenus <- median(revenus)
+cat("Médiane des revenus :", format(mediane_revenus, big.mark = " "), "FCFA\n")
+```
+
+------------------------------------------------------------------------
+
+# Introduction aux data frames
+
+Un **data frame** est la structure de données la plus utilisée en R pour représenter des tableaux de données, similaire à un tableau Excel. Chaque colonne représente une variable et chaque ligne représente une observation.
+
+## Création d'un data frame — `data.frame()`
+
+```{r}
+# Création d'un data frame simple
+# Données sur des étudiants
+etudiants <- data.frame(
+  nom = c("Adjoa Mensah", "Kofi Atsu", "Aminata Diallo", "Brice Hounsa", "Fatoumata Traoré"),
+  age = c(22, 24, 21, 23, 20),
+  filiere = c("Statistique", "Démographie", "Statistique", "Informatique", "Économie"),
+  note_maths = c(14.5, 11.0, 16.5, 13.0, 12.5),
+  a_valide = c(TRUE, FALSE, TRUE, TRUE, TRUE)
+)
+
+# Afficher le data frame
+etudiants
+```
+
+## Explorer un data frame
+
+### `View()` — Affichage tabulaire complet
+
+```{r}
+#| eval: false
+# Ouvre un onglet avec une vue tableur (uniquement dans RStudio)
+View(etudiants)
+```
+
+### `head()` et `tail()` — Premières et dernières lignes
+
+```{r}
+# Créons un data frame plus grand pour l'exemple
+set.seed(42)
+donnees_sante <- data.frame(
+  id = 1:20,
+  age = sample(18:65, 20, replace = TRUE),
+  sexe = sample(c("Masculin", "Féminin"), 20, replace = TRUE),
+  poids_kg = round(runif(20, 45, 95), 1),
+  taille_cm = sample(155:190, 20, replace = TRUE),
+  tension_sys = sample(100:160, 20, replace = TRUE)
+)
+
+# Afficher les 6 premières lignes (par défaut)
+head(donnees_sante)
+```
+
+```{r}
+# Afficher les 3 premières lignes
+head(donnees_sante, 3)
+
+# Afficher les 4 dernières lignes
+tail(donnees_sante, 4)
+```
+
+### `str()` — Structure du data frame
+
+```{r}
+# Structure détaillée : types, dimensions, premiers éléments
+str(etudiants)
+```
+
+### `summary()` — Résumé statistique
+
+```{r}
+# Résumé statistique de chaque variable
+summary(etudiants)
+```
+
+## Accéder aux colonnes d'un data frame
+
+```{r}
+# Méthode 1 : avec le symbole $
+etudiants$nom
+etudiants$note_maths
+
+# Méthode 2 : avec les crochets doubles [[ ]]
+etudiants[["age"]]
+
+# Méthode 3 : par position [ligne, colonne]
+etudiants[, 1]   # Toute la première colonne
+etudiants[2, ]   # Toute la deuxième ligne
+etudiants[2, 3]  # Ligne 2, colonne 3
+```
+
+```{r}
+# Calculs sur des colonnes
+mean(etudiants$note_maths)
+max(etudiants$age)
+
+# Filtrer des lignes
+# Étudiants ayant validé
+etudiants_valides <- etudiants[etudiants$a_valide == TRUE, ]
+etudiants_valides
+```
+
+## Dimensions d'un data frame
+
+```{r}
+# Nombre de lignes et de colonnes
+nrow(etudiants)   # Nombre de lignes (observations)
+ncol(etudiants)   # Nombre de colonnes (variables)
+dim(etudiants)    # Les deux en même temps
+
+# Noms des colonnes
+colnames(etudiants)
+names(etudiants)
+```
+
+## Exercices pratiques
+
+::: callout-caution
+## Exercice 5 — Data frames
+
+Créez un data frame `villages` contenant les informations suivantes sur 6 villages :
+
+| Village   | Département | Population | Nb_écoles | Électrifié |
+|-----------|-------------|------------|-----------|------------|
+| Kpassa    | Borgou      | 3420       | 2         | TRUE       |
+| Sinendé   | Alibori     | 5210       | 3         | FALSE      |
+| Gogounou  | Alibori     | 4180       | 2         | TRUE       |
+| Ndali     | Borgou      | 2890       | 1         | FALSE      |
+| Bembèrèkè | Borgou      | 6350       | 4         | TRUE       |
+| Kalalé    | Borgou      | 3780       | 2         | FALSE      |
+
+1.  Affichez la structure du data frame avec `str()`
+2.  Affichez le résumé statistique avec `summary()`
+3.  Quelle est la population totale de ces 6 villages ?
+4.  Quel est le nom du village le plus peuplé ?
+5.  Combien de villages sont électrifiés ?
+:::
+
+**Correction :**
+
+```{r}
+# Création du data frame
+villages <- data.frame(
+  village = c("Kpassa", "Sinendé", "Gogounou", "Ndali", "Bembèrèkè", "Kalalé"),
+  departement = c("Borgou", "Alibori", "Alibori", "Borgou", "Borgou", "Borgou"),
+  population = c(3420, 5210, 4180, 2890, 6350, 3780),
+  nb_ecoles = c(2, 3, 2, 1, 4, 2),
+  electrifie = c(TRUE, FALSE, TRUE, FALSE, TRUE, FALSE)
+)
+
+# 1. Structure
+str(villages)
+```
+
+```{r}
+# 2. Résumé statistique
+summary(villages)
+```
+
+```{r}
+# 3. Population totale
+pop_totale <- sum(villages$population)
+cat("Population totale :", format(pop_totale, big.mark = " "), "habitants\n")
+
+# 4. Village le plus peuplé
+indice_max <- which.max(villages$population)
+cat("Village le plus peuplé :", villages$village[indice_max], "\n")
+cat("Population :", villages$population[indice_max], "habitants\n")
+
+# 5. Nombre de villages électrifiés
+nb_electrifies <- sum(villages$electrifie)
+cat("Nombre de villages électrifiés :", nb_electrifies, "sur", nrow(villages), "\n")
+```
+
+------------------------------------------------------------------------
+
+# Importation de données Excel
+
+Dans la pratique, les données sont souvent stockées dans des fichiers Excel (`.xlsx` ou `.xls`). Le package `readxl` permet d'importer ces fichiers directement dans R.
+
+## Installation du package `readxl`
+
+Un **package** est une extension qui ajoute des fonctionnalités à R. Pour utiliser un package, il faut d'abord l'installer (une seule fois), puis le charger à chaque session.
+
+```{r}
+#| eval: false
+# Installation du package readxl (à faire une seule fois)
+install.packages("readxl")
+```
+
+::: callout-important
+## À retenir — Installation vs Chargement d'un package
+
+- **Installation** : `install.packages("nom_package")` — À faire **une seule fois**
+- **Chargement** : `library(nom_package)` — À faire **à chaque nouvelle session R**
+
+Analogie : Installer un package = acheter un livre. Charger un package = ouvrir ce livre pour le lire.
+:::
+
+## Chargement avec `library()`
+
+```{r}
+# Chargement du package (à faire à chaque session)
+library(readxl)
+```
+
+## Importation avec `read_excel()`
+
+```{r}
+#| eval: false
+# Syntaxe de base
+donnees <- read_excel("chemin/vers/fichier.xlsx")
+
+# Avec options avancées
+donnees <- read_excel(
+  path = "fichier.xlsx",      # Chemin du fichier
+  sheet = "Feuil1",           # Nom ou numéro de la feuille
+  skip = 0,                   # Nombre de lignes à ignorer en début
+  na = c("", "N/A", "-"),    # Valeurs considérées comme manquantes
+  col_names = TRUE            # Première ligne = noms des colonnes
+)
+```
+
+## Exemple complet
+
+```{r}
+# Simulation : créons d'abord un fichier Excel pour l'exemple
+# (Dans un cas réel, le fichier existerait déjà)
+
+# Créons des données d'exemple
+donnees_ecole <- data.frame(
+  ID_Eleve = 1:10,
+  Prenom = c("Adjoua", "Kofi", "Mani", "Brice", "Fatouma",
+             "Yao", "Aïssata", "Désiré", "Nadia", "Théo"),
+  Sexe = c("F", "M", "M", "M", "F", "M", "F", "M", "F", "M"),
+  Age = c(11, 12, 11, 13, 12, 11, 12, 12, 11, 13),
+  Note_Francais = c(14, 11, 15, 12, 16, 10, 13, 14, 15, 11),
+  Note_Maths = c(16, 14, 12, 15, 13, 18, 11, 14, 17, 12)
+)
+
+# Si readxl est installé et le fichier existe :
+# donnees <- read_excel("donnees_ecole.xlsx", sheet = 1)
+
+# Pour cet exemple, utilisons directement le data frame créé
+cat("Dimensions du jeu de données :", nrow(donnees_ecole), "lignes x", 
+    ncol(donnees_ecole), "colonnes\n")
+head(donnees_ecole)
+```
+
+::: callout-tip
+## Conseil — Définir le répertoire de travail
+
+Avant d'importer des fichiers, définissez votre répertoire de travail avec `setwd()` ou utilisez des chemins absolus :
+
+``` r
+# Définir le répertoire de travail
+setwd("C:/Users/MonNom/Documents/Formation_R")
+
+# Puis importer directement
+donnees <- read_excel("mes_donnees.xlsx")
+```
+
+Dans RStudio, vous pouvez aussi utiliser : `Session > Set Working Directory > Choose Directory`
+:::
+
+::: callout-note
+## Autres formats d'importation
+
+R peut importer de nombreux formats de données :
+
+| Format        | Package    | Fonction       |
+|---------------|------------|----------------|
+| Excel (.xlsx) | `readxl`   | `read_excel()` |
+| CSV           | Base R     | `read.csv()`   |
+| Stata (.dta)  | `haven`    | `read_dta()`   |
+| SPSS (.sav)   | `haven`    | `read_sav()`   |
+| JSON          | `jsonlite` | `fromJSON()`   |
+:::
+
+------------------------------------------------------------------------
+
+# Statistiques descriptives simples
+
+Les statistiques descriptives permettent de résumer et de caractériser un jeu de données. R fournit toutes les fonctions nécessaires nativement.
+
+## Jeu de données d'exemple
+
+```{r}
+# Jeu de données : résultats d'une enquête dans un lycée
+set.seed(123)
+n <- 50  # 50 élèves
+
+enquete_lycee <- data.frame(
+  id = 1:n,
+  sexe = sample(c("Garçon", "Fille"), n, replace = TRUE, prob = c(0.55, 0.45)),
+  age = sample(14:20, n, replace = TRUE),
+  classe = sample(c("2nde", "1ère", "Terminale"), n, replace = TRUE),
+  note_francais = round(runif(n, 6, 19), 1),
+  note_maths = round(runif(n, 4, 20), 1),
+  heures_etude = sample(1:6, n, replace = TRUE)
+)
+
+# Aperçu du jeu de données
+head(enquete_lycee)
+dim(enquete_lycee)
+```
+
+## Moyenne — `mean()`
+
+```{r}
+# Moyenne de la note de français
+moy_francais <- mean(enquete_lycee$note_francais)
+cat("Moyenne en français :", round(moy_francais, 2), "\n")
+
+# Moyenne de la note de maths
+moy_maths <- mean(enquete_lycee$note_maths)
+cat("Moyenne en maths :", round(moy_maths, 2), "\n")
+```
+
+## Médiane — `median()`
+
+```{r}
+# Médiane des notes
+med_francais <- median(enquete_lycee$note_francais)
+cat("Médiane en français :", med_francais, "\n")
+
+# Comparaison moyenne/médiane
+cat("\nComparaison Français :\n")
+cat("  Moyenne :", round(moy_francais, 2), "\n")
+cat("  Médiane :", med_francais, "\n")
+```
+
+## Écart-type — `sd()`
+
+L'écart-type mesure la dispersion des données autour de la moyenne. Plus il est grand, plus les données sont dispersées.
+
+```{r}
+# Écart-type des notes
+et_francais <- sd(enquete_lycee$note_francais)
+et_maths <- sd(enquete_lycee$note_maths)
+
+cat("Écart-type Français :", round(et_francais, 2), "\n")
+cat("Écart-type Maths    :", round(et_maths, 2), "\n")
+```
+
+## Fréquences — `table()`
+
+La fonction `table()` calcule les fréquences absolues (effectifs) d'une variable qualitative.
+
+```{r}
+# Fréquences par sexe
+freq_sexe <- table(enquete_lycee$sexe)
+freq_sexe
+
+# Fréquences par classe
+freq_classe <- table(enquete_lycee$classe)
+freq_classe
+
+# Tableau croisé (sexe × classe)
+tab_croise <- table(enquete_lycee$sexe, enquete_lycee$classe)
+tab_croise
+```
+
+## Pourcentages — `prop.table()`
+
+La fonction `prop.table()` calcule les proportions (fréquences relatives) à partir d'un tableau de fréquences.
+
+```{r}
+# Proportions par sexe
+prop_sexe <- prop.table(freq_sexe)
+prop_sexe
+
+# Pourcentages (multiplier par 100)
+pct_sexe <- round(prop.table(freq_sexe) * 100, 1)
+cat("\nRépartition par sexe :\n")
+print(pct_sexe)
+
+# Proportions du tableau croisé
+# margin = 1 : proportions en ligne ; margin = 2 : proportions en colonne
+prop_tab <- round(prop.table(tab_croise, margin = 1) * 100, 1)
+cat("\nRépartition par classe selon le sexe (en %) :\n")
+print(prop_tab)
+```
+
+## Résumé complet avec `summary()`
+
+```{r}
+# Résumé de toutes les variables numériques
+summary(enquete_lycee[, c("age", "note_francais", "note_maths", "heures_etude")])
+```
+
+::: callout-tip
+## Les 5 indicateurs clés du résumé statistique
+
+`summary()` affiche automatiquement : - **Min** : valeur minimale - **1st Qu.** : premier quartile (25% des données en dessous) - **Median** : médiane (50%) - **Mean** : moyenne arithmétique - **3rd Qu.** : troisième quartile (75%) - **Max** : valeur maximale
+:::
+
+------------------------------------------------------------------------
+
+# Premiers graphiques
+
+R est réputé pour la qualité de ses graphiques. Dans cette séance, nous découvrons les deux fonctions graphiques de base les plus utilisées.
+
+## L'histogramme — `hist()`
+
+L'histogramme représente la distribution d'une variable quantitative continue en classes.
+
+```{r}
+#| fig-height: 5
+#| fig-width: 7
+# Histogramme simple des notes de français
+hist(enquete_lycee$note_francais,
+     main = "Distribution des notes de français",  # Titre
+     xlab = "Note /20",                            # Label axe X
+     ylab = "Fréquence",                           # Label axe Y
+     col = "steelblue",                            # Couleur
+     border = "white")                             # Couleur bordure
+```
+
+```{r}
+#| fig-height: 5
+#| fig-width: 7
+# Histogramme avec plus d'options
+hist(enquete_lycee$note_maths,
+     main = "Distribution des notes de mathématiques",
+     xlab = "Note /20",
+     ylab = "Nombre d'élèves",
+     col = "coral",
+     border = "white",
+     breaks = 10,           # Nombre de classes
+     xlim = c(0, 20))       # Limites de l'axe X
+
+# Ajouter une ligne de moyenne
+abline(v = mean(enquete_lycee$note_maths), 
+       col = "darkred", lwd = 2, lty = 2)
+legend("topright", legend = paste("Moyenne =", round(mean(enquete_lycee$note_maths), 1)),
+       col = "darkred", lty = 2, lwd = 2)
+```
+
+## Le diagramme en barres — `barplot()`
+
+Le diagramme en barres représente les fréquences ou les valeurs d'une variable qualitative.
+
+```{r}
+#| fig-height: 5
+#| fig-width: 7
+# Diagramme en barres de la répartition par classe
+barplot(table(enquete_lycee$classe),
+        main = "Répartition des élèves par classe",
+        xlab = "Classe",
+        ylab = "Nombre d'élèves",
+        col = c("steelblue", "coral", "forestgreen"),
+        border = "white")
+```
+
+```{r}
+#| fig-height: 5
+#| fig-width: 8
+# Diagramme en barres groupées (sexe par classe)
+barplot(table(enquete_lycee$sexe, enquete_lycee$classe),
+        beside = TRUE,    # Barres côte à côte
+        main = "Répartition par classe et par sexe",
+        xlab = "Classe",
+        ylab = "Nombre d'élèves",
+        col = c("steelblue", "coral"),
+        border = "white",
+        legend.text = c("Garçon", "Fille"),
+        args.legend = list(x = "topright"))
+```
+
+::: callout-tip
+## Choisir le bon graphique
+
+| Type de variable | Graphique recommandé |
+|--------------------------------|----------------------------------------|
+| Variable quantitative continue | Histogramme (`hist`) |
+| Variable qualitative | Diagramme en barres (`barplot`) |
+| Deux variables quantitatives | Nuage de points (`plot`) |
+| Évolution dans le temps | Graphique en courbes (`plot` avec `type="l"`) |
+:::
+
+------------------------------------------------------------------------
+
+# Exercices de synthèse
+
+::: callout-caution
+## Exercice 6
+
+Calculez dans R les expressions suivantes : 1. $\frac{(45 + 38 + 72 + 51)}{4}$ 2. $\sqrt{(3^2 + 4^2)}$ 3. $\frac{1}{1 + e^{-2}}$ (fonction logistique en $x = 2$)
+:::
+
+::: callout-caution
+## Exercice 7
+
+Créez les variables suivantes et affichez-les : - `pays` : "Bénin" - `superficie` : 114763 (km²) - `population_2023` : 13352864 - `pib_milliards_usd` : 17.8 - `membre_ua` : TRUE
+
+Ensuite, calculez et affichez la densité de population.
+:::
+
+::: callout-caution
+## Exercice 8
+
+On a mesuré la hauteur (en cm) de 10 plants de maïs : `128, 145, 132, 118, 156, 141, 129, 147, 135, 122`
+
+1.  Créez un vecteur `hauteurs`
+2.  Calculez la hauteur minimale, maximale, moyenne et médiane
+3.  Combien de plants mesurent plus de 135 cm ? (Indice : `sum(hauteurs > 135)`)
+4.  Calculez l'écart-type
+:::
+
+::: callout-caution
+## Exercice 9
+
+Créez un data frame `personnel` avec 5 employés :
+
+| Nom             | Département  | Ancienneté (ans) | Salaire (FCFA) | Cadre |
+|-----------------|--------------|------------------|----------------|-------|
+| AHOYO Bernard   | Statistiques | 8                | 450000         | TRUE  |
+| DOSSOU Clémence | Informatique | 3                | 320000         | FALSE |
+| SOSSA Patrick   | RH           | 12               | 580000         | TRUE  |
+| KPADA Nathalie  | Comptabilité | 5                | 380000         | FALSE |
+| AGBO Rémi       | Statistiques | 15               | 650000         | TRUE  |
+
+1.  Affichez la structure avec `str()`
+2.  Quel est le salaire moyen ?
+3.  Quel est le salaire du cadre le plus ancien ?
+4.  Combien d'employés sont cadres ?
+:::
+
+::: callout-caution
+## Exercice 10
+
+Utilisez le data frame `donnees_sante` créé en section 7.2.2 pour :
+
+1.  Calculer la taille moyenne des patients
+2.  Calculer le poids minimum et maximum
+3.  Créer un tableau de fréquences du sexe
+4.  Calculer les pourcentages par sexe
+5.  Tracer un histogramme de la tension systolique
+:::
+
+::: callout-caution
+## Exercice 11
+
+À partir du vecteur suivant de températures journalières (°C) sur 30 jours :
+
+``` r
+temperatures <- c(28.5, 31.2, 33.8, 29.4, 35.1, 32.7, 30.1, 
+                  34.5, 31.8, 28.9, 36.2, 33.1, 29.7, 31.5, 34.8,
+                  30.3, 32.9, 35.6, 29.1, 33.4, 31.7, 28.3, 34.2,
+                  30.8, 32.1, 35.9, 29.6, 33.7, 31.2, 30.5)
+```
+
+1.  Calculez la température minimale, maximale, moyenne et médiane
+2.  Combien de jours la température a-t-elle dépassé 33°C ?
+3.  Quel est l'écart-type des températures ?
+4.  Tracez un histogramme des températures
+:::
+
+::: callout-caution
+## Exercice 12
+
+Créez un vecteur `notes_classe` contenant 20 notes d'élèves (inventez des valeurs entre 5 et 20), puis :
+
+1.  Calculez toutes les statistiques descriptives principales
+2.  Créez un vecteur `mention` qui indique la mention selon la note :
+    - "Passable" si note \< 12
+    - "Assez bien" si 12 ≤ note \< 14
+    - "Bien" si 14 ≤ note \< 16
+    - "Très bien" si note ≥ 16
+3.  Créez un tableau de fréquences des mentions
+:::
+
+::: callout-caution
+## Exercice 13
+
+À partir du data frame `enquete_lycee` créé en section 9, répondez aux questions :
+
+1.  Quelle est la note moyenne en français des filles ? (Indice : filtrez d'abord les filles)
+2.  Quelle est la note moyenne en maths des garçons ?
+3.  Combien d'élèves étudient plus de 3 heures par jour ?
+4.  Quel pourcentage d'élèves sont en Terminale ?
+:::
+
+::: callout-caution
+## Exercice 14
+
+Créez un diagramme en barres représentant le nombre de communes par département pour les 5 premiers départements du Bénin :
+
+| Département | Nb Communes |
+|-------------|-------------|
+| Alibori     | 6           |
+| Atacora     | 9           |
+| Atlantique  | 8           |
+| Borgou      | 12          |
+| Collines    | 6           |
+
+Ajoutez un titre, des labels d'axes et des couleurs différentes pour chaque barre.
+:::
+
+::: callout-caution
+## Exercice 15
+
+Vous disposez des données suivantes sur la vaccination dans 6 communes :
+
+| Commune | Cible | Vaccinés |
+|---------|-------|----------|
+| A       | 1200  | 1056     |
+| B       | 850   | 740      |
+| C       | 2100  | 1890     |
+| D       | 650   | 598      |
+| E       | 1800  | 1512     |
+| F       | 950   | 817      |
+
+1.  Créez un data frame `vaccination`
+2.  Calculez le taux de couverture vaccinale pour chaque commune (vaccinés/cible × 100)
+3.  Ajoutez cette nouvelle colonne au data frame
+4.  Quelle commune a le meilleur taux de couverture ?
+5.  Tracez un histogramme des taux de couverture
+:::
+
+------------------------------------------------------------------------
+
+# Corrigés détaillés
+
+## Corrigé — Exercice 6
+
+```{r}
+# 1. Calcul de la moyenne de 4 valeurs
+(45 + 38 + 72 + 51) / 4
+
+# 2. Hypoténuse (théorème de Pythagore)
+sqrt(3^2 + 4^2)
+
+# 3. Fonction logistique en x = 2
+1 / (1 + exp(-2))
+```
+
+## Corrigé — Exercice 7
+
+```{r}
+# Création des variables
+pays <- "Bénin"
+superficie <- 114763
+population_2023 <- 13352864
+pib_milliards_usd <- 17.8
+membre_ua <- TRUE
+
+# Affichage
+cat("Pays :", pays, "\n")
+cat("Superficie :", format(superficie, big.mark = " "), "km²\n")
+cat("Population 2023 :", format(population_2023, big.mark = " "), "\n")
+cat("PIB :", pib_milliards_usd, "milliards USD\n")
+cat("Membre UA :", membre_ua, "\n")
+
+# Densité de population
+densite <- population_2023 / superficie
+cat("\nDensité de population :", round(densite, 1), "habitants/km²\n")
+```
+
+## Corrigé — Exercice 8
+
+```{r}
+# 1. Création du vecteur
+hauteurs <- c(128, 145, 132, 118, 156, 141, 129, 147, 135, 122)
+
+# 2. Statistiques
+cat("Hauteur minimale :", min(hauteurs), "cm\n")
+cat("Hauteur maximale :", max(hauteurs), "cm\n")
+cat("Hauteur moyenne  :", mean(hauteurs), "cm\n")
+cat("Hauteur médiane  :", median(hauteurs), "cm\n")
+
+# 3. Plants de plus de 135 cm
+nb_grands <- sum(hauteurs > 135)
+cat("Plants > 135 cm  :", nb_grands, "\n")
+
+# 4. Écart-type
+cat("Écart-type       :", round(sd(hauteurs), 2), "cm\n")
+```
+
+## Corrigé — Exercice 9
+
+```{r}
+# Création du data frame
+personnel <- data.frame(
+  nom = c("AHOYO Bernard", "DOSSOU Clémence", "SOSSA Patrick", "KPADA Nathalie", "AGBO Rémi"),
+  departement = c("Statistiques", "Informatique", "RH", "Comptabilité", "Statistiques"),
+  anciennete = c(8, 3, 12, 5, 15),
+  salaire = c(450000, 320000, 580000, 380000, 650000),
+  cadre = c(TRUE, FALSE, TRUE, FALSE, TRUE)
+)
+
+# 1. Structure
+str(personnel)
+```
+
+```{r}
+# 2. Salaire moyen
+cat("Salaire moyen :", format(mean(personnel$salaire), big.mark = " "), "FCFA\n")
+
+# 3. Salaire du cadre le plus ancien
+cadres <- personnel[personnel$cadre == TRUE, ]
+cadre_plus_ancien <- cadres[which.max(cadres$anciennete), ]
+cat("Cadre le plus ancien :", cadre_plus_ancien$nom, "\n")
+cat("Salaire             :", format(cadre_plus_ancien$salaire, big.mark = " "), "FCFA\n")
+
+# 4. Nombre de cadres
+cat("Nombre de cadres :", sum(personnel$cadre), "\n")
+```
+
+## Corrigé — Exercice 10
+
+```{r}
+#| fig-height: 5
+#| fig-width: 7
+# Recréer le data frame donnees_sante
+set.seed(42)
+donnees_sante <- data.frame(
+  id = 1:20,
+  age = sample(18:65, 20, replace = TRUE),
+  sexe = sample(c("Masculin", "Féminin"), 20, replace = TRUE),
+  poids_kg = round(runif(20, 45, 95), 1),
+  taille_cm = sample(155:190, 20, replace = TRUE),
+  tension_sys = sample(100:160, 20, replace = TRUE)
+)
+
+# 1. Taille moyenne
+cat("Taille moyenne :", mean(donnees_sante$taille_cm), "cm\n")
+
+# 2. Poids min et max
+cat("Poids minimum  :", min(donnees_sante$poids_kg), "kg\n")
+cat("Poids maximum  :", max(donnees_sante$poids_kg), "kg\n")
+
+# 3. Tableau de fréquences du sexe
+freq_sexe <- table(donnees_sante$sexe)
+print(freq_sexe)
+
+# 4. Pourcentages par sexe
+pct_sexe <- round(prop.table(freq_sexe) * 100, 1)
+print(pct_sexe)
+
+# 5. Histogramme de la tension systolique
+hist(donnees_sante$tension_sys,
+     main = "Distribution de la tension systolique",
+     xlab = "Tension systolique (mmHg)",
+     ylab = "Fréquence",
+     col = "steelblue",
+     border = "white")
+```
+
+## Corrigé — Exercice 11
+
+```{r}
+#| fig-height: 5
+#| fig-width: 7
+temperatures <- c(28.5, 31.2, 33.8, 29.4, 35.1, 32.7, 30.1, 
+                  34.5, 31.8, 28.9, 36.2, 33.1, 29.7, 31.5, 34.8,
+                  30.3, 32.9, 35.6, 29.1, 33.4, 31.7, 28.3, 34.2,
+                  30.8, 32.1, 35.9, 29.6, 33.7, 31.2, 30.5)
+
+# 1. Statistiques principales
+cat("Température minimale :", min(temperatures), "°C\n")
+cat("Température maximale :", max(temperatures), "°C\n")
+cat("Température moyenne  :", round(mean(temperatures), 2), "°C\n")
+cat("Température médiane  :", median(temperatures), "°C\n")
+
+# 2. Jours au-dessus de 33°C
+nb_jours_chauds <- sum(temperatures > 33)
+cat("Jours > 33°C :", nb_jours_chauds, "jours sur", length(temperatures), "\n")
+
+# 3. Écart-type
+cat("Écart-type :", round(sd(temperatures), 2), "°C\n")
+
+# 4. Histogramme
+hist(temperatures,
+     main = "Distribution des températures sur 30 jours",
+     xlab = "Température (°C)",
+     ylab = "Nombre de jours",
+     col = "coral",
+     border = "white")
+abline(v = mean(temperatures), col = "darkred", lwd = 2, lty = 2)
+```
+
+## Corrigé — Exercice 12
+
+```{r}
+# Création d'un vecteur de 20 notes
+set.seed(7)
+notes_classe <- c(8, 14, 17, 11, 15, 9, 16, 12, 7, 18,
+                  13, 10, 15, 6, 14, 11, 19, 12, 16, 8)
+
+# 1. Statistiques descriptives
+cat("--- Statistiques descriptives ---\n")
+cat("Minimum    :", min(notes_classe), "\n")
+cat("Maximum    :", max(notes_classe), "\n")
+cat("Moyenne    :", mean(notes_classe), "\n")
+cat("Médiane    :", median(notes_classe), "\n")
+cat("Écart-type :", round(sd(notes_classe), 2), "\n")
+
+# 2. Attribution des mentions
+mention <- ifelse(notes_classe < 12, "Passable",
+           ifelse(notes_classe < 14, "Assez bien",
+           ifelse(notes_classe < 16, "Bien", "Très bien")))
+mention
+
+# 3. Tableau de fréquences
+table(mention)
+round(prop.table(table(mention)) * 100, 1)
+```
+
+## Corrigé — Exercice 13
+
+```{r}
+# Recréer le jeu de données
+set.seed(123)
+n <- 50
+enquete_lycee <- data.frame(
+  id = 1:n,
+  sexe = sample(c("Garçon", "Fille"), n, replace = TRUE, prob = c(0.55, 0.45)),
+  age = sample(14:20, n, replace = TRUE),
+  classe = sample(c("2nde", "1ère", "Terminale"), n, replace = TRUE),
+  note_francais = round(runif(n, 6, 19), 1),
+  note_maths = round(runif(n, 4, 20), 1),
+  heures_etude = sample(1:6, n, replace = TRUE)
+)
+
+# 1. Note moyenne en français des filles
+filles <- enquete_lycee[enquete_lycee$sexe == "Fille", ]
+cat("Moyenne français (Filles)  :", round(mean(filles$note_francais), 2), "\n")
+
+# 2. Note moyenne en maths des garçons
+garcons <- enquete_lycee[enquete_lycee$sexe == "Garçon", ]
+cat("Moyenne maths (Garçons)    :", round(mean(garcons$note_maths), 2), "\n")
+
+# 3. Élèves étudiant plus de 3h par jour
+nb_studieux <- sum(enquete_lycee$heures_etude > 3)
+cat("Élèves étudiant > 3h/jour :", nb_studieux, "\n")
+
+# 4. Pourcentage en Terminale
+pct_terminale <- mean(enquete_lycee$classe == "Terminale") * 100
+cat("% en Terminale            :", round(pct_terminale, 1), "%\n")
+```
+
+## Corrigé — Exercice 14
+
+```{r}
+#| fig-height: 5
+#| fig-width: 7
+# Données des communes par département
+departements <- c("Alibori", "Atacora", "Atlantique", "Borgou", "Collines")
+nb_communes <- c(6, 9, 8, 12, 6)
+couleurs <- c("steelblue", "coral", "forestgreen", "gold", "mediumpurple")
+
+# Diagramme en barres
+barplot(nb_communes,
+        names.arg = departements,
+        main = "Nombre de communes par département (Bénin)",
+        xlab = "Département",
+        ylab = "Nombre de communes",
+        col = couleurs,
+        border = "white",
+        ylim = c(0, 15))
+
+# Ajouter les valeurs sur les barres
+text(x = barplot(nb_communes, plot = FALSE),
+     y = nb_communes + 0.3,
+     labels = nb_communes,
+     cex = 0.9, font = 2)
+```
+
+## Corrigé — Exercice 15
+
+```{r}
+#| fig-height: 5
+#| fig-width: 7
+# 1. Création du data frame
+vaccination <- data.frame(
+  commune = c("A", "B", "C", "D", "E", "F"),
+  cible = c(1200, 850, 2100, 650, 1800, 950),
+  vaccines = c(1056, 740, 1890, 598, 1512, 817)
+)
+
+# 2. Calcul du taux de couverture
+vaccination$taux_couverture <- round((vaccination$vaccines / vaccination$cible) * 100, 1)
+
+# 3. Afficher le data frame avec la nouvelle colonne
+print(vaccination)
+
+# 4. Commune avec le meilleur taux
+meilleure_commune <- vaccination[which.max(vaccination$taux_couverture), ]
+cat("\nMeilleure couverture :", meilleure_commune$commune,
+    "avec", meilleure_commune$taux_couverture, "%\n")
+
+# 5. Histogramme des taux
+hist(vaccination$taux_couverture,
+     main = "Distribution des taux de couverture vaccinale",
+     xlab = "Taux de couverture (%)",
+     ylab = "Nombre de communes",
+     col = "steelblue",
+     border = "white",
+     breaks = 5,
+     xlim = c(80, 100))
+```
+
+------------------------------------------------------------------------
+
+# Conclusion {.unnumbered}
+
+## Résumé des notions apprises
+
+Félicitations ! À l'issue de cette première séance, vous avez acquis les bases essentielles pour travailler avec R.
+
+::: callout-note
+## Ce que vous avez appris aujourd'hui
+
+**Environnement de travail**
+
+- Installer R et RStudio
+- Naviguer dans l'interface à 4 panneaux de RStudio
+- Créer, éditer et sauvegarder un script R
+
+**Programmation de base**
+
+- Écrire des commandes et des commentaires dans R
+- Réaliser des calculs arithmétiques (+, -, \*, /, \^, sqrt)
+- Créer et manipuler des variables avec l'opérateur `<-`
+- Utiliser `ls()` et `rm()` pour gérer l'environnement
+
+**Types de données**
+
+- Distinguer les types : numérique, caractère, logique
+- Utiliser `class()` et `typeof()` pour identifier les types
+- Convertir entre types (`as.numeric()`, `as.character()`, etc.)
+
+**Structures de données**
+
+- Créer et manipuler des vecteurs avec `c()`
+- Créer et explorer des data frames avec `data.frame()`
+- Utiliser `head()`, `tail()`, `str()`, `summary()`
+
+**Analyse de données**
+
+- Importer des données Excel avec `readxl`
+- Calculer des statistiques descriptives (mean, median, sd, table, prop.table)
+- Produire des graphiques de base (hist, barplot)
+:::
+
+------------------------------------------------------------------------
+
+# Travail personnel {.unnumbered}
+
+Avant la prochaine séance, réalisez les exercices suivants à la maison pour consolider vos acquis.
+
+::: callout-caution
+## Devoir à rendre — Exercice A : Script annoté
+
+Créez un script R nommé `devoir_seance1.R` contenant :
+
+1.  Un en-tête complet (nom, date, objectif)
+2.  La création d'un data frame `eleves_ecole` avec au moins 8 élèves et 5 variables de votre choix (nom, classe, sexe, note1, note2)
+3.  Le calcul de la moyenne de chaque note
+4.  L'identification de l'élève avec la meilleure moyenne
+5.  Un tableau de fréquences et de pourcentages par classe
+6.  Un histogramme de la distribution des notes
+7.  Des commentaires expliquant chaque étape
+:::
+
+::: callout-caution
+## Devoir à rendre — Exercice B : Exploration
+
+Collectez (ou inventez) des données sur votre environnement proche (votre classe, votre quartier, votre famille) et créez un mini-jeu de données d'au moins 10 lignes.
+
+Réalisez une analyse descriptive complète et produisez au moins 2 graphiques commentés.
+:::
+
+::: callout-tip
+## Ressources pour aller plus loin
+
+**Documentation officielle**
+
+- Site officiel R : <https://www.r-project.org>
+- Aide intégrée RStudio : tapez `?nom_fonction` dans la console (ex: `?mean`)
+
+**Tutoriels en ligne gratuits**
+
+- [R for Data Science (en français)](https://r4ds.hadley.nz) — Bible de l'analyse de données avec R
+- [Introduction à R et au tidyverse](https://juba.github.io/tidyverse/) — Excellent tutoriel en français
+- Swirl : package interactif d'apprentissage de R (tapez `install.packages("swirl")`)
+
+**Communauté**
+
+- Stack Overflow : [stackoverflow.com/questions/tagged/r](https://stackoverflow.com/questions/tagged/r)
+- R-bloggers : [r-bloggers.com](https://www.r-bloggers.com)
+:::
+
+::: callout-note
+## Aperçu de la Séance 2
+
+La prochaine séance couvrira :
+
+- Le package **tidyverse** : manipulation avancée de données avec `dplyr` et `tidyr`
+- Les graphiques avec **ggplot2** : visualisations professionnelles et personnalisées
+- La gestion des valeurs manquantes (`NA`)
+- La création de fonctions personnalisées
+- Introduction aux boucles et à la programmation itérative
+:::
+
+------------------------------------------------------------------------

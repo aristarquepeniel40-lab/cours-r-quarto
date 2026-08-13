@@ -1,0 +1,13 @@
+project:
+  type: website
+
+website:
+  title: "Cours R en Quarto"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Accueil
+      - href: formation_R.qmd
+        text: Module 1
+      - href: formation_R_seance2.qmd
+        text: Module 2

@@ -1,0 +1,42 @@
+---
+title: "Accueil"
+subtitle: "Cours de Formation R"
+author: "Aristarque"
+date: "13 août 2026"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    toc-title: "Sommaire"
+---
+
+#  Bienvenue
+
+Bienvenue sur le site de formation **R**.  
+Ce site regroupe les différents modules de cours, avec exemples pratiques et ressources complémentaires.
+
+---
+
+## 📚 Objectifs du cours
+- Comprendre les bases de R et du tidyverse  
+- Manipuler et visualiser des données avec `ggplot2`  
+- Explorer des structures de données avancées  
+- Appliquer des méthodes statistiques adaptées  
+
+---
+
+## 🗂️ Plan des séances
+- [Module 1 : Introduction à R et Tidyverse](formation_R.qmd)  
+- [Module 2 : Manipulation et visualisation avancée](formation_R_seance2.qmd)  
+
+---
+
+## 🔗 Ressources utiles
+- Documentation officielle : [https://www.r-project.org](https://www.r-project.org)  
+- Tidyverse : [https://www.tidyverse.org](https://www.tidyverse.org)  
+- ggplot2 : [https://ggplot2.tidyverse.org](https://ggplot2.tidyverse.org)  
+
+---
+
+## 📫 Contact
+Pour toute question ou suggestion : **aristarquepeniel40@gmail.com**

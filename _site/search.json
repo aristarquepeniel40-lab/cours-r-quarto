@@ -1,0 +1,807 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Accueil",
+    "section": "",
+    "text": "Bienvenue sur le site de formation R.\nCe site regroupe les différents modules de cours, avec exemples pratiques et ressources complémentaires.\n\n\n\n\nComprendre les bases de R et du tidyverse\n\nManipuler et visualiser des données avec ggplot2\n\nExplorer des structures de données avancées\n\nAppliquer des méthodes statistiques adaptées\n\n\n\n\n\n\nModule 1 : Introduction à R et Tidyverse\n\nModule 2 : Manipulation et visualisation avancée\n\n\n\n\n\n\nDocumentation officielle : https://www.r-project.org\n\nTidyverse : https://www.tidyverse.org\n\nggplot2 : https://ggplot2.tidyverse.org\n\n\n\n\n\nPour toute question ou suggestion : aristarquepeniel40@gmail.com"
+  },
+  {
+    "objectID": "index.html#objectifs-du-cours",
+    "href": "index.html#objectifs-du-cours",
+    "title": "Accueil",
+    "section": "",
+    "text": "Comprendre les bases de R et du tidyverse\n\nManipuler et visualiser des données avec ggplot2\n\nExplorer des structures de données avancées\n\nAppliquer des méthodes statistiques adaptées"
+  },
+  {
+    "objectID": "index.html#plan-des-séances",
+    "href": "index.html#plan-des-séances",
+    "title": "Accueil",
+    "section": "",
+    "text": "Module 1 : Introduction à R et Tidyverse\n\nModule 2 : Manipulation et visualisation avancée"
+  },
+  {
+    "objectID": "index.html#ressources-utiles",
+    "href": "index.html#ressources-utiles",
+    "title": "Accueil",
+    "section": "",
+    "text": "Documentation officielle : https://www.r-project.org\n\nTidyverse : https://www.tidyverse.org\n\nggplot2 : https://ggplot2.tidyverse.org"
+  },
+  {
+    "objectID": "index.html#contact",
+    "href": "index.html#contact",
+    "title": "Accueil",
+    "section": "",
+    "text": "Pour toute question ou suggestion : aristarquepeniel40@gmail.com"
+  },
+  {
+    "objectID": "formation_R.html#présentation-du-langage-r",
+    "href": "formation_R.html#présentation-du-langage-r",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "0.1 Présentation du langage R",
+    "text": "0.1 Présentation du langage R\nR est un langage de programmation et un environnement logiciel libre, open-source, spécialement conçu pour le calcul statistique, l’analyse de données et la production de graphiques. Il est aujourd’hui l’un des langages les plus utilisés dans le monde par les statisticiens, data scientists, chercheurs et décideurs.\nR se distingue des autres logiciels statistiques par plusieurs caractéristiques fondamentales :\n\nGratuit et open-source : R est disponible librement pour tous les systèmes d’exploitation (Windows, macOS, Linux).\nExtensible : Des milliers de packages (extensions) sont disponibles pour enrichir les fonctionnalités de base.\nCommunautaire : Une immense communauté internationale active contribue au développement de R.\nReproductible : Les analyses réalisées sous R peuvent être documentées et reproduites facilement.\nPolyvalent : R gère à la fois la manipulation de données, les modèles statistiques complexes, la visualisation et le reporting."
+  },
+  {
+    "objectID": "formation_R.html#historique-de-r",
+    "href": "formation_R.html#historique-de-r",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "0.2 Historique de R",
+    "text": "0.2 Historique de R\n\nChronologie du développement de R\n\n\n\n\n\n\nAnnée\nÉvénement\n\n\n\n\n1976\nCréation du langage S par John Chambers aux Bell Laboratories\n\n\n1991\nRoss Ihaka et Robert Gentleman (Université d’Auckland, Nouvelle-Zélande) commencent à développer R comme alternative libre au langage S\n\n\n1993\nPremière annonce publique de R\n\n\n1997\nCréation du R Core Team qui prend en charge le développement officiel\n\n\n2000\nSortie de R version 1.0.0\n\n\n2003\nCréation du CRAN (Comprehensive R Archive Network), dépôt officiel des packages\n\n\n2011\nLancement de RStudio, environnement de développement convivial pour R\n\n\nAujourd’hui\nPlus de 20 000 packages disponibles sur le CRAN"
+  },
+  {
+    "objectID": "formation_R.html#domaines-dapplication-de-r",
+    "href": "formation_R.html#domaines-dapplication-de-r",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "0.3 Domaines d’application de R",
+    "text": "0.3 Domaines d’application de R\nR est utilisé dans de nombreux secteurs d’activité et domaines scientifiques :\nSciences et recherche\n\nBiostatistique et épidémiologie (analyse de données de santé publique)\nStatistiques agricoles et enquêtes ménages\nGénomique et bioinformatique\nSciences sociales et économie\n\nEntreprise et organisations\n\nAnalyse financière et prévision économique\nMarketing et études de marché\nRessources humaines et évaluation des performances\nSuivi-évaluation de projets et programmes\n\nIntelligence artificielle et Data Science\n\nMachine learning et modélisation prédictive\nAnalyse de texte (text mining)\nVisualisation avancée de données\n\nOrganisations internationales\nDes institutions comme l’ONU, la Banque mondiale, l’OMS, le PNUD et de nombreux ministères africains utilisent R pour leurs analyses et publications officielles."
+  },
+  {
+    "objectID": "formation_R.html#pourquoi-apprendre-r-aujourdhui",
+    "href": "formation_R.html#pourquoi-apprendre-r-aujourdhui",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "0.4 Pourquoi apprendre R aujourd’hui ?",
+    "text": "0.4 Pourquoi apprendre R aujourd’hui ?\n\n\n\n\n\n\nAstuceLes 5 bonnes raisons d’apprendre R\n\n\n\n\nGratuit et accessible : Aucune licence coûteuse contrairement à SPSS, SAS ou Stata.\nTrès demandé sur le marché de l’emploi : Les compétences en R sont valorisées dans les organisations nationales et internationales.\nReproductibilité scientifique : Vos analyses sont documentées, partageables et reproductibles.\nVisualisation de haute qualité : R produit des graphiques publiables directement dans des rapports scientifiques.\nCommunauté et ressources : Des milliers de tutoriels, forums, livres et formations gratuits sont disponibles."
+  },
+  {
+    "objectID": "formation_R.html#présentation-de-r",
+    "href": "formation_R.html#présentation-de-r",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "1.1 Présentation de R",
+    "text": "1.1 Présentation de R\nR est le moteur de calcul : c’est lui qui effectue les calculs statistiques, manipule les données et produit les résultats. Il fonctionne en ligne de commande et peut s’utiliser sans interface graphique, bien que cela soit moins confortable pour les débutants."
+  },
+  {
+    "objectID": "formation_R.html#présentation-de-rstudio",
+    "href": "formation_R.html#présentation-de-rstudio",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "1.2 Présentation de RStudio",
+    "text": "1.2 Présentation de RStudio\nRStudio est un environnement de développement intégré (IDE) conçu spécifiquement pour faciliter l’utilisation de R. Il offre une interface graphique conviviale avec des outils pour éditer du code, visualiser les résultats, gérer les fichiers et les données.\n\n\n\n\n\n\nImportantÀ retenir — R et RStudio : deux logiciels distincts\n\n\n\nR et RStudio sont deux logiciels distincts mais complémentaires :\n\nR = le moteur (indispensable, doit être installé en premier)\nRStudio = le tableau de bord (optionnel, mais fortement recommandé)\n\nAnalogie : R est comme le moteur d’une voiture, RStudio est comme le tableau de bord. Vous avez besoin des deux pour conduire confortablement, mais c’est bien le moteur qui fait le travail."
+  },
+  {
+    "objectID": "formation_R.html#différence-entre-r-et-rstudio",
+    "href": "formation_R.html#différence-entre-r-et-rstudio",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "1.3 Différence entre R et RStudio",
+    "text": "1.3 Différence entre R et RStudio\n\nComparaison entre R et RStudio\n\n\nCaractéristique\nR\nRStudio\n\n\n\n\nRôle\nMoteur de calcul\nInterface utilisateur\n\n\nInterface\nLigne de commande\nInterface graphique\n\n\nNécessité\nObligatoire\nRecommandé\n\n\nCoût\nGratuit\nGratuit (version Desktop)\n\n\nSite officiel\ncran.r-project.org\nposit.co/rstudio"
+  },
+  {
+    "objectID": "formation_R.html#installation-de-r",
+    "href": "formation_R.html#installation-de-r",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "1.4 Installation de R",
+    "text": "1.4 Installation de R\nÉtapes d’installation de R :\n\nRendez-vous sur le site officiel : https://cran.r-project.org\nCliquez sur “Download R for Windows” (ou macOS / Linux selon votre système)\nCliquez sur “base” puis sur “Download R x.x.x for Windows”\nExécutez le fichier téléchargé et suivez les instructions d’installation par défaut\nAprès installation, l’icône R apparaît sur votre bureau\n\n\n\n\n\n\n\nAstuceConseil d’installation\n\n\n\nLaissez toutes les options par défaut lors de l’installation. Ne modifiez pas le répertoire d’installation proposé, sauf si vous avez une raison particulière de le faire."
+  },
+  {
+    "objectID": "formation_R.html#installation-de-rstudio",
+    "href": "formation_R.html#installation-de-rstudio",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "1.5 Installation de RStudio",
+    "text": "1.5 Installation de RStudio\nÉtapes d’installation de RStudio :\n\nRendez-vous sur : https://posit.co/download/rstudio-desktop/\nTéléchargez la version RStudio Desktop (Free)\nExécutez le fichier d’installation\nSuivez les instructions par défaut\n\n\n\n\n\n\n\nAvertissementImportant\n\n\n\nInstallez toujours R avant RStudio. Si vous installez RStudio en premier, il ne trouvera pas R et ne fonctionnera pas correctement."
+  },
+  {
+    "objectID": "formation_R.html#présentation-détaillée-de-linterface-rstudio",
+    "href": "formation_R.html#présentation-détaillée-de-linterface-rstudio",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "1.6 Présentation détaillée de l’interface RStudio",
+    "text": "1.6 Présentation détaillée de l’interface RStudio\nL’interface RStudio est divisée en 4 panneaux principaux :\n\n\n\n\n\nÉditeur de scripts(Script Editor)[Panneau Haut-Gauche]Environnement / HistoryVariables, objets[Panneau Haut-Droit]\n\nConsole R(saisie commandes)[Panneau Bas-Gauche]Fichiers / Plots / Packages / Aide[Panneau Bas-Droit]\n\n\n\n\nDescription de chaque panneau :\n1. Éditeur de scripts (haut-gauche)\n\nZone où l’on écrit et sauvegarde le code R\nPermet d’ouvrir plusieurs fichiers simultanément (onglets)\nRaccourci pour exécuter une ligne : Ctrl + Entrée\nRaccourci pour exécuter tout le script : Ctrl + Shift + Entrée\n\n2. Console (bas-gauche)\n\nZone d’exécution interactive de R\nLes commandes s’y tapent directement ou y sont envoyées depuis l’éditeur\nLe symbole &gt; indique que R est prêt à recevoir une commande\nLes résultats s’affichent immédiatement\n\n3. Environnement / Historique (haut-droit)\n\nOnglet Environment : liste tous les objets créés (variables, données…)\nOnglet History : historique des commandes exécutées\n\n4. Fichiers / Graphiques / Packages / Aide (bas-droit)\n\nOnglet Files : navigateur de fichiers\nOnglet Plots : visualisation des graphiques produits\nOnglet Packages : gestion des packages installés\nOnglet Help : documentation et aide sur les fonctions\n\n\n\n\n\n\n\nImportantÀ retenir — Les raccourcis essentiels de RStudio\n\n\n\n\n\n\nAction\nRaccourci\n\n\n\n\nExécuter la ligne courante\nCtrl + Entrée\n\n\nExécuter tout le script\nCtrl + Shift + Entrée\n\n\nNouveau script\nCtrl + Shift + N\n\n\nSauvegarder le script\nCtrl + S\n\n\nCommentaire/Décommenter\nCtrl + Shift + C\n\n\nEffacer la console\nCtrl + L\n\n\nOpérateur d’affectation &lt;-\nAlt + -"
+  },
+  {
+    "objectID": "formation_R.html#utilisation-de-la-console",
+    "href": "formation_R.html#utilisation-de-la-console",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "2.1 Utilisation de la console",
+    "text": "2.1 Utilisation de la console\nLa console R est l’endroit où vous pouvez taper des commandes et obtenir des résultats immédiatement. Lorsque vous voyez le symbole &gt;, cela signifie que R attend votre instruction.\n\n# Exemple simple : afficher un message\nprint(\"Bonjour, je commence à apprendre R !\")\n\n[1] \"Bonjour, je commence à apprendre R !\"\n\n\n\n# R peut aussi être utilisé comme une calculatrice\n2 + 3\n\n[1] 5\n\n\n\n# Afficher le résultat d'une opération\n10 * 5\n\n[1] 50"
+  },
+  {
+    "objectID": "formation_R.html#création-dun-script-r",
+    "href": "formation_R.html#création-dun-script-r",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "2.2 Création d’un script R",
+    "text": "2.2 Création d’un script R\nUn script R est un fichier texte contenant une série de commandes R que l’on peut sauvegarder et réexécuter. L’extension des scripts R est .R.\nPour créer un nouveau script :\n\nMenu : File &gt; New File &gt; R Script\nRaccourci : Ctrl + Shift + N\n\n\n\n\n\n\n\nAstuceBonne pratique — Organisation d’un script R\n\n\n\nUn bon script R commence toujours par un en-tête décrivant son contenu :\n# =============================================================\n# Formation R - Séance 1\n# Auteur : Prénom Nom\n# Date : 2024-01-01\n# Objectif : Premiers pas avec R\n# =============================================================\n\n# Nettoyage de l'environnement\nrm(list = ls())"
+  },
+  {
+    "objectID": "formation_R.html#exécution-de-commandes",
+    "href": "formation_R.html#exécution-de-commandes",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "2.3 Exécution de commandes",
+    "text": "2.3 Exécution de commandes\nIl existe plusieurs façons d’exécuter du code dans RStudio :\nDepuis la console :\n\nTapez directement la commande après le &gt; et appuyez sur Entrée\n\nDepuis l’éditeur de scripts :\n\nPlacez le curseur sur la ligne à exécuter et appuyez sur Ctrl + Entrée\nSélectionnez plusieurs lignes et appuyez sur Ctrl + Entrée\nPour tout exécuter : Ctrl + Shift + Entrée\n\n\n# Ces trois lignes peuvent être exécutées une par une ou toutes ensemble\n1 + 1\n\n[1] 2\n\n5 * 3\n\n[1] 15\n\n100 / 4\n\n[1] 25"
+  },
+  {
+    "objectID": "formation_R.html#commentaires-dans-r",
+    "href": "formation_R.html#commentaires-dans-r",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "2.4 Commentaires dans R",
+    "text": "2.4 Commentaires dans R\nLes commentaires sont des lignes de texte dans un script qui ne sont pas exécutées par R. Ils servent à documenter et expliquer le code.\nUn commentaire commence par le symbole dièse #.\n\n# Ceci est un commentaire : R l'ignore lors de l'exécution\n\n# Calcul de la superficie d'un rectangle\nlongueur &lt;- 12  # longueur en mètres\nlargeur &lt;- 8    # largeur en mètres\nsuperficie &lt;- longueur * largeur  # multiplication\n\n# Affichage du résultat\nprint(superficie)\n\n[1] 96\n\n\n\n\n\n\n\n\nImportantÀ retenir — Les commentaires sont indispensables !\n\n\n\nCommentez généreusement votre code. Dans 6 mois, vous ne vous souviendrez plus forcément de ce que fait chaque ligne. Les commentaires permettent de :\n\nComprendre rapidement l’objectif d’une portion de code\nFaciliter la relecture par d’autres personnes\nDésactiver temporairement une ligne sans la supprimer"
+  },
+  {
+    "objectID": "formation_R.html#les-opérateurs-arithmétiques",
+    "href": "formation_R.html#les-opérateurs-arithmétiques",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "3.1 Les opérateurs arithmétiques",
+    "text": "3.1 Les opérateurs arithmétiques\n\nOpérateurs arithmétiques en R\n\n\nOpération\nOpérateur\nExemple\nRésultat\n\n\n\n\nAddition\n+\n5 + 3\n8\n\n\nSoustraction\n-\n10 - 4\n6\n\n\nMultiplication\n*\n6 * 7\n42\n\n\nDivision\n/\n15 / 4\n3.75\n\n\nPuissance\n^\n2^8\n256\n\n\nRacine carrée\nsqrt()\nsqrt(25)\n5\n\n\nModulo (reste)\n%%\n17 %% 5\n2\n\n\nDivision entière\n%/%\n17 %/% 5\n3"
+  },
+  {
+    "objectID": "formation_R.html#addition",
+    "href": "formation_R.html#addition",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "3.2 Addition",
+    "text": "3.2 Addition\n\n# Addition simple\n5 + 3\n\n[1] 8\n\n# Addition de plusieurs nombres\n10 + 20 + 30 + 40\n\n[1] 100\n\n# Addition avec décimales\n3.14 + 2.86\n\n[1] 6"
+  },
+  {
+    "objectID": "formation_R.html#soustraction",
+    "href": "formation_R.html#soustraction",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "3.3 Soustraction",
+    "text": "3.3 Soustraction\n\n# Soustraction simple\n100 - 37\n\n[1] 63\n\n# Résultat négatif\n5 - 12\n\n[1] -7\n\n# Calcul de différence d'âge\nage_pere &lt;- 45\nage_fils &lt;- 18\ndifference &lt;- age_pere - age_fils\ndifference\n\n[1] 27"
+  },
+  {
+    "objectID": "formation_R.html#multiplication",
+    "href": "formation_R.html#multiplication",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "3.4 Multiplication",
+    "text": "3.4 Multiplication\n\n# Multiplication simple\n6 * 7\n\n[1] 42\n\n# Calcul du prix total\nprix_unitaire &lt;- 2500  # en FCFA\nquantite &lt;- 12\nprix_total &lt;- prix_unitaire * quantite\nprix_total\n\n[1] 30000"
+  },
+  {
+    "objectID": "formation_R.html#division",
+    "href": "formation_R.html#division",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "3.5 Division",
+    "text": "3.5 Division\n\n# Division simple\n100 / 4\n\n[1] 25\n\n# Division avec résultat décimal\n22 / 7  # approximation de Pi\n\n[1] 3.142857\n\n# Calcul de pourcentage\n# Part des filles dans un effectif de 450 élèves dont 198 filles\nfilles &lt;- 198\ntotal &lt;- 450\npourcentage_filles &lt;- (filles / total) * 100\npourcentage_filles\n\n[1] 44"
+  },
+  {
+    "objectID": "formation_R.html#puissance",
+    "href": "formation_R.html#puissance",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "3.6 Puissance",
+    "text": "3.6 Puissance\n\n# Carré d'un nombre\n4^2\n\n[1] 16\n\n# Cube d'un nombre\n3^3\n\n[1] 27\n\n# Puissance quelconque\n2^10\n\n[1] 1024\n\n# Calcul de l'intérêt composé\n# Capital initial = 100 000 FCFA, taux = 5%, durée = 3 ans\ncapital &lt;- 100000\ntaux &lt;- 0.05\nannees &lt;- 3\ncapital_final &lt;- capital * (1 + taux)^annees\ncapital_final\n\n[1] 115762.5"
+  },
+  {
+    "objectID": "formation_R.html#racine-carrée",
+    "href": "formation_R.html#racine-carrée",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "3.7 Racine carrée",
+    "text": "3.7 Racine carrée\n\n# Racine carrée de 144\nsqrt(144)\n\n[1] 12\n\n# Racine carrée de 2 (nombre irrationnel)\nsqrt(2)\n\n[1] 1.414214\n\n# Application : hypoténuse d'un triangle rectangle\n# Triangle avec côtés a = 3 cm et b = 4 cm\na &lt;- 3\nb &lt;- 4\nhypotenuse &lt;- sqrt(a^2 + b^2)\nhypotenuse\n\n[1] 5\n\n\n\n\n\n\n\n\nNoteRemarque sur les priorités des opérations\n\n\n\nR respecte les priorités mathématiques classiques : parenthèses d’abord, puis puissances, puis multiplications/divisions, puis additions/soustractions.\n2 + 3 * 4      # = 14 (et non 20)\n(2 + 3) * 4    # = 20"
+  },
+  {
+    "objectID": "formation_R.html#exercices-corrigés",
+    "href": "formation_R.html#exercices-corrigés",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "3.8 Exercices corrigés",
+    "text": "3.8 Exercices corrigés\n\n\n\n\n\n\nMise en gardeExercice 1 — Calculs de base\n\n\n\nCalculez les expressions suivantes dans R :\n\n\\(125 + 347 - 89\\)\n\\(12 \\times 15 \\div 4\\)\n\\(\\sqrt{169}\\)\n\\(2^{12}\\)\nLa superficie d’un cercle de rayon 7 cm (rappel : \\(S = \\pi r^2\\))\n\n\n\nCorrection :\n\n# 1. Addition et soustraction\n125 + 347 - 89\n\n[1] 383\n\n# 2. Multiplication et division (respecte la priorité)\n12 * 15 / 4\n\n[1] 45\n\n# 3. Racine carrée de 169\nsqrt(169)\n\n[1] 13\n\n# 4. 2 puissance 12\n2^12\n\n[1] 4096\n\n# 5. Superficie d'un cercle de rayon 7\n# pi est une constante pré-définie dans R\nrayon &lt;- 7\nsuperficie_cercle &lt;- pi * rayon^2\nsuperficie_cercle\n\n[1] 153.938\n\n\n\n\n\n\n\n\nMise en gardeExercice 2 — Application pratique\n\n\n\nUn agent de santé collecte les données suivantes dans un centre de santé :\n\nNombre total de consultations ce mois : 342\nNombre de consultations féminines : 198\nNombre de cas de paludisme : 87\n\nCalculez dans R :\n\nLe nombre de consultations masculines\nLe pourcentage de consultations féminines\nLe taux de prévalence du paludisme (en %)\n\n\n\nCorrection :\n\n# Données\ntotal_consultations &lt;- 342\nconsultations_feminines &lt;- 198\ncas_paludisme &lt;- 87\n\n# 1. Consultations masculines\nconsultations_masculines &lt;- total_consultations - consultations_feminines\nconsultations_masculines\n\n[1] 144\n\n# 2. Pourcentage de consultations féminines\npct_feminines &lt;- (consultations_feminines / total_consultations) * 100\nround(pct_feminines, 1)  # arrondi à 1 décimale\n\n[1] 57.9\n\n# 3. Taux de prévalence du paludisme\ntaux_paludisme &lt;- (cas_paludisme / total_consultations) * 100\nround(taux_paludisme, 1)\n\n[1] 25.4"
+  },
+  {
+    "objectID": "formation_R.html#affectation-avec--",
+    "href": "formation_R.html#affectation-avec--",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "4.1 Affectation avec <-",
+    "text": "4.1 Affectation avec &lt;-\nL’opérateur d’affectation en R est &lt;- (flèche vers la gauche). Il permet de stocker une valeur dans une variable.\n\n# Affecter la valeur 42 à la variable \"age\"\nage &lt;- 42\n\n# Affecter un texte à la variable \"prenom\"\nprenom &lt;- \"Kofi\"\n\n# Affecter le résultat d'un calcul\nsalaire_mensuel &lt;- 250000  # en FCFA\nsalaire_annuel &lt;- salaire_mensuel * 12\n\n\n\n\n\n\n\nAstuceRègles de nommage des variables\n\n\n\n\nLes noms peuvent contenir des lettres, des chiffres, le point . et le tiret bas _\nIls doivent commencer par une lettre (pas un chiffre)\nR est sensible à la casse : Age et age sont deux variables différentes !\nÉvitez les noms avec des accents ou des espaces\n\n✅ Valides : age, nom_etudiant, score2024, taux.chomage\n❌ Invalides : 2age, nom etudiant, @score\n\n\n\n\n\n\n\n\nNoteNote sur = vs &lt;-\n\n\n\nBien que = puisse aussi servir d’opérateur d’affectation en R, la convention dans la communauté R est d’utiliser &lt;-. Utilisez toujours &lt;- pour les affectations dans vos scripts.\nLe raccourci clavier Alt + - insère automatiquement &lt;- dans RStudio."
+  },
+  {
+    "objectID": "formation_R.html#affichage-dobjets",
+    "href": "formation_R.html#affichage-dobjets",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "4.2 Affichage d’objets",
+    "text": "4.2 Affichage d’objets\nPour afficher la valeur d’un objet, il suffit de taper son nom ou d’utiliser la fonction print().\n\n# Créons quelques variables\nnom_pays &lt;- \"Bénin\"\npopulation &lt;- 13000000  # population approximative\nsuperficie_km2 &lt;- 114763\n\n# Affichage en tapant le nom\nnom_pays\n\n[1] \"Bénin\"\n\n# Affichage avec print()\nprint(population)\n\n[1] 13000000\n\n# Calcul et affichage direct\ndensite &lt;- population / superficie_km2\ncat(\"Densité de population :\", round(densite, 1), \"habitants/km²\\n\")\n\nDensité de population : 113.3 habitants/km²"
+  },
+  {
+    "objectID": "formation_R.html#suppression-dobjets",
+    "href": "formation_R.html#suppression-dobjets",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "4.3 Suppression d’objets",
+    "text": "4.3 Suppression d’objets\nLa fonction rm() (remove) permet de supprimer un ou plusieurs objets de l’environnement.\n\n# Créer des variables temporaires\nx &lt;- 10\ny &lt;- 20\nz &lt;- 30\ntemp1 &lt;- \"variable temporaire\"\n\n# Supprimer une seule variable\nrm(temp1)\n\n# Supprimer plusieurs variables à la fois\nrm(x, y)\n\n# Vérifier que z est toujours là\nz\n\n[1] 30"
+  },
+  {
+    "objectID": "formation_R.html#la-fonction-ls",
+    "href": "formation_R.html#la-fonction-ls",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "4.4 La fonction ls()",
+    "text": "4.4 La fonction ls()\nls() liste tous les objets présents dans l’environnement de travail actuel.\n\n# Créons plusieurs objets\nville &lt;- \"Parakou\"\ndepartement &lt;- \"Borgou\"\nnb_habitants &lt;- 255478\nest_chef_lieu &lt;- TRUE\n\n# Lister tous les objets\nls()\n\n [1] \"a\"                        \"age\"                     \n [3] \"age_fils\"                 \"age_pere\"                \n [5] \"annees\"                   \"b\"                       \n [7] \"capital\"                  \"capital_final\"           \n [9] \"cas_paludisme\"            \"consultations_feminines\" \n[11] \"consultations_masculines\" \"densite\"                 \n[13] \"departement\"              \"difference\"              \n[15] \"est_chef_lieu\"            \"filles\"                  \n[17] \"hypotenuse\"               \"largeur\"                 \n[19] \"longueur\"                 \"nb_habitants\"            \n[21] \"nom_pays\"                 \"pct_feminines\"           \n[23] \"population\"               \"pourcentage_filles\"      \n[25] \"prenom\"                   \"prix_total\"              \n[27] \"prix_unitaire\"            \"quantite\"                \n[29] \"rayon\"                    \"salaire_annuel\"          \n[31] \"salaire_mensuel\"          \"superficie\"              \n[33] \"superficie_cercle\"        \"superficie_km2\"          \n[35] \"taux\"                     \"taux_paludisme\"          \n[37] \"total\"                    \"total_consultations\"     \n[39] \"ville\"                    \"z\""
+  },
+  {
+    "objectID": "formation_R.html#la-fonction-rm-nettoyage-complet",
+    "href": "formation_R.html#la-fonction-rm-nettoyage-complet",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "4.5 La fonction rm() — Nettoyage complet",
+    "text": "4.5 La fonction rm() — Nettoyage complet\n\n# Pour supprimer TOUS les objets de l'environnement (nettoyage complet)\n# rm(list = ls())  \n# ⚠️ Décommentez cette ligne uniquement si vous voulez tout effacer\n\n# Suppression ciblée\nrm(est_chef_lieu)\nls()  # Vérifier que est_chef_lieu a été supprimé\n\n [1] \"a\"                        \"age\"                     \n [3] \"age_fils\"                 \"age_pere\"                \n [5] \"annees\"                   \"b\"                       \n [7] \"capital\"                  \"capital_final\"           \n [9] \"cas_paludisme\"            \"consultations_feminines\" \n[11] \"consultations_masculines\" \"densite\"                 \n[13] \"departement\"              \"difference\"              \n[15] \"filles\"                   \"hypotenuse\"              \n[17] \"largeur\"                  \"longueur\"                \n[19] \"nb_habitants\"             \"nom_pays\"                \n[21] \"pct_feminines\"            \"population\"              \n[23] \"pourcentage_filles\"       \"prenom\"                  \n[25] \"prix_total\"               \"prix_unitaire\"           \n[27] \"quantite\"                 \"rayon\"                   \n[29] \"salaire_annuel\"           \"salaire_mensuel\"         \n[31] \"superficie\"               \"superficie_cercle\"       \n[33] \"superficie_km2\"           \"taux\"                    \n[35] \"taux_paludisme\"           \"total\"                   \n[37] \"total_consultations\"      \"ville\"                   \n[39] \"z\"                       \n\n\n\n\n\n\n\n\nAstuceBonne pratique — Début de script\n\n\n\nIl est recommandé de commencer chaque script par rm(list = ls()) pour partir d’un environnement propre et éviter les conflits avec des objets d’une session précédente."
+  },
+  {
+    "objectID": "formation_R.html#exemples-détaillés",
+    "href": "formation_R.html#exemples-détaillés",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "4.6 Exemples détaillés",
+    "text": "4.6 Exemples détaillés\n\n# --- Exemple complet : gestion de variables ---\n\n# Données d'un étudiant\nnom_etudiant &lt;- \"Adjovi Marie\"\nage_etudiant &lt;- 22\nfiliere &lt;- \"Statistique Appliquée\"\nannee_etude &lt;- 3\nnote_stats &lt;- 14.5\nnote_info &lt;- 16.0\nnote_demo &lt;- 13.0\n\n# Calcul de la moyenne\nnb_matieres &lt;- 3\nmoyenne_generale &lt;- (note_stats + note_info + note_demo) / nb_matieres\n\n# Affichage formaté\ncat(\"=== Relevé de notes ===\\n\")\n\n=== Relevé de notes ===\n\ncat(\"Étudiant :\", nom_etudiant, \"\\n\")\n\nÉtudiant : Adjovi Marie \n\ncat(\"Âge :\", age_etudiant, \"ans\\n\")\n\nÂge : 22 ans\n\ncat(\"Filière :\", filiere, \"— Année\", annee_etude, \"\\n\")\n\nFilière : Statistique Appliquée — Année 3 \n\ncat(\"Moyenne générale :\", round(moyenne_generale, 2), \"/20\\n\")\n\nMoyenne générale : 14.5 /20\n\n# Lister tous les objets créés\nls()\n\n [1] \"a\"                        \"age\"                     \n [3] \"age_etudiant\"             \"age_fils\"                \n [5] \"age_pere\"                 \"annee_etude\"             \n [7] \"annees\"                   \"b\"                       \n [9] \"capital\"                  \"capital_final\"           \n[11] \"cas_paludisme\"            \"consultations_feminines\" \n[13] \"consultations_masculines\" \"densite\"                 \n[15] \"departement\"              \"difference\"              \n[17] \"filiere\"                  \"filles\"                  \n[19] \"hypotenuse\"               \"largeur\"                 \n[21] \"longueur\"                 \"moyenne_generale\"        \n[23] \"nb_habitants\"             \"nb_matieres\"             \n[25] \"nom_etudiant\"             \"nom_pays\"                \n[27] \"note_demo\"                \"note_info\"               \n[29] \"note_stats\"               \"pct_feminines\"           \n[31] \"population\"               \"pourcentage_filles\"      \n[33] \"prenom\"                   \"prix_total\"              \n[35] \"prix_unitaire\"            \"quantite\"                \n[37] \"rayon\"                    \"salaire_annuel\"          \n[39] \"salaire_mensuel\"          \"superficie\"              \n[41] \"superficie_cercle\"        \"superficie_km2\"          \n[43] \"taux\"                     \"taux_paludisme\"          \n[45] \"total\"                    \"total_consultations\"     \n[47] \"ville\"                    \"z\""
+  },
+  {
+    "objectID": "formation_R.html#les-types-principaux",
+    "href": "formation_R.html#les-types-principaux",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "5.1 Les types principaux",
+    "text": "5.1 Les types principaux\n\n5.1.1 Le type Numérique (numeric)\nLe type numérique représente les nombres réels (avec ou sans décimales).\n\n# Entiers et décimaux\npopulation &lt;- 15000000\ntaux_croissance &lt;- 2.8\ntemperature &lt;- -5.3\n\n# Vérification du type\nclass(population)\n\n[1] \"numeric\"\n\nclass(taux_croissance)\n\n[1] \"numeric\"\n\n\n\n# Les entiers stricts (integer) se notent avec un L\nnb_enfants &lt;- 3L\nclass(nb_enfants)\n\n[1] \"integer\"\n\ntypeof(nb_enfants)  # type interne plus précis\n\n[1] \"integer\"\n\n\n\n\n5.1.2 Le type Caractère (character)\nLe type caractère (ou chaîne de caractères) représente du texte. Les valeurs sont toujours entourées de guillemets simples '...' ou doubles \"...\".\n\n# Exemples de chaînes de caractères\nprenom &lt;- \"Adjoa\"\npays &lt;- 'Bénin'\nphrase &lt;- \"L'analyse de données est fascinante !\"\n\n# Vérification\nclass(prenom)\n\n[1] \"character\"\n\n# Opérations sur les caractères\n# Concaténation avec paste()\nnom_complet &lt;- paste(\"Adjoa\", \"Mensah\")\nnom_complet\n\n[1] \"Adjoa Mensah\"\n\n# Concaténation sans espace\ncode &lt;- paste0(\"ENSPD\", \"2024\")\ncode\n\n[1] \"ENSPD2024\"\n\n# Longueur d'une chaîne\nnchar(prenom)\n\n[1] 5\n\nnchar(\"Bonjour, monde !\")\n\n[1] 16\n\n\n\n\n5.1.3 Le type Logique (logical)\nLe type logique (booléen) ne peut prendre que deux valeurs : TRUE (vrai) ou FALSE (faux). Ces valeurs sont souvent le résultat de comparaisons.\n\n# Valeurs logiques directes\nest_etudiant &lt;- TRUE\nest_marie &lt;- FALSE\n\nclass(est_etudiant)\n\n[1] \"logical\"\n\n# Résultats de comparaisons\n10 &gt; 5      # Dix est-il supérieur à cinq ?\n\n[1] TRUE\n\n3 == 3      # Trois est-il égal à trois ?\n\n[1] TRUE\n\n7 != 4      # Sept est-il différent de quatre ?\n\n[1] TRUE\n\n15 &gt;= 20    # Quinze est-il supérieur ou égal à vingt ?\n\n[1] FALSE\n\n\n\n# Opérateurs logiques\n# ET logique : &\nTRUE & FALSE    # Les deux doivent être vrais\n\n[1] FALSE\n\nTRUE & TRUE\n\n[1] TRUE\n\n# OU logique : |\nTRUE | FALSE    # Au moins un doit être vrai\n\n[1] TRUE\n\nFALSE | FALSE\n\n[1] FALSE\n\n# NON logique : !\n!TRUE\n\n[1] FALSE\n\n!FALSE\n\n[1] TRUE"
+  },
+  {
+    "objectID": "formation_R.html#les-fonctions-class-et-typeof",
+    "href": "formation_R.html#les-fonctions-class-et-typeof",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "5.2 Les fonctions class() et typeof()",
+    "text": "5.2 Les fonctions class() et typeof()\n\n# class() donne la classe de l'objet (niveau utilisateur)\n# typeof() donne le type interne (niveau machine)\n\nx &lt;- 42.5\ncat(\"class() :\", class(x), \"\\n\")\n\nclass() : numeric \n\ncat(\"typeof() :\", typeof(x), \"\\n\")\n\ntypeof() : double \n\ny &lt;- \"Bonjour\"\ncat(\"class() :\", class(y), \"\\n\")\n\nclass() : character \n\ncat(\"typeof() :\", typeof(y), \"\\n\")\n\ntypeof() : character \n\nz &lt;- TRUE\ncat(\"class() :\", class(z), \"\\n\")\n\nclass() : logical \n\ncat(\"typeof() :\", typeof(z), \"\\n\")\n\ntypeof() : logical \n\nn &lt;- 10L\ncat(\"class() :\", class(n), \"\\n\")\n\nclass() : integer \n\ncat(\"typeof() :\", typeof(n), \"\\n\")\n\ntypeof() : integer \n\n\n\n\n\n\n\n\nImportantÀ retenir — Résumé des types de données\n\n\n\n\n\n\nType\nExemple\nclass()\nUsage\n\n\n\n\nNumérique\n3.14, 42\n\"numeric\"\nMesures, calculs\n\n\nEntier\n5L, 100L\n\"integer\"\nComptages\n\n\nCaractère\n\"Bonjour\"\n\"character\"\nTextes, noms\n\n\nLogique\nTRUE, FALSE\n\"logical\"\nConditions, filtres"
+  },
+  {
+    "objectID": "formation_R.html#conversion-entre-types",
+    "href": "formation_R.html#conversion-entre-types",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "5.3 Conversion entre types",
+    "text": "5.3 Conversion entre types\n\n# Convertir un numérique en caractère\nx &lt;- 42\nx_texte &lt;- as.character(x)\nclass(x_texte)\n\n[1] \"character\"\n\n# Convertir un caractère en numérique (si possible)\ny &lt;- \"3.14\"\ny_num &lt;- as.numeric(y)\nclass(y_num)\n\n[1] \"numeric\"\n\n# Convertir en logique\nas.logical(0)   # 0 → FALSE\n\n[1] FALSE\n\nas.logical(1)   # 1 → TRUE\n\n[1] TRUE\n\nas.logical(5)   # tout non-zéro → TRUE\n\n[1] TRUE"
+  },
+  {
+    "objectID": "formation_R.html#exercices",
+    "href": "formation_R.html#exercices",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "5.4 Exercices",
+    "text": "5.4 Exercices\n\n\n\n\n\n\nMise en gardeExercice 3 — Types de données\n\n\n\n\nCréez les objets suivants et vérifiez leur type avec class() :\n\nLe nombre de communes au Bénin : 77\nLe taux de mortalité infantile : 57.2 (pour mille)\nLe nom de la capitale du Bénin : “Porto-Novo”\nUn indicateur “pays enclavé” : FALSE\n\nQue retourne class(TRUE + TRUE) ? Expliquez.\nQue se passe-t-il si vous essayez as.numeric(\"ENSPD\") ?\n\n\n\nCorrection :\n\n# 1. Création et vérification des types\nnb_communes &lt;- 77\ncat(\"Nombre de communes — class():\", class(nb_communes), \"\\n\")\n\nNombre de communes — class(): numeric \n\ntaux_mortalite &lt;- 57.2\ncat(\"Taux de mortalité — class():\", class(taux_mortalite), \"\\n\")\n\nTaux de mortalité — class(): numeric \n\ncapitale &lt;- \"Porto-Novo\"\ncat(\"Capitale — class():\", class(capitale), \"\\n\")\n\nCapitale — class(): character \n\nenclave &lt;- FALSE\ncat(\"Pays enclavé — class():\", class(enclave), \"\\n\")\n\nPays enclavé — class(): logical \n\n\n\n# 2. TRUE + TRUE\nresultat &lt;- TRUE + TRUE\ncat(\"TRUE + TRUE =\", resultat, \"\\n\")\n\nTRUE + TRUE = 2 \n\ncat(\"class(TRUE + TRUE) =\", class(TRUE + TRUE), \"\\n\")\n\nclass(TRUE + TRUE) = integer \n\n# Explication : R convertit automatiquement TRUE en 1 et FALSE en 0\n# lors des opérations arithmétiques. TRUE + TRUE = 1 + 1 = 2 (numeric)\n\n\n# 3. Conversion impossible\nas.numeric(\"ENSPD\")\n\n[1] NA\n\n# R retourne NA (valeur manquante) avec un avertissement\n# car \"ENSPD\" ne peut pas être converti en nombre"
+  },
+  {
+    "objectID": "formation_R.html#création-de-vecteurs-avec-c",
+    "href": "formation_R.html#création-de-vecteurs-avec-c",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "6.1 Création de vecteurs avec c()",
+    "text": "6.1 Création de vecteurs avec c()\nLa fonction c() (combine ou concatenate) permet de créer des vecteurs.\n\n# Vecteur numérique : notes de 6 étudiants\nnotes &lt;- c(12.5, 14.0, 11.5, 16.0, 9.5, 13.0)\nnotes\n\n[1] 12.5 14.0 11.5 16.0  9.5 13.0\n\n# Vecteur de caractères : prénoms\nprenoms &lt;- c(\"Adjoa\", \"Kofi\", \"Aminata\", \"Brice\", \"Fatoumata\", \"Yao\")\nprenoms\n\n[1] \"Adjoa\"     \"Kofi\"      \"Aminata\"   \"Brice\"     \"Fatoumata\" \"Yao\"      \n\n# Vecteur logique\nont_valide &lt;- c(TRUE, TRUE, FALSE, TRUE, FALSE, TRUE)\nont_valide\n\n[1]  TRUE  TRUE FALSE  TRUE FALSE  TRUE\n\n# Séquences numériques\nseq1 &lt;- 1:10           # Entiers de 1 à 10\nseq2 &lt;- seq(0, 1, by = 0.1)   # De 0 à 1 par pas de 0.1\nseq3 &lt;- seq(2020, 2030, by = 2)  # Années paires\nseq1\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\nseq2\n\n [1] 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0\n\nseq3\n\n[1] 2020 2022 2024 2026 2028 2030"
+  },
+  {
+    "objectID": "formation_R.html#longueur-dun-vecteur-length",
+    "href": "formation_R.html#longueur-dun-vecteur-length",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "6.2 Longueur d’un vecteur — length()",
+    "text": "6.2 Longueur d’un vecteur — length()\n\nnotes &lt;- c(12.5, 14.0, 11.5, 16.0, 9.5, 13.0)\n\n# Nombre d'éléments dans le vecteur\nlength(notes)\n\n[1] 6\n\nprenoms &lt;- c(\"Adjoa\", \"Kofi\", \"Aminata\", \"Brice\", \"Fatoumata\", \"Yao\")\nlength(prenoms)\n\n[1] 6"
+  },
+  {
+    "objectID": "formation_R.html#somme-sum",
+    "href": "formation_R.html#somme-sum",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "6.3 Somme — sum()",
+    "text": "6.3 Somme — sum()\n\n# Somme de toutes les valeurs\ndepenses &lt;- c(15000, 8500, 22000, 6000, 17500)\nsum(depenses)  # Total des dépenses\n\n[1] 69000\n\n# Somme logique : compter les vrais\nont_valide &lt;- c(TRUE, TRUE, FALSE, TRUE, FALSE, TRUE)\nsum(ont_valide)  # Nombre d'étudiants ayant validé\n\n[1] 4"
+  },
+  {
+    "objectID": "formation_R.html#moyenne-mean",
+    "href": "formation_R.html#moyenne-mean",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "6.4 Moyenne — mean()",
+    "text": "6.4 Moyenne — mean()\n\nnotes &lt;- c(12.5, 14.0, 11.5, 16.0, 9.5, 13.0)\nmean(notes)  # Moyenne des notes\n\n[1] 12.75\n\n# Moyenne des températures journalières (°C)\ntemperatures &lt;- c(32.1, 34.5, 31.8, 33.2, 35.0, 30.9, 32.7)\nmean(temperatures)\n\n[1] 32.88571"
+  },
+  {
+    "objectID": "formation_R.html#minimum-et-maximum-min-max",
+    "href": "formation_R.html#minimum-et-maximum-min-max",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "6.5 Minimum et Maximum — min(), max()",
+    "text": "6.5 Minimum et Maximum — min(), max()\n\nnotes &lt;- c(12.5, 14.0, 11.5, 16.0, 9.5, 13.0)\n\n# Note minimale\nmin(notes)\n\n[1] 9.5\n\n# Note maximale\nmax(notes)\n\n[1] 16\n\n# Les deux en même temps avec range()\nrange(notes)\n\n[1]  9.5 16.0"
+  },
+  {
+    "objectID": "formation_R.html#médiane-median",
+    "href": "formation_R.html#médiane-median",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "6.6 Médiane — median()",
+    "text": "6.6 Médiane — median()\n\nnotes &lt;- c(12.5, 14.0, 11.5, 16.0, 9.5, 13.0)\n\n# Médiane des notes\nmedian(notes)\n\n[1] 12.75\n\n# Comparaison moyenne vs médiane\n# Avec une valeur extrême (outlier)\nrevenus &lt;- c(150000, 200000, 180000, 160000, 2500000)  # dernier = millionnaire\ncat(\"Moyenne des revenus :\", mean(revenus), \"\\n\")\n\nMoyenne des revenus : 638000 \n\ncat(\"Médiane des revenus :\", median(revenus), \"\\n\")\n\nMédiane des revenus : 180000 \n\n# La médiane est plus robuste aux valeurs extrêmes"
+  },
+  {
+    "objectID": "formation_R.html#accéder-aux-éléments-dun-vecteur",
+    "href": "formation_R.html#accéder-aux-éléments-dun-vecteur",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "6.7 Accéder aux éléments d’un vecteur",
+    "text": "6.7 Accéder aux éléments d’un vecteur\n\nnotes &lt;- c(12.5, 14.0, 11.5, 16.0, 9.5, 13.0)\n\n# Accéder au premier élément (indices commencent à 1 en R !)\nnotes[1]\n\n[1] 12.5\n\n# Accéder au 4ème élément\nnotes[4]\n\n[1] 16\n\n# Accéder à plusieurs éléments\nnotes[c(1, 3, 5)]\n\n[1] 12.5 11.5  9.5\n\n# Accéder à une plage\nnotes[2:4]\n\n[1] 14.0 11.5 16.0\n\n# Exclure un élément (indice négatif)\nnotes[-1]   # Tout sauf le premier\n\n[1] 14.0 11.5 16.0  9.5 13.0"
+  },
+  {
+    "objectID": "formation_R.html#exercices-corrigés-1",
+    "href": "formation_R.html#exercices-corrigés-1",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "6.8 Exercices corrigés",
+    "text": "6.8 Exercices corrigés\n\n\n\n\n\n\nMise en gardeExercice 4 — Manipulation de vecteurs\n\n\n\nOn dispose des données suivantes sur 8 ménages d’un village :\n\nNombre d’enfants : 3, 1, 5, 2, 4, 0, 3, 6\nRevenus mensuels (FCFA) : 85000, 120000, 65000, 200000, 95000, 180000, 75000, 110000\n\n\nCréez un vecteur nb_enfants et un vecteur revenus\nCombien y a-t-il de ménages ?\nQuel est le nombre moyen d’enfants par ménage ?\nQuel est le revenu total de l’ensemble des ménages ?\nQuels sont les revenus minimum et maximum ?\nQuelle est la médiane des revenus ?\n\n\n\nCorrection :\n\n# 1. Création des vecteurs\nnb_enfants &lt;- c(3, 1, 5, 2, 4, 0, 3, 6)\nrevenus &lt;- c(85000, 120000, 65000, 200000, 95000, 180000, 75000, 110000)\n\n# 2. Nombre de ménages\nnb_menages &lt;- length(nb_enfants)\ncat(\"Nombre de ménages :\", nb_menages, \"\\n\")\n\nNombre de ménages : 8 \n\n# 3. Nombre moyen d'enfants\nmoy_enfants &lt;- mean(nb_enfants)\ncat(\"Nombre moyen d'enfants :\", moy_enfants, \"\\n\")\n\nNombre moyen d'enfants : 3 \n\n# 4. Revenu total\nrevenu_total &lt;- sum(revenus)\ncat(\"Revenu total :\", format(revenu_total, big.mark = \" \"), \"FCFA\\n\")\n\nRevenu total : 930 000 FCFA\n\n# 5. Revenus min et max\ncat(\"Revenu minimum :\", format(min(revenus), big.mark = \" \"), \"FCFA\\n\")\n\nRevenu minimum : 65 000 FCFA\n\ncat(\"Revenu maximum :\", format(max(revenus), big.mark = \" \"), \"FCFA\\n\")\n\nRevenu maximum : 200 000 FCFA\n\n# 6. Médiane des revenus\nmediane_revenus &lt;- median(revenus)\ncat(\"Médiane des revenus :\", format(mediane_revenus, big.mark = \" \"), \"FCFA\\n\")\n\nMédiane des revenus : 102 500 FCFA"
+  },
+  {
+    "objectID": "formation_R.html#création-dun-data-frame-data.frame",
+    "href": "formation_R.html#création-dun-data-frame-data.frame",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "7.1 Création d’un data frame — data.frame()",
+    "text": "7.1 Création d’un data frame — data.frame()\n\n# Création d'un data frame simple\n# Données sur des étudiants\netudiants &lt;- data.frame(\n  nom = c(\"Adjoa Mensah\", \"Kofi Atsu\", \"Aminata Diallo\", \"Brice Hounsa\", \"Fatoumata Traoré\"),\n  age = c(22, 24, 21, 23, 20),\n  filiere = c(\"Statistique\", \"Démographie\", \"Statistique\", \"Informatique\", \"Économie\"),\n  note_maths = c(14.5, 11.0, 16.5, 13.0, 12.5),\n  a_valide = c(TRUE, FALSE, TRUE, TRUE, TRUE)\n)\n\n# Afficher le data frame\netudiants\n\n\n\n\nnomagefilierenote_mathsa_valide\n\n\n\nAdjoa Mensah22Statistique14.5TRUE\n\nKofi Atsu24Démographie11  FALSE\n\nAminata Diallo21Statistique16.5TRUE\n\nBrice Hounsa23Informatique13  TRUE\n\nFatoumata Traoré20Économie12.5TRUE"
+  },
+  {
+    "objectID": "formation_R.html#explorer-un-data-frame",
+    "href": "formation_R.html#explorer-un-data-frame",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "7.2 Explorer un data frame",
+    "text": "7.2 Explorer un data frame\n\n7.2.1 View() — Affichage tabulaire complet\n\n# Ouvre un onglet avec une vue tableur (uniquement dans RStudio)\nView(etudiants)\n\n\n\n7.2.2 head() et tail() — Premières et dernières lignes\n\n# Créons un data frame plus grand pour l'exemple\nset.seed(42)\ndonnees_sante &lt;- data.frame(\n  id = 1:20,\n  age = sample(18:65, 20, replace = TRUE),\n  sexe = sample(c(\"Masculin\", \"Féminin\"), 20, replace = TRUE),\n  poids_kg = round(runif(20, 45, 95), 1),\n  taille_cm = sample(155:190, 20, replace = TRUE),\n  tension_sys = sample(100:160, 20, replace = TRUE)\n)\n\n# Afficher les 6 premières lignes (par défaut)\nhead(donnees_sante)\n\n\n\n\nidagesexepoids_kgtaille_cmtension_sys\n\n\n\n154Féminin92.9156117\n\n218Masculin89.4157123\n\n342Masculin77  175148\n\n427Masculin93.5156117\n\n553Masculin75.9164104\n\n635Féminin61.7159145\n\n\n\n\n\n# Afficher les 3 premières lignes\nhead(donnees_sante, 3)\n\n\n\n\nidagesexepoids_kgtaille_cmtension_sys\n\n\n\n154Féminin92.9156117\n\n218Masculin89.4157123\n\n342Masculin77  175148\n\n\n\n# Afficher les 4 dernières lignes\ntail(donnees_sante, 4)\n\n\n\n\nidagesexepoids_kgtaille_cmtension_sys\n\n\n\n1720Masculin94.1182126\n\n1858Féminin83  159112\n\n1942Féminin73.3182152\n\n2044Féminin87.5156153\n\n\n\n\n\n\n7.2.3 str() — Structure du data frame\n\n# Structure détaillée : types, dimensions, premiers éléments\nstr(etudiants)\n\n'data.frame':   5 obs. of  5 variables:\n $ nom       : chr  \"Adjoa Mensah\" \"Kofi Atsu\" \"Aminata Diallo\" \"Brice Hounsa\" ...\n $ age       : num  22 24 21 23 20\n $ filiere   : chr  \"Statistique\" \"Démographie\" \"Statistique\" \"Informatique\" ...\n $ note_maths: num  14.5 11 16.5 13 12.5\n $ a_valide  : logi  TRUE FALSE TRUE TRUE TRUE\n\n\n\n\n7.2.4 summary() — Résumé statistique\n\n# Résumé statistique de chaque variable\nsummary(etudiants)\n\n        nom          age          filiere     note_maths    a_valide      \n Length   : 5   Min.   :20   Length   : 5   Min.   :11.0   Mode :logical  \n N.unique : 5   1st Qu.:21   N.unique : 4   1st Qu.:12.5   FALSE:1        \n N.blank  : 0   Median :22   N.blank  : 0   Median :13.0   TRUE :4        \n Min.nchar: 9   Mean   :22   Min.nchar: 8   Mean   :13.5                  \n Max.nchar:16   3rd Qu.:23   Max.nchar:12   3rd Qu.:14.5                  \n                Max.   :24                  Max.   :16.5"
+  },
+  {
+    "objectID": "formation_R.html#accéder-aux-colonnes-dun-data-frame",
+    "href": "formation_R.html#accéder-aux-colonnes-dun-data-frame",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "7.3 Accéder aux colonnes d’un data frame",
+    "text": "7.3 Accéder aux colonnes d’un data frame\n\n# Méthode 1 : avec le symbole $\netudiants$nom\n\n[1] \"Adjoa Mensah\"     \"Kofi Atsu\"        \"Aminata Diallo\"   \"Brice Hounsa\"    \n[5] \"Fatoumata Traoré\"\n\netudiants$note_maths\n\n[1] 14.5 11.0 16.5 13.0 12.5\n\n# Méthode 2 : avec les crochets doubles [[ ]]\netudiants[[\"age\"]]\n\n[1] 22 24 21 23 20\n\n# Méthode 3 : par position [ligne, colonne]\netudiants[, 1]   # Toute la première colonne\n\n[1] \"Adjoa Mensah\"     \"Kofi Atsu\"        \"Aminata Diallo\"   \"Brice Hounsa\"    \n[5] \"Fatoumata Traoré\"\n\netudiants[2, ]   # Toute la deuxième ligne\n\n\n\n\nnomagefilierenote_mathsa_valide\n\n\n\nKofi Atsu24Démographie11FALSE\n\n\n\netudiants[2, 3]  # Ligne 2, colonne 3\n\n[1] \"Démographie\"\n\n\n\n# Calculs sur des colonnes\nmean(etudiants$note_maths)\n\n[1] 13.5\n\nmax(etudiants$age)\n\n[1] 24\n\n# Filtrer des lignes\n# Étudiants ayant validé\netudiants_valides &lt;- etudiants[etudiants$a_valide == TRUE, ]\netudiants_valides\n\n\n\n\nnomagefilierenote_mathsa_valide\n\n\n\nAdjoa Mensah22Statistique14.5TRUE\n\nAminata Diallo21Statistique16.5TRUE\n\nBrice Hounsa23Informatique13  TRUE\n\nFatoumata Traoré20Économie12.5TRUE"
+  },
+  {
+    "objectID": "formation_R.html#dimensions-dun-data-frame",
+    "href": "formation_R.html#dimensions-dun-data-frame",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "7.4 Dimensions d’un data frame",
+    "text": "7.4 Dimensions d’un data frame\n\n# Nombre de lignes et de colonnes\nnrow(etudiants)   # Nombre de lignes (observations)\n\n[1] 5\n\nncol(etudiants)   # Nombre de colonnes (variables)\n\n[1] 5\n\ndim(etudiants)    # Les deux en même temps\n\n[1] 5 5\n\n# Noms des colonnes\ncolnames(etudiants)\n\n[1] \"nom\"        \"age\"        \"filiere\"    \"note_maths\" \"a_valide\"  \n\nnames(etudiants)\n\n[1] \"nom\"        \"age\"        \"filiere\"    \"note_maths\" \"a_valide\""
+  },
+  {
+    "objectID": "formation_R.html#exercices-pratiques",
+    "href": "formation_R.html#exercices-pratiques",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "7.5 Exercices pratiques",
+    "text": "7.5 Exercices pratiques\n\n\n\n\n\n\nMise en gardeExercice 5 — Data frames\n\n\n\nCréez un data frame villages contenant les informations suivantes sur 6 villages :\n\n\n\nVillage\nDépartement\nPopulation\nNb_écoles\nÉlectrifié\n\n\n\n\nKpassa\nBorgou\n3420\n2\nTRUE\n\n\nSinendé\nAlibori\n5210\n3\nFALSE\n\n\nGogounou\nAlibori\n4180\n2\nTRUE\n\n\nNdali\nBorgou\n2890\n1\nFALSE\n\n\nBembèrèkè\nBorgou\n6350\n4\nTRUE\n\n\nKalalé\nBorgou\n3780\n2\nFALSE\n\n\n\n\nAffichez la structure du data frame avec str()\nAffichez le résumé statistique avec summary()\nQuelle est la population totale de ces 6 villages ?\nQuel est le nom du village le plus peuplé ?\nCombien de villages sont électrifiés ?\n\n\n\nCorrection :\n\n# Création du data frame\nvillages &lt;- data.frame(\n  village = c(\"Kpassa\", \"Sinendé\", \"Gogounou\", \"Ndali\", \"Bembèrèkè\", \"Kalalé\"),\n  departement = c(\"Borgou\", \"Alibori\", \"Alibori\", \"Borgou\", \"Borgou\", \"Borgou\"),\n  population = c(3420, 5210, 4180, 2890, 6350, 3780),\n  nb_ecoles = c(2, 3, 2, 1, 4, 2),\n  electrifie = c(TRUE, FALSE, TRUE, FALSE, TRUE, FALSE)\n)\n\n# 1. Structure\nstr(villages)\n\n'data.frame':   6 obs. of  5 variables:\n $ village    : chr  \"Kpassa\" \"Sinendé\" \"Gogounou\" \"Ndali\" ...\n $ departement: chr  \"Borgou\" \"Alibori\" \"Alibori\" \"Borgou\" ...\n $ population : num  3420 5210 4180 2890 6350 3780\n $ nb_ecoles  : num  2 3 2 1 4 2\n $ electrifie : logi  TRUE FALSE TRUE FALSE TRUE FALSE\n\n\n\n# 2. Résumé statistique\nsummary(villages)\n\n      village     departement   population     nb_ecoles     electrifie     \n Length   :6   Length   :6    Min.   :2890   Min.   :1.000   Mode :logical  \n N.unique :6   N.unique :2    1st Qu.:3510   1st Qu.:2.000   FALSE:3        \n N.blank  :0   N.blank  :0    Median :3980   Median :2.000   TRUE :3        \n Min.nchar:5   Min.nchar:6    Mean   :4305   Mean   :2.333                  \n Max.nchar:9   Max.nchar:7    3rd Qu.:4952   3rd Qu.:2.750                  \n                              Max.   :6350   Max.   :4.000                  \n\n\n\n# 3. Population totale\npop_totale &lt;- sum(villages$population)\ncat(\"Population totale :\", format(pop_totale, big.mark = \" \"), \"habitants\\n\")\n\nPopulation totale : 25 830 habitants\n\n# 4. Village le plus peuplé\nindice_max &lt;- which.max(villages$population)\ncat(\"Village le plus peuplé :\", villages$village[indice_max], \"\\n\")\n\nVillage le plus peuplé : Bembèrèkè \n\ncat(\"Population :\", villages$population[indice_max], \"habitants\\n\")\n\nPopulation : 6350 habitants\n\n# 5. Nombre de villages électrifiés\nnb_electrifies &lt;- sum(villages$electrifie)\ncat(\"Nombre de villages électrifiés :\", nb_electrifies, \"sur\", nrow(villages), \"\\n\")\n\nNombre de villages électrifiés : 3 sur 6"
+  },
+  {
+    "objectID": "formation_R.html#installation-du-package-readxl",
+    "href": "formation_R.html#installation-du-package-readxl",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "8.1 Installation du package readxl",
+    "text": "8.1 Installation du package readxl\nUn package est une extension qui ajoute des fonctionnalités à R. Pour utiliser un package, il faut d’abord l’installer (une seule fois), puis le charger à chaque session.\n\n# Installation du package readxl (à faire une seule fois)\ninstall.packages(\"readxl\")\n\n\n\n\n\n\n\nImportantÀ retenir — Installation vs Chargement d’un package\n\n\n\n\nInstallation : install.packages(\"nom_package\") — À faire une seule fois\nChargement : library(nom_package) — À faire à chaque nouvelle session R\n\nAnalogie : Installer un package = acheter un livre. Charger un package = ouvrir ce livre pour le lire."
+  },
+  {
+    "objectID": "formation_R.html#chargement-avec-library",
+    "href": "formation_R.html#chargement-avec-library",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "8.2 Chargement avec library()",
+    "text": "8.2 Chargement avec library()\n\n# Chargement du package (à faire à chaque session)\nlibrary(readxl)"
+  },
+  {
+    "objectID": "formation_R.html#importation-avec-read_excel",
+    "href": "formation_R.html#importation-avec-read_excel",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "8.3 Importation avec read_excel()",
+    "text": "8.3 Importation avec read_excel()\n\n# Syntaxe de base\ndonnees &lt;- read_excel(\"chemin/vers/fichier.xlsx\")\n\n# Avec options avancées\ndonnees &lt;- read_excel(\n  path = \"fichier.xlsx\",      # Chemin du fichier\n  sheet = \"Feuil1\",           # Nom ou numéro de la feuille\n  skip = 0,                   # Nombre de lignes à ignorer en début\n  na = c(\"\", \"N/A\", \"-\"),    # Valeurs considérées comme manquantes\n  col_names = TRUE            # Première ligne = noms des colonnes\n)"
+  },
+  {
+    "objectID": "formation_R.html#exemple-complet",
+    "href": "formation_R.html#exemple-complet",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "8.4 Exemple complet",
+    "text": "8.4 Exemple complet\n\n# Simulation : créons d'abord un fichier Excel pour l'exemple\n# (Dans un cas réel, le fichier existerait déjà)\n\n# Créons des données d'exemple\ndonnees_ecole &lt;- data.frame(\n  ID_Eleve = 1:10,\n  Prenom = c(\"Adjoua\", \"Kofi\", \"Mani\", \"Brice\", \"Fatouma\",\n             \"Yao\", \"Aïssata\", \"Désiré\", \"Nadia\", \"Théo\"),\n  Sexe = c(\"F\", \"M\", \"M\", \"M\", \"F\", \"M\", \"F\", \"M\", \"F\", \"M\"),\n  Age = c(11, 12, 11, 13, 12, 11, 12, 12, 11, 13),\n  Note_Francais = c(14, 11, 15, 12, 16, 10, 13, 14, 15, 11),\n  Note_Maths = c(16, 14, 12, 15, 13, 18, 11, 14, 17, 12)\n)\n\n# Si readxl est installé et le fichier existe :\n# donnees &lt;- read_excel(\"donnees_ecole.xlsx\", sheet = 1)\n\n# Pour cet exemple, utilisons directement le data frame créé\ncat(\"Dimensions du jeu de données :\", nrow(donnees_ecole), \"lignes x\", \n    ncol(donnees_ecole), \"colonnes\\n\")\n\nDimensions du jeu de données : 10 lignes x 6 colonnes\n\nhead(donnees_ecole)\n\n\n\n\nID_ElevePrenomSexeAgeNote_FrancaisNote_Maths\n\n\n\n1AdjouaF111416\n\n2KofiM121114\n\n3ManiM111512\n\n4BriceM131215\n\n5FatoumaF121613\n\n6YaoM111018\n\n\n\n\n\n\n\n\n\n\nAstuceConseil — Définir le répertoire de travail\n\n\n\nAvant d’importer des fichiers, définissez votre répertoire de travail avec setwd() ou utilisez des chemins absolus :\n# Définir le répertoire de travail\nsetwd(\"C:/Users/MonNom/Documents/Formation_R\")\n\n# Puis importer directement\ndonnees &lt;- read_excel(\"mes_donnees.xlsx\")\nDans RStudio, vous pouvez aussi utiliser : Session &gt; Set Working Directory &gt; Choose Directory\n\n\n\n\n\n\n\n\nNoteAutres formats d’importation\n\n\n\nR peut importer de nombreux formats de données :\n\n\n\nFormat\nPackage\nFonction\n\n\n\n\nExcel (.xlsx)\nreadxl\nread_excel()\n\n\nCSV\nBase R\nread.csv()\n\n\nStata (.dta)\nhaven\nread_dta()\n\n\nSPSS (.sav)\nhaven\nread_sav()\n\n\nJSON\njsonlite\nfromJSON()"
+  },
+  {
+    "objectID": "formation_R.html#jeu-de-données-dexemple",
+    "href": "formation_R.html#jeu-de-données-dexemple",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "9.1 Jeu de données d’exemple",
+    "text": "9.1 Jeu de données d’exemple\n\n# Jeu de données : résultats d'une enquête dans un lycée\nset.seed(123)\nn &lt;- 50  # 50 élèves\n\nenquete_lycee &lt;- data.frame(\n  id = 1:n,\n  sexe = sample(c(\"Garçon\", \"Fille\"), n, replace = TRUE, prob = c(0.55, 0.45)),\n  age = sample(14:20, n, replace = TRUE),\n  classe = sample(c(\"2nde\", \"1ère\", \"Terminale\"), n, replace = TRUE),\n  note_francais = round(runif(n, 6, 19), 1),\n  note_maths = round(runif(n, 4, 20), 1),\n  heures_etude = sample(1:6, n, replace = TRUE)\n)\n\n# Aperçu du jeu de données\nhead(enquete_lycee)\n\n\n\n\nidsexeageclassenote_francaisnote_mathsheures_etude\n\n\n\n1Garçon172nde11.417.11\n\n2Fille18Terminale9.518.71\n\n3Garçon20Terminale14.28.55\n\n4Fille181ère8.419.45\n\n5Fille16Terminale17.215.73\n\n6Garçon192nde15.715  2\n\n\n\ndim(enquete_lycee)\n\n[1] 50  7"
+  },
+  {
+    "objectID": "formation_R.html#moyenne-mean-1",
+    "href": "formation_R.html#moyenne-mean-1",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "9.2 Moyenne — mean()",
+    "text": "9.2 Moyenne — mean()\n\n# Moyenne de la note de français\nmoy_francais &lt;- mean(enquete_lycee$note_francais)\ncat(\"Moyenne en français :\", round(moy_francais, 2), \"\\n\")\n\nMoyenne en français : 12.69 \n\n# Moyenne de la note de maths\nmoy_maths &lt;- mean(enquete_lycee$note_maths)\ncat(\"Moyenne en maths :\", round(moy_maths, 2), \"\\n\")\n\nMoyenne en maths : 12.86"
+  },
+  {
+    "objectID": "formation_R.html#médiane-median-1",
+    "href": "formation_R.html#médiane-median-1",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "9.3 Médiane — median()",
+    "text": "9.3 Médiane — median()\n\n# Médiane des notes\nmed_francais &lt;- median(enquete_lycee$note_francais)\ncat(\"Médiane en français :\", med_francais, \"\\n\")\n\nMédiane en français : 12.5 \n\n# Comparaison moyenne/médiane\ncat(\"\\nComparaison Français :\\n\")\n\n\nComparaison Français :\n\ncat(\"  Moyenne :\", round(moy_francais, 2), \"\\n\")\n\n  Moyenne : 12.69 \n\ncat(\"  Médiane :\", med_francais, \"\\n\")\n\n  Médiane : 12.5"
+  },
+  {
+    "objectID": "formation_R.html#écart-type-sd",
+    "href": "formation_R.html#écart-type-sd",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "9.4 Écart-type — sd()",
+    "text": "9.4 Écart-type — sd()\nL’écart-type mesure la dispersion des données autour de la moyenne. Plus il est grand, plus les données sont dispersées.\n\n# Écart-type des notes\net_francais &lt;- sd(enquete_lycee$note_francais)\net_maths &lt;- sd(enquete_lycee$note_maths)\n\ncat(\"Écart-type Français :\", round(et_francais, 2), \"\\n\")\n\nÉcart-type Français : 3.26 \n\ncat(\"Écart-type Maths    :\", round(et_maths, 2), \"\\n\")\n\nÉcart-type Maths    : 4.28"
+  },
+  {
+    "objectID": "formation_R.html#fréquences-table",
+    "href": "formation_R.html#fréquences-table",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "9.5 Fréquences — table()",
+    "text": "9.5 Fréquences — table()\nLa fonction table() calcule les fréquences absolues (effectifs) d’une variable qualitative.\n\n# Fréquences par sexe\nfreq_sexe &lt;- table(enquete_lycee$sexe)\nfreq_sexe\n\n\n Fille Garçon \n    23     27 \n\n# Fréquences par classe\nfreq_classe &lt;- table(enquete_lycee$classe)\nfreq_classe\n\n\n     1ère      2nde Terminale \n       21         8        21 \n\n# Tableau croisé (sexe × classe)\ntab_croise &lt;- table(enquete_lycee$sexe, enquete_lycee$classe)\ntab_croise\n\n        \n         1ère 2nde Terminale\n  Fille    13    1         9\n  Garçon    8    7        12"
+  },
+  {
+    "objectID": "formation_R.html#pourcentages-prop.table",
+    "href": "formation_R.html#pourcentages-prop.table",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "9.6 Pourcentages — prop.table()",
+    "text": "9.6 Pourcentages — prop.table()\nLa fonction prop.table() calcule les proportions (fréquences relatives) à partir d’un tableau de fréquences.\n\n# Proportions par sexe\nprop_sexe &lt;- prop.table(freq_sexe)\nprop_sexe\n\n\n Fille Garçon \n  0.46   0.54 \n\n# Pourcentages (multiplier par 100)\npct_sexe &lt;- round(prop.table(freq_sexe) * 100, 1)\ncat(\"\\nRépartition par sexe :\\n\")\n\n\nRépartition par sexe :\n\nprint(pct_sexe)\n\n\n Fille Garçon \n    46     54 \n\n# Proportions du tableau croisé\n# margin = 1 : proportions en ligne ; margin = 2 : proportions en colonne\nprop_tab &lt;- round(prop.table(tab_croise, margin = 1) * 100, 1)\ncat(\"\\nRépartition par classe selon le sexe (en %) :\\n\")\n\n\nRépartition par classe selon le sexe (en %) :\n\nprint(prop_tab)\n\n        \n         1ère 2nde Terminale\n  Fille  56.5  4.3      39.1\n  Garçon 29.6 25.9      44.4"
+  },
+  {
+    "objectID": "formation_R.html#résumé-complet-avec-summary",
+    "href": "formation_R.html#résumé-complet-avec-summary",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "9.7 Résumé complet avec summary()",
+    "text": "9.7 Résumé complet avec summary()\n\n# Résumé de toutes les variables numériques\nsummary(enquete_lycee[, c(\"age\", \"note_francais\", \"note_maths\", \"heures_etude\")])\n\n      age        note_francais     note_maths     heures_etude \n Min.   :14.00   Min.   : 6.60   Min.   : 4.80   Min.   :1.00  \n 1st Qu.:15.00   1st Qu.: 9.80   1st Qu.: 9.45   1st Qu.:1.25  \n Median :18.00   Median :12.50   Median :12.85   Median :3.00  \n Mean   :17.22   Mean   :12.69   Mean   :12.86   Mean   :3.20  \n 3rd Qu.:19.00   3rd Qu.:14.78   3rd Qu.:16.38   3rd Qu.:5.00  \n Max.   :20.00   Max.   :18.80   Max.   :19.50   Max.   :6.00  \n\n\n\n\n\n\n\n\nAstuceLes 5 indicateurs clés du résumé statistique\n\n\n\nsummary() affiche automatiquement : - Min : valeur minimale - 1st Qu. : premier quartile (25% des données en dessous) - Median : médiane (50%) - Mean : moyenne arithmétique - 3rd Qu. : troisième quartile (75%) - Max : valeur maximale"
+  },
+  {
+    "objectID": "formation_R.html#lhistogramme-hist",
+    "href": "formation_R.html#lhistogramme-hist",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "10.1 L’histogramme — hist()",
+    "text": "10.1 L’histogramme — hist()\nL’histogramme représente la distribution d’une variable quantitative continue en classes.\n\n# Histogramme simple des notes de français\nhist(enquete_lycee$note_francais,\n     main = \"Distribution des notes de français\",  # Titre\n     xlab = \"Note /20\",                            # Label axe X\n     ylab = \"Fréquence\",                           # Label axe Y\n     col = \"steelblue\",                            # Couleur\n     border = \"white\")                             # Couleur bordure\n\n\n\n\n\n\n\n\n\n# Histogramme avec plus d'options\nhist(enquete_lycee$note_maths,\n     main = \"Distribution des notes de mathématiques\",\n     xlab = \"Note /20\",\n     ylab = \"Nombre d'élèves\",\n     col = \"coral\",\n     border = \"white\",\n     breaks = 10,           # Nombre de classes\n     xlim = c(0, 20))       # Limites de l'axe X\n\n# Ajouter une ligne de moyenne\nabline(v = mean(enquete_lycee$note_maths), \n       col = \"darkred\", lwd = 2, lty = 2)\nlegend(\"topright\", legend = paste(\"Moyenne =\", round(mean(enquete_lycee$note_maths), 1)),\n       col = \"darkred\", lty = 2, lwd = 2)"
+  },
+  {
+    "objectID": "formation_R.html#le-diagramme-en-barres-barplot",
+    "href": "formation_R.html#le-diagramme-en-barres-barplot",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "10.2 Le diagramme en barres — barplot()",
+    "text": "10.2 Le diagramme en barres — barplot()\nLe diagramme en barres représente les fréquences ou les valeurs d’une variable qualitative.\n\n# Diagramme en barres de la répartition par classe\nbarplot(table(enquete_lycee$classe),\n        main = \"Répartition des élèves par classe\",\n        xlab = \"Classe\",\n        ylab = \"Nombre d'élèves\",\n        col = c(\"steelblue\", \"coral\", \"forestgreen\"),\n        border = \"white\")\n\n\n\n\n\n\n\n\n\n# Diagramme en barres groupées (sexe par classe)\nbarplot(table(enquete_lycee$sexe, enquete_lycee$classe),\n        beside = TRUE,    # Barres côte à côte\n        main = \"Répartition par classe et par sexe\",\n        xlab = \"Classe\",\n        ylab = \"Nombre d'élèves\",\n        col = c(\"steelblue\", \"coral\"),\n        border = \"white\",\n        legend.text = c(\"Garçon\", \"Fille\"),\n        args.legend = list(x = \"topright\"))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAstuceChoisir le bon graphique\n\n\n\n\n\n\n\n\n\n\nType de variable\nGraphique recommandé\n\n\n\n\nVariable quantitative continue\nHistogramme (hist)\n\n\nVariable qualitative\nDiagramme en barres (barplot)\n\n\nDeux variables quantitatives\nNuage de points (plot)\n\n\nÉvolution dans le temps\nGraphique en courbes (plot avec type=\"l\")"
+  },
+  {
+    "objectID": "formation_R.html#corrigé-exercice-6",
+    "href": "formation_R.html#corrigé-exercice-6",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "12.1 Corrigé — Exercice 6",
+    "text": "12.1 Corrigé — Exercice 6\n\n# 1. Calcul de la moyenne de 4 valeurs\n(45 + 38 + 72 + 51) / 4\n\n[1] 51.5\n\n# 2. Hypoténuse (théorème de Pythagore)\nsqrt(3^2 + 4^2)\n\n[1] 5\n\n# 3. Fonction logistique en x = 2\n1 / (1 + exp(-2))\n\n[1] 0.8807971"
+  },
+  {
+    "objectID": "formation_R.html#corrigé-exercice-7",
+    "href": "formation_R.html#corrigé-exercice-7",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "12.2 Corrigé — Exercice 7",
+    "text": "12.2 Corrigé — Exercice 7\n\n# Création des variables\npays &lt;- \"Bénin\"\nsuperficie &lt;- 114763\npopulation_2023 &lt;- 13352864\npib_milliards_usd &lt;- 17.8\nmembre_ua &lt;- TRUE\n\n# Affichage\ncat(\"Pays :\", pays, \"\\n\")\n\nPays : Bénin \n\ncat(\"Superficie :\", format(superficie, big.mark = \" \"), \"km²\\n\")\n\nSuperficie : 114 763 km²\n\ncat(\"Population 2023 :\", format(population_2023, big.mark = \" \"), \"\\n\")\n\nPopulation 2023 : 13 352 864 \n\ncat(\"PIB :\", pib_milliards_usd, \"milliards USD\\n\")\n\nPIB : 17.8 milliards USD\n\ncat(\"Membre UA :\", membre_ua, \"\\n\")\n\nMembre UA : TRUE \n\n# Densité de population\ndensite &lt;- population_2023 / superficie\ncat(\"\\nDensité de population :\", round(densite, 1), \"habitants/km²\\n\")\n\n\nDensité de population : 116.4 habitants/km²"
+  },
+  {
+    "objectID": "formation_R.html#corrigé-exercice-8",
+    "href": "formation_R.html#corrigé-exercice-8",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "12.3 Corrigé — Exercice 8",
+    "text": "12.3 Corrigé — Exercice 8\n\n# 1. Création du vecteur\nhauteurs &lt;- c(128, 145, 132, 118, 156, 141, 129, 147, 135, 122)\n\n# 2. Statistiques\ncat(\"Hauteur minimale :\", min(hauteurs), \"cm\\n\")\n\nHauteur minimale : 118 cm\n\ncat(\"Hauteur maximale :\", max(hauteurs), \"cm\\n\")\n\nHauteur maximale : 156 cm\n\ncat(\"Hauteur moyenne  :\", mean(hauteurs), \"cm\\n\")\n\nHauteur moyenne  : 135.3 cm\n\ncat(\"Hauteur médiane  :\", median(hauteurs), \"cm\\n\")\n\nHauteur médiane  : 133.5 cm\n\n# 3. Plants de plus de 135 cm\nnb_grands &lt;- sum(hauteurs &gt; 135)\ncat(\"Plants &gt; 135 cm  :\", nb_grands, \"\\n\")\n\nPlants &gt; 135 cm  : 4 \n\n# 4. Écart-type\ncat(\"Écart-type       :\", round(sd(hauteurs), 2), \"cm\\n\")\n\nÉcart-type       : 11.89 cm"
+  },
+  {
+    "objectID": "formation_R.html#corrigé-exercice-9",
+    "href": "formation_R.html#corrigé-exercice-9",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "12.4 Corrigé — Exercice 9",
+    "text": "12.4 Corrigé — Exercice 9\n\n# Création du data frame\npersonnel &lt;- data.frame(\n  nom = c(\"AHOYO Bernard\", \"DOSSOU Clémence\", \"SOSSA Patrick\", \"KPADA Nathalie\", \"AGBO Rémi\"),\n  departement = c(\"Statistiques\", \"Informatique\", \"RH\", \"Comptabilité\", \"Statistiques\"),\n  anciennete = c(8, 3, 12, 5, 15),\n  salaire = c(450000, 320000, 580000, 380000, 650000),\n  cadre = c(TRUE, FALSE, TRUE, FALSE, TRUE)\n)\n\n# 1. Structure\nstr(personnel)\n\n'data.frame':   5 obs. of  5 variables:\n $ nom        : chr  \"AHOYO Bernard\" \"DOSSOU Clémence\" \"SOSSA Patrick\" \"KPADA Nathalie\" ...\n $ departement: chr  \"Statistiques\" \"Informatique\" \"RH\" \"Comptabilité\" ...\n $ anciennete : num  8 3 12 5 15\n $ salaire    : num  450000 320000 580000 380000 650000\n $ cadre      : logi  TRUE FALSE TRUE FALSE TRUE\n\n\n\n# 2. Salaire moyen\ncat(\"Salaire moyen :\", format(mean(personnel$salaire), big.mark = \" \"), \"FCFA\\n\")\n\nSalaire moyen : 476 000 FCFA\n\n# 3. Salaire du cadre le plus ancien\ncadres &lt;- personnel[personnel$cadre == TRUE, ]\ncadre_plus_ancien &lt;- cadres[which.max(cadres$anciennete), ]\ncat(\"Cadre le plus ancien :\", cadre_plus_ancien$nom, \"\\n\")\n\nCadre le plus ancien : AGBO Rémi \n\ncat(\"Salaire             :\", format(cadre_plus_ancien$salaire, big.mark = \" \"), \"FCFA\\n\")\n\nSalaire             : 650 000 FCFA\n\n# 4. Nombre de cadres\ncat(\"Nombre de cadres :\", sum(personnel$cadre), \"\\n\")\n\nNombre de cadres : 3"
+  },
+  {
+    "objectID": "formation_R.html#corrigé-exercice-10",
+    "href": "formation_R.html#corrigé-exercice-10",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "12.5 Corrigé — Exercice 10",
+    "text": "12.5 Corrigé — Exercice 10\n\n# Recréer le data frame donnees_sante\nset.seed(42)\ndonnees_sante &lt;- data.frame(\n  id = 1:20,\n  age = sample(18:65, 20, replace = TRUE),\n  sexe = sample(c(\"Masculin\", \"Féminin\"), 20, replace = TRUE),\n  poids_kg = round(runif(20, 45, 95), 1),\n  taille_cm = sample(155:190, 20, replace = TRUE),\n  tension_sys = sample(100:160, 20, replace = TRUE)\n)\n\n# 1. Taille moyenne\ncat(\"Taille moyenne :\", mean(donnees_sante$taille_cm), \"cm\\n\")\n\nTaille moyenne : 170.7 cm\n\n# 2. Poids min et max\ncat(\"Poids minimum  :\", min(donnees_sante$poids_kg), \"kg\\n\")\n\nPoids minimum  : 46.9 kg\n\ncat(\"Poids maximum  :\", max(donnees_sante$poids_kg), \"kg\\n\")\n\nPoids maximum  : 94.1 kg\n\n# 3. Tableau de fréquences du sexe\nfreq_sexe &lt;- table(donnees_sante$sexe)\nprint(freq_sexe)\n\n\n Féminin Masculin \n      12        8 \n\n# 4. Pourcentages par sexe\npct_sexe &lt;- round(prop.table(freq_sexe) * 100, 1)\nprint(pct_sexe)\n\n\n Féminin Masculin \n      60       40 \n\n# 5. Histogramme de la tension systolique\nhist(donnees_sante$tension_sys,\n     main = \"Distribution de la tension systolique\",\n     xlab = \"Tension systolique (mmHg)\",\n     ylab = \"Fréquence\",\n     col = \"steelblue\",\n     border = \"white\")"
+  },
+  {
+    "objectID": "formation_R.html#corrigé-exercice-11",
+    "href": "formation_R.html#corrigé-exercice-11",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "12.6 Corrigé — Exercice 11",
+    "text": "12.6 Corrigé — Exercice 11\n\ntemperatures &lt;- c(28.5, 31.2, 33.8, 29.4, 35.1, 32.7, 30.1, \n                  34.5, 31.8, 28.9, 36.2, 33.1, 29.7, 31.5, 34.8,\n                  30.3, 32.9, 35.6, 29.1, 33.4, 31.7, 28.3, 34.2,\n                  30.8, 32.1, 35.9, 29.6, 33.7, 31.2, 30.5)\n\n# 1. Statistiques principales\ncat(\"Température minimale :\", min(temperatures), \"°C\\n\")\n\nTempérature minimale : 28.3 °C\n\ncat(\"Température maximale :\", max(temperatures), \"°C\\n\")\n\nTempérature maximale : 36.2 °C\n\ncat(\"Température moyenne  :\", round(mean(temperatures), 2), \"°C\\n\")\n\nTempérature moyenne  : 32.02 °C\n\ncat(\"Température médiane  :\", median(temperatures), \"°C\\n\")\n\nTempérature médiane  : 31.75 °C\n\n# 2. Jours au-dessus de 33°C\nnb_jours_chauds &lt;- sum(temperatures &gt; 33)\ncat(\"Jours &gt; 33°C :\", nb_jours_chauds, \"jours sur\", length(temperatures), \"\\n\")\n\nJours &gt; 33°C : 11 jours sur 30 \n\n# 3. Écart-type\ncat(\"Écart-type :\", round(sd(temperatures), 2), \"°C\\n\")\n\nÉcart-type : 2.34 °C\n\n# 4. Histogramme\nhist(temperatures,\n     main = \"Distribution des températures sur 30 jours\",\n     xlab = \"Température (°C)\",\n     ylab = \"Nombre de jours\",\n     col = \"coral\",\n     border = \"white\")\nabline(v = mean(temperatures), col = \"darkred\", lwd = 2, lty = 2)"
+  },
+  {
+    "objectID": "formation_R.html#corrigé-exercice-12",
+    "href": "formation_R.html#corrigé-exercice-12",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "12.7 Corrigé — Exercice 12",
+    "text": "12.7 Corrigé — Exercice 12\n\n# Création d'un vecteur de 20 notes\nset.seed(7)\nnotes_classe &lt;- c(8, 14, 17, 11, 15, 9, 16, 12, 7, 18,\n                  13, 10, 15, 6, 14, 11, 19, 12, 16, 8)\n\n# 1. Statistiques descriptives\ncat(\"--- Statistiques descriptives ---\\n\")\n\n--- Statistiques descriptives ---\n\ncat(\"Minimum    :\", min(notes_classe), \"\\n\")\n\nMinimum    : 6 \n\ncat(\"Maximum    :\", max(notes_classe), \"\\n\")\n\nMaximum    : 19 \n\ncat(\"Moyenne    :\", mean(notes_classe), \"\\n\")\n\nMoyenne    : 12.55 \n\ncat(\"Médiane    :\", median(notes_classe), \"\\n\")\n\nMédiane    : 12.5 \n\ncat(\"Écart-type :\", round(sd(notes_classe), 2), \"\\n\")\n\nÉcart-type : 3.78 \n\n# 2. Attribution des mentions\nmention &lt;- ifelse(notes_classe &lt; 12, \"Passable\",\n           ifelse(notes_classe &lt; 14, \"Assez bien\",\n           ifelse(notes_classe &lt; 16, \"Bien\", \"Très bien\")))\nmention\n\n [1] \"Passable\"   \"Bien\"       \"Très bien\"  \"Passable\"   \"Bien\"      \n [6] \"Passable\"   \"Très bien\"  \"Assez bien\" \"Passable\"   \"Très bien\" \n[11] \"Assez bien\" \"Passable\"   \"Bien\"       \"Passable\"   \"Bien\"      \n[16] \"Passable\"   \"Très bien\"  \"Assez bien\" \"Très bien\"  \"Passable\"  \n\n# 3. Tableau de fréquences\ntable(mention)\n\nmention\nAssez bien       Bien   Passable  Très bien \n         3          4          8          5 \n\nround(prop.table(table(mention)) * 100, 1)\n\nmention\nAssez bien       Bien   Passable  Très bien \n        15         20         40         25"
+  },
+  {
+    "objectID": "formation_R.html#corrigé-exercice-13",
+    "href": "formation_R.html#corrigé-exercice-13",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "12.8 Corrigé — Exercice 13",
+    "text": "12.8 Corrigé — Exercice 13\n\n# Recréer le jeu de données\nset.seed(123)\nn &lt;- 50\nenquete_lycee &lt;- data.frame(\n  id = 1:n,\n  sexe = sample(c(\"Garçon\", \"Fille\"), n, replace = TRUE, prob = c(0.55, 0.45)),\n  age = sample(14:20, n, replace = TRUE),\n  classe = sample(c(\"2nde\", \"1ère\", \"Terminale\"), n, replace = TRUE),\n  note_francais = round(runif(n, 6, 19), 1),\n  note_maths = round(runif(n, 4, 20), 1),\n  heures_etude = sample(1:6, n, replace = TRUE)\n)\n\n# 1. Note moyenne en français des filles\nfilles &lt;- enquete_lycee[enquete_lycee$sexe == \"Fille\", ]\ncat(\"Moyenne français (Filles)  :\", round(mean(filles$note_francais), 2), \"\\n\")\n\nMoyenne français (Filles)  : 13 \n\n# 2. Note moyenne en maths des garçons\ngarcons &lt;- enquete_lycee[enquete_lycee$sexe == \"Garçon\", ]\ncat(\"Moyenne maths (Garçons)    :\", round(mean(garcons$note_maths), 2), \"\\n\")\n\nMoyenne maths (Garçons)    : 12.79 \n\n# 3. Élèves étudiant plus de 3h par jour\nnb_studieux &lt;- sum(enquete_lycee$heures_etude &gt; 3)\ncat(\"Élèves étudiant &gt; 3h/jour :\", nb_studieux, \"\\n\")\n\nÉlèves étudiant &gt; 3h/jour : 22 \n\n# 4. Pourcentage en Terminale\npct_terminale &lt;- mean(enquete_lycee$classe == \"Terminale\") * 100\ncat(\"% en Terminale            :\", round(pct_terminale, 1), \"%\\n\")\n\n% en Terminale            : 42 %"
+  },
+  {
+    "objectID": "formation_R.html#corrigé-exercice-14",
+    "href": "formation_R.html#corrigé-exercice-14",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "12.9 Corrigé — Exercice 14",
+    "text": "12.9 Corrigé — Exercice 14\n\n# Données des communes par département\ndepartements &lt;- c(\"Alibori\", \"Atacora\", \"Atlantique\", \"Borgou\", \"Collines\")\nnb_communes &lt;- c(6, 9, 8, 12, 6)\ncouleurs &lt;- c(\"steelblue\", \"coral\", \"forestgreen\", \"gold\", \"mediumpurple\")\n\n# Diagramme en barres\nbarplot(nb_communes,\n        names.arg = departements,\n        main = \"Nombre de communes par département (Bénin)\",\n        xlab = \"Département\",\n        ylab = \"Nombre de communes\",\n        col = couleurs,\n        border = \"white\",\n        ylim = c(0, 15))\n\n# Ajouter les valeurs sur les barres\ntext(x = barplot(nb_communes, plot = FALSE),\n     y = nb_communes + 0.3,\n     labels = nb_communes,\n     cex = 0.9, font = 2)"
+  },
+  {
+    "objectID": "formation_R.html#corrigé-exercice-15",
+    "href": "formation_R.html#corrigé-exercice-15",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "12.10 Corrigé — Exercice 15",
+    "text": "12.10 Corrigé — Exercice 15\n\n# 1. Création du data frame\nvaccination &lt;- data.frame(\n  commune = c(\"A\", \"B\", \"C\", \"D\", \"E\", \"F\"),\n  cible = c(1200, 850, 2100, 650, 1800, 950),\n  vaccines = c(1056, 740, 1890, 598, 1512, 817)\n)\n\n# 2. Calcul du taux de couverture\nvaccination$taux_couverture &lt;- round((vaccination$vaccines / vaccination$cible) * 100, 1)\n\n# 3. Afficher le data frame avec la nouvelle colonne\nprint(vaccination)\n\n  commune cible vaccines taux_couverture\n1       A  1200     1056            88.0\n2       B   850      740            87.1\n3       C  2100     1890            90.0\n4       D   650      598            92.0\n5       E  1800     1512            84.0\n6       F   950      817            86.0\n\n# 4. Commune avec le meilleur taux\nmeilleure_commune &lt;- vaccination[which.max(vaccination$taux_couverture), ]\ncat(\"\\nMeilleure couverture :\", meilleure_commune$commune,\n    \"avec\", meilleure_commune$taux_couverture, \"%\\n\")\n\n\nMeilleure couverture : D avec 92 %\n\n# 5. Histogramme des taux\nhist(vaccination$taux_couverture,\n     main = \"Distribution des taux de couverture vaccinale\",\n     xlab = \"Taux de couverture (%)\",\n     ylab = \"Nombre de communes\",\n     col = \"steelblue\",\n     border = \"white\",\n     breaks = 5,\n     xlim = c(80, 100))"
+  },
+  {
+    "objectID": "formation_R.html#résumé-des-notions-apprises",
+    "href": "formation_R.html#résumé-des-notions-apprises",
+    "title": "Formation R — Séance 1 : Prise en main du logiciel R",
+    "section": "12.11 Résumé des notions apprises",
+    "text": "12.11 Résumé des notions apprises\nFélicitations ! À l’issue de cette première séance, vous avez acquis les bases essentielles pour travailler avec R.\n\n\n\n\n\n\nNoteCe que vous avez appris aujourd’hui\n\n\n\nEnvironnement de travail\n\nInstaller R et RStudio\nNaviguer dans l’interface à 4 panneaux de RStudio\nCréer, éditer et sauvegarder un script R\n\nProgrammation de base\n\nÉcrire des commandes et des commentaires dans R\nRéaliser des calculs arithmétiques (+, -, *, /, ^, sqrt)\nCréer et manipuler des variables avec l’opérateur &lt;-\nUtiliser ls() et rm() pour gérer l’environnement\n\nTypes de données\n\nDistinguer les types : numérique, caractère, logique\nUtiliser class() et typeof() pour identifier les types\nConvertir entre types (as.numeric(), as.character(), etc.)\n\nStructures de données\n\nCréer et manipuler des vecteurs avec c()\nCréer et explorer des data frames avec data.frame()\nUtiliser head(), tail(), str(), summary()\n\nAnalyse de données\n\nImporter des données Excel avec readxl\nCalculer des statistiques descriptives (mean, median, sd, table, prop.table)\nProduire des graphiques de base (hist, barplot)"
+  },
+  {
+    "objectID": "formation_R_seance2.html#quest-ce-que-le-tidyverse",
+    "href": "formation_R_seance2.html#quest-ce-que-le-tidyverse",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "1.1 Qu’est-ce que le Tidyverse ?",
+    "text": "1.1 Qu’est-ce que le Tidyverse ?\nLe tidyverse est une collection de packages R conçus pour travailler ensemble de façon cohérente. Tous partagent la même philosophie : les données doivent être ordonnées (tidy) pour faciliter l’analyse.\nUn jeu de données est dit tidy lorsque :\n\nChaque variable occupe une colonne\nChaque observation occupe une ligne\nChaque valeur occupe une cellule\n\n\n\n\n\n\n\nImportantÀ retenir — Les packages principaux du Tidyverse\n\n\n\n\n\n\nPackage\nRôle principal\n\n\n\n\ndplyr\nManipulation de données (filtrer, trier, résumer…)\n\n\ntidyr\nRemise en forme des tableaux (pivot, gather…)\n\n\nggplot2\nVisualisation de données\n\n\nreadr\nImportation de fichiers CSV et texte\n\n\nstringr\nManipulation de chaînes de caractères\n\n\nforcats\nManipulation de facteurs\n\n\npurrr\nProgrammation fonctionnelle\n\n\ntibble\nAmélioration des data frames"
+  },
+  {
+    "objectID": "formation_R_seance2.html#installation-et-chargement",
+    "href": "formation_R_seance2.html#installation-et-chargement",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "1.2 Installation et chargement",
+    "text": "1.2 Installation et chargement\n\n# Installation du tidyverse (une seule fois)\ninstall.packages(\"tidyverse\")\n\n\n# Chargement du tidyverse (à chaque session)\nlibrary(tidyverse)\n\n\n\n\n\n\n\nAstuceAstuce — library(tidyverse) charge plusieurs packages à la fois\n\n\n\nEn tapant library(tidyverse), vous chargez automatiquement : ggplot2, dplyr, tidyr, readr, purrr, tibble, stringr et forcats. C’est équivalent à charger ces 8 packages un par un."
+  },
+  {
+    "objectID": "formation_R_seance2.html#le-tibble-version-améliorée-du-data-frame",
+    "href": "formation_R_seance2.html#le-tibble-version-améliorée-du-data-frame",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "1.3 Le tibble : version améliorée du data frame",
+    "text": "1.3 Le tibble : version améliorée du data frame\nLe tibble est la version moderne du data frame dans le tidyverse. Il s’affiche mieux dans la console et gère mieux les types de données.\n\n# Créer un tibble\ndonnees_eleves &lt;- tibble(\n  nom     = c(\"Adjoua\", \"Kofi\", \"Aminata\", \"Brice\", \"Fatouma\"),\n  age     = c(22, 24, 21, 23, 20),\n  filiere = c(\"Statistique\", \"Démographie\", \"Statistique\", \"Info\", \"Éco\"),\n  note    = c(14.5, 11.0, 16.5, 13.0, 12.5)\n)\n\ndonnees_eleves\n\n# A tibble: 5 × 4\n  nom       age filiere      note\n  &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;\n1 Adjoua     22 Statistique  14.5\n2 Kofi       24 Démographie  11  \n3 Aminata    21 Statistique  16.5\n4 Brice      23 Info         13  \n5 Fatouma    20 Éco          12.5\n\n\n\n# Différence avec un data.frame classique à l'affichage\nclass(donnees_eleves)\n\n[1] \"tbl_df\"     \"tbl\"        \"data.frame\""
+  },
+  {
+    "objectID": "formation_R_seance2.html#lopérateur-pipe",
+    "href": "formation_R_seance2.html#lopérateur-pipe",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "1.4 L’opérateur pipe |>",
+    "text": "1.4 L’opérateur pipe |&gt;\nLe pipe (|&gt;) est l’un des éléments les plus importants du tidyverse. Il permet de chaîner des opérations de gauche à droite, rendant le code beaucoup plus lisible.\n\n# Sans pipe : lecture de droite à gauche, difficile à suivre\nround(mean(c(12, 14, 11, 16, 13)), 2)\n\n[1] 13.2\n\n# Avec pipe : lecture de gauche à droite, naturelle\nc(12, 14, 11, 16, 13) |&gt; mean() |&gt; round(2)\n\n[1] 13.2\n\n\n\n\n\n\n\n\nAstuceRaccourci clavier pour le pipe\n\n\n\nDans RStudio : Ctrl + Shift + M insère le pipe |&gt;\nL’ancien pipe %&gt;% du package magrittr fonctionne de la même façon. Vous le verrez souvent dans les tutoriels anciens."
+  },
+  {
+    "objectID": "formation_R_seance2.html#jeu-de-données-de-travail",
+    "href": "formation_R_seance2.html#jeu-de-données-de-travail",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "2.1 Jeu de données de travail",
+    "text": "2.1 Jeu de données de travail\n\n# Jeu de données : enquête dans une université\nset.seed(42)\nn &lt;- 80\n\nenquete &lt;- tibble(\n  id           = 1:n,\n  sexe         = sample(c(\"Homme\", \"Femme\"), n, replace = TRUE, prob = c(0.55, 0.45)),\n  age          = sample(18:30, n, replace = TRUE),\n  filiere      = sample(c(\"Statistique\", \"Démographie\", \"Informatique\", \"Économie\"), \n                        n, replace = TRUE),\n  annee        = sample(1:3, n, replace = TRUE),\n  note_stats   = round(runif(n, 5, 20), 1),\n  note_info    = round(runif(n, 5, 20), 1),\n  heures_travail = sample(1:8, n, replace = TRUE),\n  bourse       = sample(c(TRUE, FALSE), n, replace = TRUE, prob = c(0.4, 0.6))\n)\n\nglimpse(enquete)\n\nRows: 80\nColumns: 9\n$ id             &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, …\n$ sexe           &lt;chr&gt; \"Femme\", \"Femme\", \"Homme\", \"Femme\", \"Femme\", \"Homme\", \"…\n$ age            &lt;int&gt; 21, 30, 27, 26, 30, 29, 21, 26, 28, 20, 30, 22, 29, 25,…\n$ filiere        &lt;chr&gt; \"Démographie\", \"Démographie\", \"Informatique\", \"Démograp…\n$ annee          &lt;int&gt; 1, 1, 2, 3, 3, 3, 1, 1, 1, 2, 3, 3, 1, 3, 2, 3, 2, 3, 3…\n$ note_stats     &lt;dbl&gt; 13.4, 14.8, 9.2, 19.7, 14.7, 13.7, 14.2, 18.9, 10.9, 9.…\n$ note_info      &lt;dbl&gt; 14.8, 18.8, 10.4, 17.8, 9.5, 12.0, 7.1, 17.1, 15.0, 5.9…\n$ heures_travail &lt;int&gt; 1, 3, 1, 4, 3, 3, 5, 6, 5, 3, 5, 2, 6, 4, 2, 7, 4, 1, 1…\n$ bourse         &lt;lgl&gt; FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, TRUE, FALSE, F…"
+  },
+  {
+    "objectID": "formation_R_seance2.html#filter-filtrer-les-lignes",
+    "href": "formation_R_seance2.html#filter-filtrer-les-lignes",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "2.2 filter() — Filtrer les lignes",
+    "text": "2.2 filter() — Filtrer les lignes\n\n# Étudiants de première année\nenquete |&gt; filter(annee == 1)\n\n# A tibble: 27 × 9\n      id sexe    age filiere    annee note_stats note_info heures_travail bourse\n   &lt;int&gt; &lt;chr&gt; &lt;int&gt; &lt;chr&gt;      &lt;int&gt;      &lt;dbl&gt;     &lt;dbl&gt;          &lt;int&gt; &lt;lgl&gt; \n 1     1 Femme    21 Démograph…     1       13.4      14.8              1 FALSE \n 2     2 Femme    30 Démograph…     1       14.8      18.8              3 FALSE \n 3     7 Femme    21 Informati…     1       14.2       7.1              5 TRUE  \n 4     8 Homme    26 Démograph…     1       18.9      17.1              6 FALSE \n 5     9 Femme    28 Démograph…     1       10.9      15                5 FALSE \n 6    13 Femme    29 Économie       1       16.4      15.5              6 TRUE  \n 7    20 Femme    25 Économie       1       17.4      17.7              4 FALSE \n 8    21 Femme    18 Démograph…     1       13.7      10.9              1 FALSE \n 9    22 Homme    19 Statistiq…     1       12.1       6.2              3 FALSE \n10    25 Homme    24 Statistiq…     1       14         6.7              3 FALSE \n# ℹ 17 more rows\n\n\n\n# Étudiants de Statistique ayant une note &gt; 14\nenquete |&gt; filter(filiere == \"Statistique\", note_stats &gt; 14)\n\n# A tibble: 4 × 9\n     id sexe    age filiere     annee note_stats note_info heures_travail bourse\n  &lt;int&gt; &lt;chr&gt; &lt;int&gt; &lt;chr&gt;       &lt;int&gt;      &lt;dbl&gt;     &lt;dbl&gt;          &lt;int&gt; &lt;lgl&gt; \n1    16 Femme    29 Statistique     3       19.5       9.6              7 TRUE  \n2    35 Homme    30 Statistique     3       15.8      12.4              5 FALSE \n3    38 Homme    20 Statistique     2       18.6      18.6              6 FALSE \n4    69 Femme    20 Statistique     2       15.3      18.5              6 TRUE  \n\n\n\n# Étudiants boursiers OU ayant plus de 25 ans\nenquete |&gt; filter(bourse == TRUE | age &gt; 25) |&gt; nrow()\n\n[1] 48"
+  },
+  {
+    "objectID": "formation_R_seance2.html#select-sélectionner-les-colonnes",
+    "href": "formation_R_seance2.html#select-sélectionner-les-colonnes",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "2.3 select() — Sélectionner les colonnes",
+    "text": "2.3 select() — Sélectionner les colonnes\n\n# Sélectionner quelques colonnes\nenquete |&gt; select(id, sexe, filiere, note_stats)\n\n# A tibble: 80 × 4\n      id sexe  filiere      note_stats\n   &lt;int&gt; &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;\n 1     1 Femme Démographie        13.4\n 2     2 Femme Démographie        14.8\n 3     3 Homme Informatique        9.2\n 4     4 Femme Démographie        19.7\n 5     5 Femme Économie           14.7\n 6     6 Homme Économie           13.7\n 7     7 Femme Informatique       14.2\n 8     8 Homme Démographie        18.9\n 9     9 Femme Démographie        10.9\n10    10 Femme Informatique        9.3\n# ℹ 70 more rows\n\n\n\n# Exclure des colonnes avec -\nenquete |&gt; select(-id, -bourse)\n\n# A tibble: 80 × 7\n   sexe    age filiere      annee note_stats note_info heures_travail\n   &lt;chr&gt; &lt;int&gt; &lt;chr&gt;        &lt;int&gt;      &lt;dbl&gt;     &lt;dbl&gt;          &lt;int&gt;\n 1 Femme    21 Démographie      1       13.4      14.8              1\n 2 Femme    30 Démographie      1       14.8      18.8              3\n 3 Homme    27 Informatique     2        9.2      10.4              1\n 4 Femme    26 Démographie      3       19.7      17.8              4\n 5 Femme    30 Économie         3       14.7       9.5              3\n 6 Homme    29 Économie         3       13.7      12                3\n 7 Femme    21 Informatique     1       14.2       7.1              5\n 8 Homme    26 Démographie      1       18.9      17.1              6\n 9 Femme    28 Démographie      1       10.9      15                5\n10 Femme    20 Informatique     2        9.3       5.9              3\n# ℹ 70 more rows\n\n\n\n# Sélection par type ou pattern\nenquete |&gt; select(starts_with(\"note\"))     # colonnes qui commencent par \"note\"\n\n# A tibble: 80 × 2\n   note_stats note_info\n        &lt;dbl&gt;     &lt;dbl&gt;\n 1       13.4      14.8\n 2       14.8      18.8\n 3        9.2      10.4\n 4       19.7      17.8\n 5       14.7       9.5\n 6       13.7      12  \n 7       14.2       7.1\n 8       18.9      17.1\n 9       10.9      15  \n10        9.3       5.9\n# ℹ 70 more rows\n\nenquete |&gt; select(where(is.numeric))       # toutes les colonnes numériques\n\n# A tibble: 80 × 6\n      id   age annee note_stats note_info heures_travail\n   &lt;int&gt; &lt;int&gt; &lt;int&gt;      &lt;dbl&gt;     &lt;dbl&gt;          &lt;int&gt;\n 1     1    21     1       13.4      14.8              1\n 2     2    30     1       14.8      18.8              3\n 3     3    27     2        9.2      10.4              1\n 4     4    26     3       19.7      17.8              4\n 5     5    30     3       14.7       9.5              3\n 6     6    29     3       13.7      12                3\n 7     7    21     1       14.2       7.1              5\n 8     8    26     1       18.9      17.1              6\n 9     9    28     1       10.9      15                5\n10    10    20     2        9.3       5.9              3\n# ℹ 70 more rows"
+  },
+  {
+    "objectID": "formation_R_seance2.html#mutate-créer-ou-modifier-des-colonnes",
+    "href": "formation_R_seance2.html#mutate-créer-ou-modifier-des-colonnes",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "2.4 mutate() — Créer ou modifier des colonnes",
+    "text": "2.4 mutate() — Créer ou modifier des colonnes\n\n# Ajouter une colonne \"moyenne\" et une colonne \"mention\"\nenquete &lt;- enquete |&gt;\n  mutate(\n    moyenne = (note_stats + note_info) / 2,\n    mention = case_when(\n      moyenne &gt;= 16 ~ \"Très bien\",\n      moyenne &gt;= 14 ~ \"Bien\",\n      moyenne &gt;= 12 ~ \"Assez bien\",\n      moyenne &gt;= 10 ~ \"Passable\",\n      TRUE          ~ \"Insuffisant\"\n    )\n  )\n\n# Vérification\nenquete |&gt; select(id, note_stats, note_info, moyenne, mention) |&gt; head(8)\n\n# A tibble: 8 × 5\n     id note_stats note_info moyenne mention    \n  &lt;int&gt;      &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;      \n1     1       13.4      14.8    14.1 Bien       \n2     2       14.8      18.8    16.8 Très bien  \n3     3        9.2      10.4     9.8 Insuffisant\n4     4       19.7      17.8    18.8 Très bien  \n5     5       14.7       9.5    12.1 Assez bien \n6     6       13.7      12      12.8 Assez bien \n7     7       14.2       7.1    10.6 Passable   \n8     8       18.9      17.1    18   Très bien"
+  },
+  {
+    "objectID": "formation_R_seance2.html#arrange-trier-les-lignes",
+    "href": "formation_R_seance2.html#arrange-trier-les-lignes",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "2.5 arrange() — Trier les lignes",
+    "text": "2.5 arrange() — Trier les lignes\n\n# Trier par moyenne décroissante\nenquete |&gt; arrange(desc(moyenne)) |&gt; select(id, filiere, moyenne, mention) |&gt; head(5)\n\n# A tibble: 5 × 4\n     id filiere     moyenne mention  \n  &lt;int&gt; &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;    \n1    47 Démographie    19.0 Très bien\n2     4 Démographie    18.8 Très bien\n3    38 Statistique    18.6 Très bien\n4    45 Démographie    18.3 Très bien\n5     8 Démographie    18   Très bien\n\n\n\n# Trier par filière puis par moyenne décroissante\nenquete |&gt; arrange(filiere, desc(moyenne)) |&gt; \n  select(id, filiere, moyenne) |&gt; head(8)\n\n# A tibble: 8 × 3\n     id filiere     moyenne\n  &lt;int&gt; &lt;chr&gt;         &lt;dbl&gt;\n1    47 Démographie    19.0\n2     4 Démographie    18.8\n3    45 Démographie    18.3\n4     8 Démographie    18  \n5     2 Démographie    16.8\n6    37 Démographie    16.7\n7    63 Démographie    16.2\n8    26 Démographie    16.0"
+  },
+  {
+    "objectID": "formation_R_seance2.html#summarise-résumer-les-données",
+    "href": "formation_R_seance2.html#summarise-résumer-les-données",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "2.6 summarise() — Résumer les données",
+    "text": "2.6 summarise() — Résumer les données\n\n# Statistiques globales\nenquete |&gt;\n  summarise(\n    n          = n(),\n    moy_stats  = mean(note_stats),\n    moy_info   = mean(note_info),\n    moy_gen    = mean(moyenne),\n    et_gen     = sd(moyenne),\n    min_gen    = min(moyenne),\n    max_gen    = max(moyenne)\n  )\n\n# A tibble: 1 × 7\n      n moy_stats moy_info moy_gen et_gen min_gen max_gen\n  &lt;int&gt;     &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;\n1    80      11.9     12.0    12.0   3.39     5.7    19.0"
+  },
+  {
+    "objectID": "formation_R_seance2.html#group_by-summarise-statistiques-par-groupe",
+    "href": "formation_R_seance2.html#group_by-summarise-statistiques-par-groupe",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "2.7 group_by() + summarise() — Statistiques par groupe",
+    "text": "2.7 group_by() + summarise() — Statistiques par groupe\nC’est la combinaison la plus puissante de dplyr : calculer des statistiques par groupe.\n\n# Statistiques par filière\nenquete |&gt;\n  group_by(filiere) |&gt;\n  summarise(\n    n          = n(),\n    moy_gen    = round(mean(moyenne), 2),\n    moy_stats  = round(mean(note_stats), 2),\n    pct_bourse = round(mean(bourse) * 100, 1)\n  ) |&gt;\n  arrange(desc(moy_gen))\n\n# A tibble: 4 × 5\n  filiere          n moy_gen moy_stats pct_bourse\n  &lt;chr&gt;        &lt;int&gt;   &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n1 Démographie     25    13.5      13.6       20  \n2 Économie        19    12.1      11.2       31.6\n3 Statistique     20    11.0      11.2       25  \n4 Informatique    16    10.8      11.2       50  \n\n\n\n# Statistiques par sexe et par filière\nenquete |&gt;\n  group_by(sexe, filiere) |&gt;\n  summarise(\n    n     = n(),\n    moy   = round(mean(moyenne), 2),\n    .groups = \"drop\"\n  ) |&gt;\n  arrange(filiere, sexe)\n\n# A tibble: 8 × 4\n  sexe  filiere          n   moy\n  &lt;chr&gt; &lt;chr&gt;        &lt;int&gt; &lt;dbl&gt;\n1 Femme Démographie     13 13.8 \n2 Homme Démographie     12 13.2 \n3 Femme Informatique    10  9.36\n4 Homme Informatique     6 13.1 \n5 Femme Statistique      7 10.7 \n6 Homme Statistique     13 11.1 \n7 Femme Économie        10 13.0 \n8 Homme Économie         9 11.1 \n\n\n\n\n\n\n\n\nImportantÀ retenir — Les 5 verbes fondamentaux de dplyr\n\n\n\n\n\n\nVerbe\nAction\n\n\n\n\nfilter()\nGarder certaines lignes selon une condition\n\n\nselect()\nGarder ou exclure certaines colonnes\n\n\nmutate()\nCréer ou transformer des colonnes\n\n\narrange()\nTrier les lignes\n\n\nsummarise() + group_by()\nRésumer par groupe"
+  },
+  {
+    "objectID": "formation_R_seance2.html#count-compter-rapidement",
+    "href": "formation_R_seance2.html#count-compter-rapidement",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "2.8 count() — Compter rapidement",
+    "text": "2.8 count() — Compter rapidement\n\n# Compter les effectifs par filière\nenquete |&gt; count(filiere, sort = TRUE)\n\n# A tibble: 4 × 2\n  filiere          n\n  &lt;chr&gt;        &lt;int&gt;\n1 Démographie     25\n2 Statistique     20\n3 Économie        19\n4 Informatique    16\n\n\n\n# Compter avec proportions\nenquete |&gt;\n  count(filiere) |&gt;\n  mutate(pct = round(n / sum(n) * 100, 1))\n\n# A tibble: 4 × 3\n  filiere          n   pct\n  &lt;chr&gt;        &lt;int&gt; &lt;dbl&gt;\n1 Démographie     25  31.2\n2 Informatique    16  20  \n3 Statistique     20  25  \n4 Économie        19  23.8"
+  },
+  {
+    "objectID": "formation_R_seance2.html#rename-et-relocate",
+    "href": "formation_R_seance2.html#rename-et-relocate",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "2.9 rename() et relocate()",
+    "text": "2.9 rename() et relocate()\n\n# Renommer une colonne\nenquete |&gt; rename(note_statistique = note_stats) |&gt; names()\n\n [1] \"id\"               \"sexe\"             \"age\"              \"filiere\"         \n [5] \"annee\"            \"note_statistique\" \"note_info\"        \"heures_travail\"  \n [9] \"bourse\"           \"moyenne\"          \"mention\"         \n\n\n\n# Déplacer une colonne en premier\nenquete |&gt; relocate(moyenne, .before = note_stats) |&gt; names()\n\n [1] \"id\"             \"sexe\"           \"age\"            \"filiere\"       \n [5] \"annee\"          \"moyenne\"        \"note_stats\"     \"note_info\"     \n [9] \"heures_travail\" \"bourse\"         \"mention\""
+  },
+  {
+    "objectID": "formation_R_seance2.html#les-listes-en-r",
+    "href": "formation_R_seance2.html#les-listes-en-r",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "3.1 Les listes en R",
+    "text": "3.1 Les listes en R\nUne liste est une structure qui peut contenir des éléments de types différents : vecteurs, data frames, d’autres listes, etc. C’est la structure la plus flexible de R.\n\n# Créer une liste hétérogène\nprofil_etudiant &lt;- list(\n  nom        = \"Adjoa Mensah\",\n  age        = 22,\n  notes      = c(14.5, 12.0, 16.0, 11.5),\n  est_bourse = TRUE,\n  adresse    = list(ville = \"Parakou\", pays = \"Bénin\")\n)\n\n# Afficher la structure\nstr(profil_etudiant)\n\nList of 5\n $ nom       : chr \"Adjoa Mensah\"\n $ age       : num 22\n $ notes     : num [1:4] 14.5 12 16 11.5\n $ est_bourse: logi TRUE\n $ adresse   :List of 2\n  ..$ ville: chr \"Parakou\"\n  ..$ pays : chr \"Bénin\""
+  },
+  {
+    "objectID": "formation_R_seance2.html#accéder-aux-éléments-dune-liste",
+    "href": "formation_R_seance2.html#accéder-aux-éléments-dune-liste",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "3.2 Accéder aux éléments d’une liste",
+    "text": "3.2 Accéder aux éléments d’une liste\n\n# Méthode 1 : par le nom avec $\nprofil_etudiant$nom\n\n[1] \"Adjoa Mensah\"\n\nprofil_etudiant$notes\n\n[1] 14.5 12.0 16.0 11.5\n\n# Méthode 2 : par double crochets [[]]\nprofil_etudiant[[\"age\"]]\n\n[1] 22\n\n# Méthode 3 : par position\nprofil_etudiant[[1]]   # Premier élément\n\n[1] \"Adjoa Mensah\"\n\n# Accès imbriqué\nprofil_etudiant$adresse$ville\n\n[1] \"Parakou\"\n\n\n\n# Longueur d'une liste\nlength(profil_etudiant)\n\n[1] 5\n\n# Noms des éléments\nnames(profil_etudiant)\n\n[1] \"nom\"        \"age\"        \"notes\"      \"est_bourse\" \"adresse\""
+  },
+  {
+    "objectID": "formation_R_seance2.html#modifier-une-liste",
+    "href": "formation_R_seance2.html#modifier-une-liste",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "3.3 Modifier une liste",
+    "text": "3.3 Modifier une liste\n\n# Ajouter un élément\nprofil_etudiant$filiere &lt;- \"Statistique Appliquée\"\n\n# Modifier un élément\nprofil_etudiant$age &lt;- 23\n\n# Supprimer un élément\nprofil_etudiant$est_bourse &lt;- NULL\n\nstr(profil_etudiant)\n\nList of 5\n $ nom    : chr \"Adjoa Mensah\"\n $ age    : num 23\n $ notes  : num [1:4] 14.5 12 16 11.5\n $ adresse:List of 2\n  ..$ ville: chr \"Parakou\"\n  ..$ pays : chr \"Bénin\"\n $ filiere: chr \"Statistique Appliquée\""
+  },
+  {
+    "objectID": "formation_R_seance2.html#listes-de-data-frames-tableaux-imbriqués",
+    "href": "formation_R_seance2.html#listes-de-data-frames-tableaux-imbriqués",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "3.4 Listes de data frames (tableaux imbriqués)",
+    "text": "3.4 Listes de data frames (tableaux imbriqués)\n\n# Cas pratique : résultats de plusieurs enquêtes\nresultats &lt;- list(\n  ue1 = tibble(matiere = \"Statistique\", note = c(14, 12, 16, 11, 15)),\n  ue2 = tibble(matiere = \"Informatique\", note = c(13, 15, 12, 17, 14)),\n  ue3 = tibble(matiere = \"Démographie\",  note = c(11, 14, 13, 15, 12))\n)\n\n# Accéder à un tableau\nresultats$ue1\n\n# A tibble: 5 × 2\n  matiere      note\n  &lt;chr&gt;       &lt;dbl&gt;\n1 Statistique    14\n2 Statistique    12\n3 Statistique    16\n4 Statistique    11\n5 Statistique    15\n\n# Calculer la moyenne pour chaque UE\nsapply(resultats, function(df) mean(df$note))\n\n ue1  ue2  ue3 \n13.6 14.2 13.0"
+  },
+  {
+    "objectID": "formation_R_seance2.html#tidyr-remise-en-forme-des-tableaux",
+    "href": "formation_R_seance2.html#tidyr-remise-en-forme-des-tableaux",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "3.5 tidyr — Remise en forme des tableaux",
+    "text": "3.5 tidyr — Remise en forme des tableaux\nLe package tidyr permet de passer d’un format large (une ligne par individu, plusieurs colonnes de mesures) à un format long (une ligne par mesure), et vice-versa.\n\n# Données en format large\nnotes_large &lt;- tibble(\n  etudiant = c(\"Adjoua\", \"Kofi\", \"Aminata\", \"Brice\"),\n  stats    = c(14.5, 11.0, 16.5, 13.0),\n  info     = c(13.0, 15.0, 12.0, 14.5),\n  demo     = c(12.0, 10.5, 14.0, 11.5)\n)\nnotes_large\n\n# A tibble: 4 × 4\n  etudiant stats  info  demo\n  &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 Adjoua    14.5  13    12  \n2 Kofi      11    15    10.5\n3 Aminata   16.5  12    14  \n4 Brice     13    14.5  11.5\n\n\n\n# Passage au format long avec pivot_longer()\nnotes_long &lt;- notes_large |&gt;\n  pivot_longer(\n    cols      = c(stats, info, demo),  # colonnes à empiler\n    names_to  = \"matiere\",             # nom de la nouvelle colonne des noms\n    values_to = \"note\"                 # nom de la nouvelle colonne des valeurs\n  )\nnotes_long\n\n# A tibble: 12 × 3\n   etudiant matiere  note\n   &lt;chr&gt;    &lt;chr&gt;   &lt;dbl&gt;\n 1 Adjoua   stats    14.5\n 2 Adjoua   info     13  \n 3 Adjoua   demo     12  \n 4 Kofi     stats    11  \n 5 Kofi     info     15  \n 6 Kofi     demo     10.5\n 7 Aminata  stats    16.5\n 8 Aminata  info     12  \n 9 Aminata  demo     14  \n10 Brice    stats    13  \n11 Brice    info     14.5\n12 Brice    demo     11.5\n\n\n\n# Retour au format large avec pivot_wider()\nnotes_large_retour &lt;- notes_long |&gt;\n  pivot_wider(\n    names_from  = matiere,\n    values_from = note\n  )\nnotes_large_retour\n\n# A tibble: 4 × 4\n  etudiant stats  info  demo\n  &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 Adjoua    14.5  13    12  \n2 Kofi      11    15    10.5\n3 Aminata   16.5  12    14  \n4 Brice     13    14.5  11.5\n\n\n\n\n\n\n\n\nAstuceQuand utiliser le format long vs large ?\n\n\n\n\nFormat large : présentation dans un tableau, rapport, export Excel\nFormat long : analyse avec dplyr, visualisation avec ggplot2, modélisation\n\nLa plupart des fonctions du tidyverse travaillent avec le format long."
+  },
+  {
+    "objectID": "formation_R_seance2.html#les-facteurs-factor",
+    "href": "formation_R_seance2.html#les-facteurs-factor",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "4.1 Les facteurs (factor)",
+    "text": "4.1 Les facteurs (factor)\nUn facteur est un vecteur de valeurs catégorielles dont les niveaux sont fixés et ordonnés. C’est le type utilisé pour représenter des variables qualitatives en R.\n\n# Créer un facteur simple\nniveau_etude &lt;- factor(c(\"Licence\", \"Master\", \"Licence\", \"Doctorat\", \"Master\"))\nniveau_etude\n\n[1] Licence  Master   Licence  Doctorat Master  \nLevels: Doctorat Licence Master\n\n\n\n# Voir les niveaux\nlevels(niveau_etude)\n\n[1] \"Doctorat\" \"Licence\"  \"Master\"  \n\n# Nombre de niveaux\nnlevels(niveau_etude)\n\n[1] 3\n\n# Classe\nclass(niveau_etude)\n\n[1] \"factor\""
+  },
+  {
+    "objectID": "formation_R_seance2.html#facteurs-ordonnés",
+    "href": "formation_R_seance2.html#facteurs-ordonnés",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "4.2 Facteurs ordonnés",
+    "text": "4.2 Facteurs ordonnés\n\n# Facteur ordonné (avec hiérarchie)\nmention &lt;- factor(\n  c(\"Bien\", \"Passable\", \"Très bien\", \"Assez bien\", \"Bien\"),\n  levels  = c(\"Passable\", \"Assez bien\", \"Bien\", \"Très bien\"),\n  ordered = TRUE\n)\nmention\n\n[1] Bien       Passable   Très bien  Assez bien Bien      \nLevels: Passable &lt; Assez bien &lt; Bien &lt; Très bien\n\n# Comparaison logique possible grâce à l'ordre\nmention[1] &gt; mention[2]   # \"Bien\" &gt; \"Passable\" ?\n\n[1] TRUE"
+  },
+  {
+    "objectID": "formation_R_seance2.html#le-package-forcats-pour-manipuler-les-facteurs",
+    "href": "formation_R_seance2.html#le-package-forcats-pour-manipuler-les-facteurs",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "4.3 Le package forcats pour manipuler les facteurs",
+    "text": "4.3 Le package forcats pour manipuler les facteurs\nforcats (inclus dans le tidyverse) fournit des fonctions pratiques pour gérer les facteurs.\n\n# Données avec un facteur filière\nfilieres_vec &lt;- c(\"Statistique\", \"Éco\", \"Info\", \"Statistique\", \"Démographie\",\n                  \"Éco\", \"Info\", \"Statistique\", \"Statistique\", \"Éco\")\nfiliere_f &lt;- factor(filieres_vec)\n\n# fct_count() : compter les modalités\nfct_count(filiere_f, sort = TRUE)\n\n# A tibble: 4 × 2\n  f               n\n  &lt;fct&gt;       &lt;int&gt;\n1 Statistique     4\n2 Éco             3\n3 Info            2\n4 Démographie     1\n\n\n\n# fct_relevel() : réordonner les niveaux manuellement\nfiliere_f &lt;- fct_relevel(filiere_f, \"Statistique\", \"Démographie\", \"Éco\", \"Info\")\nlevels(filiere_f)\n\n[1] \"Statistique\" \"Démographie\" \"Éco\"         \"Info\"       \n\n\n\n# fct_recode() : renommer les modalités\nfiliere_f2 &lt;- fct_recode(filiere_f,\n  \"STAT\" = \"Statistique\",\n  \"DEMO\" = \"Démographie\",\n  \"INFO\" = \"Info\",\n  \"ECO\"  = \"Éco\"\n)\nlevels(filiere_f2)\n\n[1] \"STAT\" \"DEMO\" \"ECO\"  \"INFO\"\n\n\n\n# fct_lump_n() : regrouper les modalités rares\nregion &lt;- factor(c(\"Borgou\", \"Atacora\", \"Borgou\", \"Atlantique\", \"Borgou\",\n                   \"Zou\", \"Couffo\", \"Borgou\", \"Atlantique\", \"Mono\", \"Borgou\"))\n# Garder les 2 plus fréquentes, regrouper le reste en \"Autre\"\nfct_lump_n(region, n = 2)\n\n [1] Borgou     Other      Borgou     Atlantique Borgou     Other     \n [7] Other      Borgou     Atlantique Other      Borgou    \nLevels: Atlantique Borgou Other"
+  },
+  {
+    "objectID": "formation_R_seance2.html#les-vecteurs-labellisés",
+    "href": "formation_R_seance2.html#les-vecteurs-labellisés",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "4.4 Les vecteurs labellisés",
+    "text": "4.4 Les vecteurs labellisés\nLes vecteurs labellisés permettent d’associer des étiquettes textuelles à des codes numériques, comme dans les logiciels d’enquête (Stata, SPSS, SAS). C’est très utile pour les données d’enquêtes ménages.\n\n# Installation du package haven (si nécessaire)\ninstall.packages(\"haven\")\n\n\nlibrary(haven)\n\n# Créer un vecteur labellisé\nsexe_lab &lt;- labelled(\n  c(1, 2, 1, 1, 2, 2, 1),\n  labels = c(Homme = 1, Femme = 2)\n)\n\nsexe_lab\n\n&lt;labelled&lt;double&gt;[7]&gt;\n[1] 1 2 1 1 2 2 1\n\nLabels:\n value label\n     1 Homme\n     2 Femme\n\nclass(sexe_lab)\n\n[1] \"haven_labelled\" \"vctrs_vctr\"     \"double\"        \n\n\n\n# Voir les labels\nattr(sexe_lab, \"labels\")\n\nHomme Femme \n    1     2 \n\n# Convertir en facteur\nas_factor(sexe_lab)\n\n[1] Homme Femme Homme Homme Femme Femme Homme\nLevels: Homme Femme\n\n\n\n# Exemple complet : données d'enquête codées\nniveau_vie &lt;- labelled(\n  c(1, 3, 2, 1, 4, 2, 3, 1),\n  labels = c(\n    \"Très pauvre\" = 1,\n    \"Pauvre\"      = 2,\n    \"Moyen\"       = 3,\n    \"Aisé\"        = 4\n  )\n)\n\n# Affichage avec les labels\nas_factor(niveau_vie)\n\n[1] Très pauvre Moyen       Pauvre      Très pauvre Aisé        Pauvre     \n[7] Moyen       Très pauvre\nLevels: Très pauvre Pauvre Moyen Aisé\n\n# Table de fréquences avec labels\ntable(as_factor(niveau_vie))\n\n\nTrès pauvre      Pauvre       Moyen        Aisé \n          3           2           2           1 \n\n\n\n\n\n\n\n\nNoteVecteurs labellisés vs Facteurs\n\n\n\n\n\n\n\nFacteur\nVecteur labellisé\n\n\n\n\nStockage interne\nEntier\nNumérique avec attributs\n\n\nUsage principal\nAnalyse R native\nImport depuis Stata/SPSS\n\n\nPackage\nBase R\nhaven\n\n\nConversion\nas.factor()\nas_factor() (haven)\n\n\n\nDans la pratique, on importe les données Stata/SPSS avec haven, et on convertit en facteurs pour l’analyse avec as_factor()."
+  },
+  {
+    "objectID": "formation_R_seance2.html#la-grammaire-des-graphiques",
+    "href": "formation_R_seance2.html#la-grammaire-des-graphiques",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "5.1 La grammaire des graphiques",
+    "text": "5.1 La grammaire des graphiques\nggplot2 est fondé sur la grammaire des graphiques : tout graphique est construit par couches successives.\nggplot(data = ..., aes(x = ..., y = ..., color = ...)) +\n  geom_...() +           # type de graphique\n  scale_...() +          # ajustement des axes/couleurs\n  labs(...) +            # titres et labels\n  theme_...()            # apparence générale\n\n\n\n\n\n\nImportantÀ retenir — Les 3 composantes obligatoires\n\n\n\n\ndata : le jeu de données\naes() : les aesthetics (variables mappées aux axes, couleurs, formes…)\ngeom_*() : le type de représentation graphique"
+  },
+  {
+    "objectID": "formation_R_seance2.html#histogramme-avec-geom_histogram",
+    "href": "formation_R_seance2.html#histogramme-avec-geom_histogram",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "5.2 Histogramme avec geom_histogram()",
+    "text": "5.2 Histogramme avec geom_histogram()\n\nggplot(enquete, aes(x = moyenne)) +\n  geom_histogram(bins = 15, fill = \"steelblue\", color = \"white\") +\n  labs(\n    title    = \"Distribution des moyennes générales\",\n    subtitle = \"Enquête universitaire — n = 80 étudiants\",\n    x        = \"Moyenne générale /20\",\n    y        = \"Nombre d'étudiants\",\n    caption  = \"Source : Enquête universitaire 2024\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "formation_R_seance2.html#diagramme-en-barres-avec-geom_bar",
+    "href": "formation_R_seance2.html#diagramme-en-barres-avec-geom_bar",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "5.3 Diagramme en barres avec geom_bar()",
+    "text": "5.3 Diagramme en barres avec geom_bar()\n\nggplot(enquete, aes(x = filiere)) +\n  geom_bar(fill = \"coral\", color = \"white\") +\n  labs(\n    title = \"Répartition des étudiants par filière\",\n    x     = \"Filière\",\n    y     = \"Effectif\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n# Barres groupées par sexe\nggplot(enquete, aes(x = filiere, fill = sexe)) +\n  geom_bar(position = \"dodge\") +\n  scale_fill_manual(values = c(\"Homme\" = \"steelblue\", \"Femme\" = \"coral\")) +\n  labs(\n    title = \"Répartition par filière et par sexe\",\n    x     = \"Filière\",\n    y     = \"Effectif\",\n    fill  = \"Sexe\"\n  ) +\n  theme_minimal() +\n  theme(legend.position = \"top\")"
+  },
+  {
+    "objectID": "formation_R_seance2.html#boîte-à-moustaches-avec-geom_boxplot",
+    "href": "formation_R_seance2.html#boîte-à-moustaches-avec-geom_boxplot",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "5.4 Boîte à moustaches avec geom_boxplot()",
+    "text": "5.4 Boîte à moustaches avec geom_boxplot()\nLa boîte à moustaches (boxplot) est idéale pour comparer la distribution d’une variable quantitative selon les modalités d’une variable qualitative.\n\nggplot(enquete, aes(x = filiere, y = moyenne, fill = filiere)) +\n  geom_boxplot(alpha = 0.7) +\n  geom_jitter(width = 0.2, alpha = 0.3, size = 1.5) +  # points individuels\n  scale_fill_brewer(palette = \"Set2\") +\n  labs(\n    title    = \"Distribution des moyennes par filière\",\n    subtitle = \"Les points représentent les observations individuelles\",\n    x        = \"Filière\",\n    y        = \"Moyenne générale /20\"\n  ) +\n  theme_minimal() +\n  theme(legend.position = \"none\")"
+  },
+  {
+    "objectID": "formation_R_seance2.html#nuage-de-points-avec-geom_point",
+    "href": "formation_R_seance2.html#nuage-de-points-avec-geom_point",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "5.5 Nuage de points avec geom_point()",
+    "text": "5.5 Nuage de points avec geom_point()\n\nggplot(enquete, aes(x = note_stats, y = note_info, color = filiere)) +\n  geom_point(alpha = 0.7, size = 2.5) +\n  geom_smooth(method = \"lm\", se = FALSE, linewidth = 0.8) +\n  scale_color_brewer(palette = \"Set1\") +\n  labs(\n    title  = \"Relation entre la note de stats et la note d'info\",\n    x      = \"Note de Statistique /20\",\n    y      = \"Note d'Informatique /20\",\n    color  = \"Filière\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "formation_R_seance2.html#graphique-en-courbes-avec-geom_line",
+    "href": "formation_R_seance2.html#graphique-en-courbes-avec-geom_line",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "5.6 Graphique en courbes avec geom_line()",
+    "text": "5.6 Graphique en courbes avec geom_line()\n\n# Données temporelles simulées\nevolution &lt;- tibble(\n  annee      = rep(2018:2023, 3),\n  filiere    = rep(c(\"Statistique\", \"Informatique\", \"Démographie\"), each = 6),\n  effectif   = c(45, 52, 58, 61, 70, 75,\n                 30, 35, 42, 50, 58, 65,\n                 20, 22, 25, 24, 28, 30)\n)\n\nggplot(evolution, aes(x = annee, y = effectif, color = filiere, group = filiere)) +\n  geom_line(linewidth = 1.2) +\n  geom_point(size = 3) +\n  scale_color_manual(values = c(\"steelblue\", \"coral\", \"forestgreen\")) +\n  labs(\n    title  = \"Évolution des effectifs par filière (2018–2023)\",\n    x      = \"Année\",\n    y      = \"Effectif\",\n    color  = \"Filière\"\n  ) +\n  theme_minimal() +\n  scale_x_continuous(breaks = 2018:2023)"
+  },
+  {
+    "objectID": "formation_R_seance2.html#graphique-à-barres-empilées",
+    "href": "formation_R_seance2.html#graphique-à-barres-empilées",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "5.7 Graphique à barres empilées (%)",
+    "text": "5.7 Graphique à barres empilées (%)\n\nggplot(enquete, aes(x = filiere, fill = mention)) +\n  geom_bar(position = \"fill\") +\n  scale_y_continuous(labels = scales::percent) +\n  scale_fill_brewer(palette = \"RdYlGn\", direction = 1) +\n  labs(\n    title = \"Répartition des mentions par filière\",\n    x     = \"Filière\",\n    y     = \"Proportion\",\n    fill  = \"Mention\"\n  ) +\n  theme_minimal() +\n  theme(legend.position = \"bottom\")"
+  },
+  {
+    "objectID": "formation_R_seance2.html#facet_wrap-graphiques-en-facettes",
+    "href": "formation_R_seance2.html#facet_wrap-graphiques-en-facettes",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "5.8 facet_wrap() — Graphiques en facettes",
+    "text": "5.8 facet_wrap() — Graphiques en facettes\nLes facettes permettent de répéter le même graphique pour chaque modalité d’une variable.\n\nggplot(enquete, aes(x = note_stats, fill = sexe)) +\n  geom_histogram(bins = 10, alpha = 0.75, color = \"white\") +\n  facet_wrap(~ filiere, ncol = 2) +\n  scale_fill_manual(values = c(\"Homme\" = \"steelblue\", \"Femme\" = \"coral\")) +\n  labs(\n    title = \"Distribution des notes de statistique par filière et sexe\",\n    x     = \"Note /20\",\n    y     = \"Effectif\",\n    fill  = \"Sexe\"\n  ) +\n  theme_minimal() +\n  theme(legend.position = \"bottom\")"
+  },
+  {
+    "objectID": "formation_R_seance2.html#personnalisation-avancée-des-thèmes",
+    "href": "formation_R_seance2.html#personnalisation-avancée-des-thèmes",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "5.9 Personnalisation avancée des thèmes",
+    "text": "5.9 Personnalisation avancée des thèmes\n\nggplot(enquete, aes(x = fct_reorder(filiere, moyenne, .fun = mean), \n                    y = moyenne, fill = filiere)) +\n  stat_summary(fun = mean, geom = \"bar\", alpha = 0.85) +\n  stat_summary(fun.data = mean_se, geom = \"errorbar\", width = 0.25, linewidth = 0.8) +\n  coord_flip() +\n  scale_fill_brewer(palette = \"Dark2\") +\n  labs(\n    title    = \"Moyenne générale par filière (avec intervalle d'erreur)\",\n    subtitle = \"Les barres d'erreur représentent ± l'erreur standard\",\n    x        = NULL,\n    y        = \"Moyenne générale /20\"\n  ) +\n  theme_classic() +\n  theme(\n    legend.position = \"none\",\n    plot.title      = element_text(face = \"bold\", size = 12),\n    plot.subtitle   = element_text(color = \"gray50\", size = 9),\n    axis.text       = element_text(size = 10)\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAstuceLes thèmes prédéfinis de ggplot2\n\n\n\n\n\n\nThème\nRendu\n\n\n\n\ntheme_minimal()\nFond blanc, grille légère\n\n\ntheme_classic()\nFond blanc, axes uniquement\n\n\ntheme_bw()\nFond blanc, grille visible\n\n\ntheme_dark()\nFond sombre\n\n\ntheme_void()\nAucun fond ni axes\n\n\n\nUtilisez theme_minimal() ou theme_classic() pour des graphiques prêts pour publication."
+  },
+  {
+    "objectID": "formation_R_seance2.html#sauvegarder-un-graphique",
+    "href": "formation_R_seance2.html#sauvegarder-un-graphique",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "5.10 Sauvegarder un graphique",
+    "text": "5.10 Sauvegarder un graphique\n\n# Créer le graphique\nmon_graphique &lt;- ggplot(enquete, aes(x = filiere, y = moyenne)) +\n  geom_boxplot(fill = \"steelblue\", alpha = 0.7) +\n  theme_minimal() +\n  labs(title = \"Moyennes par filière\")\n\n# Sauvegarder en PNG haute résolution\nggsave(\n  filename = \"graphique_moyennes.png\",\n  plot     = mon_graphique,\n  width    = 8,\n  height   = 5,\n  dpi      = 300\n)\n\n# Sauvegarder en PDF (vectoriel, pour publications)\nggsave(\"graphique_moyennes.pdf\", mon_graphique, width = 8, height = 5)"
+  },
+  {
+    "objectID": "formation_R_seance2.html#statistiques-univariées-avec-les-fonctions-de-base",
+    "href": "formation_R_seance2.html#statistiques-univariées-avec-les-fonctions-de-base",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "6.1 Statistiques univariées avec les fonctions de base",
+    "text": "6.1 Statistiques univariées avec les fonctions de base\n\n6.1.1 Variables quantitatives\n\n# Utilisons le jeu de données enquete déjà créé\nx &lt;- enquete$moyenne\n\n# Mesures de tendance centrale\ncat(\"=== Tendance centrale ===\\n\")\n\n=== Tendance centrale ===\n\ncat(\"Moyenne   :\", round(mean(x), 2), \"\\n\")\n\nMoyenne   : 12 \n\ncat(\"Médiane   :\", round(median(x), 2), \"\\n\")\n\nMédiane   : 12.1 \n\ncat(\"Mode      :\", names(sort(table(round(x)), decreasing = TRUE)[1]), \"\\n\")\n\nMode      : 9 \n\n# Mesures de dispersion\ncat(\"\\n=== Dispersion ===\\n\")\n\n\n=== Dispersion ===\n\ncat(\"Écart-type:\", round(sd(x), 2), \"\\n\")\n\nÉcart-type: 3.39 \n\ncat(\"Variance  :\", round(var(x), 2), \"\\n\")\n\nVariance  : 11.5 \n\ncat(\"Étendue   :\", max(x) - min(x), \"\\n\")\n\nÉtendue   : 13.35 \n\ncat(\"IQR       :\", IQR(x), \"\\n\")\n\nIQR       : 4.875 \n\n# Quantiles\ncat(\"\\n=== Quantiles ===\\n\")\n\n\n=== Quantiles ===\n\nprint(round(quantile(x, probs = c(0, 0.25, 0.5, 0.75, 1)), 2))\n\n   0%   25%   50%   75%  100% \n 5.70  9.19 12.10 14.06 19.05 \n\n\n\n# Résumé complet en une commande\nsummary(enquete$moyenne)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  5.700   9.188  12.100  11.996  14.062  19.050 \n\n\n\n\n6.1.2 Asymétrie et aplatissement\n\ninstall.packages(\"e1071\")\n\n\nlibrary(e1071)\n\ncat(\"Asymétrie (skewness) :\", round(skewness(enquete$moyenne), 3), \"\\n\")\n\nAsymétrie (skewness) : 0.295 \n\ncat(\"Aplatissement (kurtosis) :\", round(kurtosis(enquete$moyenne), 3), \"\\n\")\n\nAplatissement (kurtosis) : -0.899 \n\n\n\n\n\n\n\n\nNoteInterpréter l’asymétrie\n\n\n\n\nSkewness ≈ 0 : distribution symétrique\nSkewness &gt; 0 : queue à droite (asymétrie positive)\nSkewness &lt; 0 : queue à gauche (asymétrie négative)\n\n\n\n\n\n6.1.3 Variables qualitatives\n\n# Fréquences absolues\ntable(enquete$filiere)\n\n\n Démographie     Économie Informatique  Statistique \n          25           19           16           20 \n\n# Fréquences relatives (%)\nround(prop.table(table(enquete$filiere)) * 100, 1)\n\n\n Démographie     Économie Informatique  Statistique \n        31.2         23.8         20.0         25.0 \n\n# Avec dplyr (plus lisible)\nenquete |&gt;\n  count(filiere) |&gt;\n  mutate(\n    pct   = round(n / sum(n) * 100, 1),\n    cum_n = cumsum(n),\n    cum_pct = cumsum(pct)\n  )\n\n# A tibble: 4 × 5\n  filiere          n   pct cum_n cum_pct\n  &lt;chr&gt;        &lt;int&gt; &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt;\n1 Démographie     25  31.2    25    31.2\n2 Informatique    16  20      41    51.2\n3 Statistique     20  25      61    76.2\n4 Économie        19  23.8    80   100"
+  },
+  {
+    "objectID": "formation_R_seance2.html#statistiques-bivariées",
+    "href": "formation_R_seance2.html#statistiques-bivariées",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "6.2 Statistiques bivariées",
+    "text": "6.2 Statistiques bivariées\n\n6.2.1 Deux variables qualitatives — Tableau croisé\n\n# Tableau de contingence\ntab &lt;- table(enquete$filiere, enquete$sexe)\ntab\n\n              \n               Femme Homme\n  Démographie     13    12\n  Économie        10     9\n  Informatique    10     6\n  Statistique      7    13\n\n# En pourcentages ligne (profil ligne)\nround(prop.table(tab, margin = 1) * 100, 1)\n\n              \n               Femme Homme\n  Démographie   52.0  48.0\n  Économie      52.6  47.4\n  Informatique  62.5  37.5\n  Statistique   35.0  65.0\n\n# En pourcentages colonne (profil colonne)\nround(prop.table(tab, margin = 2) * 100, 1)\n\n              \n               Femme Homme\n  Démographie   32.5  30.0\n  Économie      25.0  22.5\n  Informatique  25.0  15.0\n  Statistique   17.5  32.5\n\n\n\n# Test du chi-2 d'indépendance\ntest_chi2 &lt;- chisq.test(tab)\ntest_chi2\n\n\n    Pearson's Chi-squared test\n\ndata:  tab\nX-squared = 2.8926, df = 3, p-value = 0.4085\n\n\n\n# Interpréter le résultat\ncat(\"Valeur du chi-2 :\", round(test_chi2$statistic, 3), \"\\n\")\n\nValeur du chi-2 : 2.893 \n\ncat(\"Degrés de liberté :\", test_chi2$parameter, \"\\n\")\n\nDegrés de liberté : 3 \n\ncat(\"p-valeur :\", round(test_chi2$p.value, 4), \"\\n\")\n\np-valeur : 0.4085 \n\nif (test_chi2$p.value &lt; 0.05) {\n  cat(\"Conclusion : Lien significatif entre filière et sexe (α = 5%)\\n\")\n} else {\n  cat(\"Conclusion : Pas de lien significatif (α = 5%)\\n\")\n}\n\nConclusion : Pas de lien significatif (α = 5%)\n\n\n\n\n6.2.2 Une qualitative × une quantitative — Comparaison de groupes\n\n# Moyenne par groupe\nenquete |&gt;\n  group_by(filiere) |&gt;\n  summarise(\n    n   = n(),\n    moy = round(mean(moyenne), 2),\n    et  = round(sd(moyenne), 2),\n    med = round(median(moyenne), 2)\n  )\n\n# A tibble: 4 × 5\n  filiere          n   moy    et   med\n  &lt;chr&gt;        &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 Démographie     25  13.5  3.28  13.3\n2 Informatique    16  10.8  3.23  10.0\n3 Statistique     20  11.0  3.53  10.0\n4 Économie        19  12.1  2.92  12.1\n\n\n\n# Test de Kruskal-Wallis (alternative non paramétrique à l'ANOVA)\nkruskal.test(moyenne ~ filiere, data = enquete)\n\n\n    Kruskal-Wallis rank sum test\n\ndata:  moyenne by filiere\nKruskal-Wallis chi-squared = 9.0226, df = 3, p-value = 0.02899\n\n\n\n# Comparaison Homme vs Femme (test de Wilcoxon)\nwilcox.test(moyenne ~ sexe, data = enquete)\n\n\n    Wilcoxon rank sum exact test\n\ndata:  moyenne by sexe\nW = 777, p-value = 0.8277\nalternative hypothesis: true location shift is not equal to 0\n\n\n\n\n6.2.3 Deux variables quantitatives — Corrélation\n\n# Corrélation de Pearson\ncor_val &lt;- cor(enquete$note_stats, enquete$note_info, method = \"pearson\")\ncat(\"Corrélation de Pearson (stats ~ info) :\", round(cor_val, 3), \"\\n\")\n\nCorrélation de Pearson (stats ~ info) : 0.196 \n\n# Test de significativité\ncor.test(enquete$note_stats, enquete$note_info)\n\n\n    Pearson's product-moment correlation\n\ndata:  enquete$note_stats and enquete$note_info\nt = 1.7617, df = 78, p-value = 0.08204\nalternative hypothesis: true correlation is not equal to 0\n95 percent confidence interval:\n -0.02518251  0.39821810\nsample estimates:\n      cor \n0.1956167 \n\n\n\n# Matrice de corrélations\nvars_quant &lt;- enquete |&gt; select(note_stats, note_info, heures_travail, moyenne, age)\ncor_matrix &lt;- round(cor(vars_quant, method = \"pearson\"), 2)\ncor_matrix\n\n               note_stats note_info heures_travail moyenne   age\nnote_stats           1.00      0.20           0.15    0.78 -0.06\nnote_info            0.20      1.00          -0.03    0.77  0.03\nheures_travail       0.15     -0.03           1.00    0.07  0.15\nmoyenne              0.78      0.77           0.07    1.00 -0.02\nage                 -0.06      0.03           0.15   -0.02  1.00\n\n\n\n\n\n\n\n\nNoteInterpréter le coefficient de corrélation\n\n\n\n\n\n\n\nr\n\n\n\n\n0.00 – 0.10\nNulle ou négligeable\n\n\n0.10 – 0.30\nFaible\n\n\n0.30 – 0.50\nModérée\n\n\n0.50 – 0.70\nForte\n\n\n0.70 – 1.00\nTrès forte\n\n\n\n\n\n\n# Visualisation de la matrice de corrélations\n# Installation si nécessaire : install.packages(\"corrplot\")\nlibrary(corrplot)\n\ncorrplot(cor_matrix,\n         method  = \"color\",\n         type    = \"upper\",\n         addCoef.col = \"black\",\n         tl.col  = \"black\",\n         tl.srt  = 45,\n         col     = colorRampPalette(c(\"coral\", \"white\", \"steelblue\"))(200),\n         title   = \"Matrice de corrélations\",\n         mar     = c(0, 0, 1, 0))"
+  },
+  {
+    "objectID": "formation_R_seance2.html#fonctions-sur-les-chaînes-de-caractères-stringr",
+    "href": "formation_R_seance2.html#fonctions-sur-les-chaînes-de-caractères-stringr",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "7.1 Fonctions sur les chaînes de caractères — stringr",
+    "text": "7.1 Fonctions sur les chaînes de caractères — stringr\n\nlibrary(stringr)\n\nnoms &lt;- c(\"Adjoa Mensah\", \"kofi ATSU\", \"aminata Diallo\", \"BRICE Hounsa\")\n\n# Mise en forme\nstr_to_upper(noms)         # TOUT EN MAJUSCULES\n\n[1] \"ADJOA MENSAH\"   \"KOFI ATSU\"      \"AMINATA DIALLO\" \"BRICE HOUNSA\"  \n\nstr_to_lower(noms)         # tout en minuscules\n\n[1] \"adjoa mensah\"   \"kofi atsu\"      \"aminata diallo\" \"brice hounsa\"  \n\nstr_to_title(noms)         # Première Lettre En Majuscule\n\n[1] \"Adjoa Mensah\"   \"Kofi Atsu\"      \"Aminata Diallo\" \"Brice Hounsa\"  \n\n\n\n# Longueur des chaînes\nstr_length(noms)\n\n[1] 12  9 14 12\n\n# Détecter un motif\nstr_detect(noms, \"a\")     # Contient la lettre \"a\" ?\n\n[1]  TRUE FALSE  TRUE  TRUE\n\n# Extraire une sous-chaîne\nstr_sub(noms, 1, 5)       # 5 premiers caractères\n\n[1] \"Adjoa\" \"kofi \" \"amina\" \"BRICE\"\n\n# Remplacer\nstr_replace(noms, \"Adjoa\", \"Akosua\")\n\n[1] \"Akosua Mensah\"  \"kofi ATSU\"      \"aminata Diallo\" \"BRICE Hounsa\"  \n\n\n\n# Diviser une chaîne\nstr_split(\"Adjoa Mensah\", \" \")[[1]]\n\n[1] \"Adjoa\"  \"Mensah\"\n\n# Coller des chaînes\nstr_c(\"Étudiant\", 1:5, sep = \"_\")\n\n[1] \"Étudiant_1\" \"Étudiant_2\" \"Étudiant_3\" \"Étudiant_4\" \"Étudiant_5\"\n\n# Supprimer les espaces inutiles\nstr_trim(\"   Brice Hounsa   \")\n\n[1] \"Brice Hounsa\"\n\n# Compter les occurrences d'un motif\nstr_count(noms, \"a\")\n\n[1] 2 0 4 1"
+  },
+  {
+    "objectID": "formation_R_seance2.html#fonctions-mathématiques-et-de-transformation",
+    "href": "formation_R_seance2.html#fonctions-mathématiques-et-de-transformation",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "7.2 Fonctions mathématiques et de transformation",
+    "text": "7.2 Fonctions mathématiques et de transformation\n\nx &lt;- c(4.567, 3.142, 9.999, 1.001, 7.5)\n\n# Arrondis\nround(x, 2)          # arrondi à 2 décimales\n\n[1]  4.57  3.14 10.00  1.00  7.50\n\nfloor(x)             # arrondi vers le bas\n\n[1] 4 3 9 1 7\n\nceiling(x)           # arrondi vers le haut\n\n[1]  5  4 10  2  8\n\ntrunc(x)             # partie entière (vers zéro)\n\n[1] 4 3 9 1 7\n\n# Transformations mathématiques\nlog(x)               # logarithme naturel\n\n[1] 1.5188565342 1.1448595398 2.3024850880 0.0009995003 2.0149030205\n\nlog10(x)             # logarithme base 10\n\n[1] 0.6596310116 0.4972061807 0.9999565684 0.0004340775 0.8750612634\n\nexp(x)               # exponentielle\n\n[1]    96.254911    23.150121 22004.450339     2.721001  1808.042414\n\nabs(c(-3, 5, -2, 7)) # valeur absolue\n\n[1] 3 5 2 7\n\n\n\n# Cumul et rang\nvaleurs &lt;- c(10, 25, 8, 17, 30, 12)\ncumsum(valeurs)      # somme cumulée\n\n[1]  10  35  43  60  90 102\n\ncumprod(c(1,2,3,4))  # produit cumulé\n\n[1]  1  2  6 24\n\ncummax(valeurs)      # maximum cumulé\n\n[1] 10 25 25 25 30 30\n\nrank(valeurs)        # rang de chaque valeur\n\n[1] 2 5 1 4 6 3"
+  },
+  {
+    "objectID": "formation_R_seance2.html#fonctions-sur-les-vecteurs-et-data-frames",
+    "href": "formation_R_seance2.html#fonctions-sur-les-vecteurs-et-data-frames",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "7.3 Fonctions sur les vecteurs et data frames",
+    "text": "7.3 Fonctions sur les vecteurs et data frames\n\n# Identifier les valeurs uniques\nvilles &lt;- c(\"Cotonou\", \"Parakou\", \"Cotonou\", \"Porto-Novo\", \"Parakou\", \"Cotonou\")\nunique(villes)         # valeurs distinctes\n\n[1] \"Cotonou\"    \"Parakou\"    \"Porto-Novo\"\n\nduplicated(villes)     # TRUE si doublon\n\n[1] FALSE FALSE  TRUE FALSE  TRUE  TRUE\n\ntable(villes)          # fréquences\n\nvilles\n   Cotonou    Parakou Porto-Novo \n         3          2          1 \n\n# Valeurs manquantes\nx_na &lt;- c(3, NA, 7, NA, 5, 9)\nis.na(x_na)            # Identifier les NA\n\n[1] FALSE  TRUE FALSE  TRUE FALSE FALSE\n\nsum(is.na(x_na))       # Compter les NA\n\n[1] 2\n\nmean(x_na, na.rm = TRUE)  # Calculer en ignorant les NA\n\n[1] 6\n\nna.omit(x_na)          # Supprimer les NA\n\n[1] 3 7 5 9\nattr(,\"na.action\")\n[1] 2 4\nattr(,\"class\")\n[1] \"omit\"\n\n\n\n# Remplacer les NA\nx_na[is.na(x_na)] &lt;- 0   # Remplacer par 0\nx_na\n\n[1] 3 0 7 0 5 9\n\n# Avec dplyr : replace_na()\nenquete_na &lt;- tibble(age = c(20, NA, 22, NA, 25))\nenquete_na |&gt; mutate(age = replace_na(age, mean(age, na.rm = TRUE)))\n\n# A tibble: 5 × 1\n    age\n  &lt;dbl&gt;\n1  20  \n2  22.3\n3  22  \n4  22.3\n5  25"
+  },
+  {
+    "objectID": "formation_R_seance2.html#conditions-if-ifelse-case_when",
+    "href": "formation_R_seance2.html#conditions-if-ifelse-case_when",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "7.4 Conditions : if, ifelse(), case_when()",
+    "text": "7.4 Conditions : if, ifelse(), case_when()\n\n# if simple (pour un seul test)\nnote &lt;- 13.5\nif (note &gt;= 10) {\n  cat(\"Admis\\n\")\n} else {\n  cat(\"Ajourné\\n\")\n}\n\nAdmis\n\n\n\n# ifelse() vectorisé (pour un vecteur)\nnotes &lt;- c(14, 9, 12, 7, 15, 11)\nstatut &lt;- ifelse(notes &gt;= 10, \"Admis\", \"Ajourné\")\nstatut\n\n[1] \"Admis\"   \"Ajourné\" \"Admis\"   \"Ajourné\" \"Admis\"   \"Admis\"  \n\n\n\n# case_when() de dplyr : conditions multiples\nnotes_df &lt;- tibble(note = c(18, 15, 13, 11, 8))\nnotes_df |&gt;\n  mutate(\n    mention = case_when(\n      note &gt;= 16 ~ \"Très bien\",\n      note &gt;= 14 ~ \"Bien\",\n      note &gt;= 12 ~ \"Assez bien\",\n      note &gt;= 10 ~ \"Passable\",\n      TRUE       ~ \"Insuffisant\"\n    )\n  )\n\n# A tibble: 5 × 2\n   note mention    \n  &lt;dbl&gt; &lt;chr&gt;      \n1    18 Très bien  \n2    15 Bien       \n3    13 Assez bien \n4    11 Passable   \n5     8 Insuffisant"
+  },
+  {
+    "objectID": "formation_R_seance2.html#boucles-for-et-fonctions-apply",
+    "href": "formation_R_seance2.html#boucles-for-et-fonctions-apply",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "7.5 Boucles for et fonctions apply",
+    "text": "7.5 Boucles for et fonctions apply\n\n# Boucle for : répéter une opération\nfor (i in 1:5) {\n  cat(\"Itération\", i, \"— carré =\", i^2, \"\\n\")\n}\n\nItération 1 — carré = 1 \nItération 2 — carré = 4 \nItération 3 — carré = 9 \nItération 4 — carré = 16 \nItération 5 — carré = 25 \n\n\n\n# sapply() : appliquer une fonction à chaque élément\nmatieres &lt;- list(\n  stats = c(14, 12, 16, 11, 15),\n  info  = c(13, 15, 10, 17, 12),\n  demo  = c(11, 14, 13, 15, 12)\n)\n\nsapply(matieres, mean)\n\nstats  info  demo \n 13.6  13.4  13.0 \n\nsapply(matieres, sd)\n\n   stats     info     demo \n2.073644 2.701851 1.581139 \n\n\n\n# lapply() : retourne une liste\nlapply(matieres, summary)\n\n$stats\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n   11.0    12.0    14.0    13.6    15.0    16.0 \n\n$info\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n   10.0    12.0    13.0    13.4    15.0    17.0 \n\n$demo\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n     11      12      13      13      14      15 \n\n\n\n# apply() : sur une matrice (lignes ou colonnes)\nmat &lt;- matrix(c(14, 12, 16, 11, 13, 15, 10, 17, 11, 14, 13, 15), nrow = 4)\napply(mat, 1, mean)  # moyenne par ligne\n\n[1] 12.66667 13.66667 13.00000 14.33333\n\napply(mat, 2, mean)  # moyenne par colonne\n\n[1] 13.25 13.75 13.25"
+  },
+  {
+    "objectID": "formation_R_seance2.html#créer-ses-propres-fonctions",
+    "href": "formation_R_seance2.html#créer-ses-propres-fonctions",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "7.6 Créer ses propres fonctions",
+    "text": "7.6 Créer ses propres fonctions\n\n# Structure d'une fonction\nma_fonction &lt;- function(argument1, argument2 = valeur_defaut) {\n  # Corps de la fonction\n  resultat &lt;- argument1 + argument2\n  return(resultat)\n}\n\n\n# Fonction : taux de réussite\ntaux_reussite &lt;- function(notes, seuil = 10) {\n  n_total  &lt;- length(notes)\n  n_admis  &lt;- sum(notes &gt;= seuil)\n  taux     &lt;- round(n_admis / n_total * 100, 1)\n  cat(\"Total :\", n_total, \"| Admis :\", n_admis, \"| Taux :\", taux, \"%\\n\")\n  return(invisible(taux))\n}\n\n# Application\nnotes_classe &lt;- c(14, 9, 12, 7, 15, 11, 8, 16, 10, 13)\ntaux_reussite(notes_classe)\n\nTotal : 10 | Admis : 7 | Taux : 70 %\n\ntaux_reussite(notes_classe, seuil = 12)\n\nTotal : 10 | Admis : 5 | Taux : 50 %\n\n\n\n# Fonction : résumé statistique personnalisé\nresume_stat &lt;- function(x, var_name = \"Variable\") {\n  tibble(\n    variable  = var_name,\n    n         = length(x[!is.na(x)]),\n    n_na      = sum(is.na(x)),\n    moyenne   = round(mean(x, na.rm = TRUE), 2),\n    mediane   = round(median(x, na.rm = TRUE), 2),\n    et        = round(sd(x, na.rm = TRUE), 2),\n    min       = round(min(x, na.rm = TRUE), 2),\n    max       = round(max(x, na.rm = TRUE), 2),\n    q1        = round(quantile(x, 0.25, na.rm = TRUE), 2),\n    q3        = round(quantile(x, 0.75, na.rm = TRUE), 2)\n  )\n}\n\n# Application sur plusieurs variables\nbind_rows(\n  resume_stat(enquete$note_stats,  \"Note Stats\"),\n  resume_stat(enquete$note_info,   \"Note Info\"),\n  resume_stat(enquete$moyenne,     \"Moyenne\"),\n  resume_stat(enquete$heures_travail, \"Heures de travail\")\n)\n\n# A tibble: 4 × 10\n  variable              n  n_na moyenne mediane    et   min   max    q1    q3\n  &lt;chr&gt;             &lt;int&gt; &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 Note Stats           80     0   12.0     12.2  4.41   5.2  19.7  7.88  15  \n2 Note Info            80     0   12.0     11.4  4.36   5    19.7  8.32  16.4\n3 Moyenne              80     0   12       12.1  3.39   5.7  19.0  9.19  14.1\n4 Heures de travail    80     0    4.16     4    2.2    1     8    2      6  \n\n\n\n\n\n\n\n\nAstuceBonne pratique — Écrire de bonnes fonctions\n\n\n\n\nUn nom explicite : préférez calculer_taux() à f()\nDes arguments nommés avec des valeurs par défaut sensées\nDes commentaires expliquant le rôle de chaque argument\nUn return() explicite pour la valeur retournée\nTester la fonction avec des cas simples avant de l’utiliser"
+  },
+  {
+    "objectID": "formation_R_seance2.html#résumé-des-notions-apprises",
+    "href": "formation_R_seance2.html#résumé-des-notions-apprises",
+    "title": "Formation R — Séance 2 : Manipulation et visualisation de données",
+    "section": "8.1 Résumé des notions apprises",
+    "text": "8.1 Résumé des notions apprises\n\n\n\n\n\n\nNoteCe que vous avez maîtrisé en Séance 2\n\n\n\nTidyverse & dplyr\n\nComprendre la philosophie tidy data et l’opérateur pipe |&gt;\nManipuler des données avec les 5 verbes : filter, select, mutate, arrange, summarise\nGrouper et résumer avec group_by() + summarise()\n\nStructures de données avancées\n\nCréer et manipuler des listes\nPivoter les tableaux avec pivot_longer() et pivot_wider()\nCréer et retravailler des facteurs avec factor() et forcats\nComprendre les vecteurs labellisés (haven)\n\nVisualisation avec ggplot2\n\nMaîtriser la grammaire des graphiques (data + aes + geom)\nProduire : histogramme, boxplot, nuage de points, barres, courbes\nUtiliser les facettes (facet_wrap)\nPersonnaliser les thèmes et sauvegarder\n\nStatistiques univariées & bivariées\n\nIndicateurs de tendance centrale, dispersion, forme\nTableau croisé, test du chi-2, corrélation de Pearson\nTests de comparaison : Wilcoxon, Kruskal-Wallis\n\nFonctions et outils\n\nManipulation de chaînes avec stringr\nConditions : ifelse(), case_when()\nItération : boucles for, sapply(), lapply()\nCréer ses propres fonctions"
+  }
+]
