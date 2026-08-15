@@ -12,6 +12,9 @@ website:
       - href: formation_R_seance2.qmd
         text: Module 2
 
+execute:
+  freeze: true
+
 format:
   html:
     theme: cosmo
